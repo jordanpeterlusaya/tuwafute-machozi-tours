@@ -29,7 +29,7 @@ export default function EnquirePage() {
                   @{brand.instagram}
                 </a>
               </li>
-              <li>WhatsApp · the green button</li>
+              <li>WhatsApp · {brand.phoneDisplay}</li>
               <li>
                 <a className="text-gold" href="/trip-builder">
                   Trip builder

@@ -6,7 +6,7 @@ import { whatsappLink } from "@/lib/utils";
 export function WhatsAppButton() {
   const href = whatsappLink(
     brand.whatsapp,
-    `Hello ${brand.name} — I would like to begin a conversation about a journey to Tanzania.`,
+    `Hello ${brand.name} — I would like to request details for Zanzibar excursions.`,
   );
 
   return (
@@ -14,7 +14,7 @@ export function WhatsAppButton() {
       href={href}
       target="_blank"
       rel="noreferrer"
-      aria-label="Chat on WhatsApp"
+      aria-label="Book via WhatsApp"
       className="fixed bottom-5 right-5 z-40 flex h-14 w-14 items-center justify-center rounded-full bg-[#25D366] text-white shadow-lg shadow-black/20 transition-transform hover:scale-105"
     >
       <svg viewBox="0 0 24 24" className="h-7 w-7" fill="currentColor" aria-hidden>

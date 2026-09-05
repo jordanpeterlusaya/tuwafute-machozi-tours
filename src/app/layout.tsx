@@ -6,6 +6,7 @@ import { Header } from "@/components/layout/Header";
 import { Providers } from "@/components/layout/Providers";
 import { WhatsAppButton } from "@/components/layout/WhatsAppButton";
 import { brand } from "@/content/brand";
+import "mapbox-gl/dist/mapbox-gl.css";
 import "./globals.css";
 
 const display = Cormorant_Garamond({

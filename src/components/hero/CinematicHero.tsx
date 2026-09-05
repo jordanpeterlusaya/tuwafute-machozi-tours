@@ -12,7 +12,10 @@ import {
 } from "framer-motion";
 import { Button } from "@/components/ui/Button";
 import { brand } from "@/content/brand";
+import { coastFilms } from "@/content/media";
 import { WorldLoader } from "@/components/world/WorldLoader";
+
+const heroFilm = coastFilms[0];
 
 export function CinematicHero() {
   const layer = useRef<HTMLDivElement>(null);
@@ -80,14 +83,16 @@ export function CinematicHero() {
             loop
             playsInline
             preload="metadata"
-            poster="/images/hero-nungwi.jpg"
+            poster={heroFilm.poster}
+            aria-label={heroFilm.title}
           >
             <source
-              src="/media/hero-nungwi-mobile.mp4"
+              src={heroFilm.mobileVideo}
               type="video/mp4"
               media="(max-width: 767px)"
             />
-            <source src="/media/hero-nungwi.mp4" type="video/mp4" />
+            <source src={heroFilm.video} type="video/mp4" />
+            Your browser does not support HTML video.
           </video>
         )}
       </motion.div>

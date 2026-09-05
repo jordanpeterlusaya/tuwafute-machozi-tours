@@ -1,452 +1,534 @@
+export type ExperienceRegion = "north" | "east" | "south" | "west-central";
+
+export type ExperienceCategory =
+  | "coast"
+  | "marine"
+  | "culture"
+  | "nature"
+  | "adventure";
+
 export type Experience = {
   slug: string;
   name: string;
-  region: string;
-  duration: string;
-  priceFrom: number;
-  category: "coast" | "marine" | "culture" | "nature" | "adventure";
+  region: ExperienceRegion;
+  regionLabel: string;
+  category: ExperienceCategory;
   image: string;
   summary: string;
-  details: string;
-  includes: string[];
-  notes: string;
   destination: string;
+  coordinates: {
+    lat: number;
+    lng: number;
+    label: string;
+    precision: "site" | "locality" | "area" | "departure";
+  };
 };
 
+export const experienceRegions: {
+  id: ExperienceRegion;
+  label: string;
+  expectedCount: number;
+}[] = [
+  { id: "north", label: "North Zanzibar", expectedCount: 6 },
+  { id: "east", label: "East Coast Zanzibar", expectedCount: 7 },
+  { id: "south", label: "South Zanzibar", expectedCount: 6 },
+  { id: "west-central", label: "West & Central Zanzibar", expectedCount: 9 },
+];
+
+/**
+ * Canonical catalog transcribed from the seven-page Zanzibar Excursions &
+ * Experiences Guide supplied to the project. The guide provides no prices,
+ * durations, inclusions, packages, or availability guarantees.
+ *
+ * Named sites and localities were checked against OpenStreetMap place data.
+ * Pins marked "area" or "departure" are honest reference points for
+ * experiences that do not have one fixed on-land location.
+ */
 export const experiences: Experience[] = [
   {
     slug: "nungwi-beach",
     name: "Nungwi Beach & Village",
-    region: "North Zanzibar",
-    duration: "Half day",
-    priceFrom: 45,
+    region: "north",
+    regionLabel: "North Zanzibar",
     category: "coast",
     image: "/images/hero-nungwi.jpg",
     summary:
-      "The famous northern coastline — white sand, turquoise water, sunset light and the lively atmosphere of the village.",
-    details:
-      "Walk the curve of Nungwi, swim the clear shallows, and move through the village as the day cools. We keep the rhythm unhurried: beach, local lanes, and a sundowner where the dhows gather.",
-    includes: ["Private guide", "Return transfers", "Sunset stop"],
-    notes: "Best late afternoon. Tide dependent for the widest sand.",
+      "Enjoy Zanzibar’s famous northern coastline, beautiful white sand, turquoise water, sunset views and the lively local atmosphere.",
     destination: "nungwi",
+    coordinates: {
+      lat: -5.7272268,
+      lng: 39.2992016,
+      label: "Nungwi village and beachfront",
+      precision: "locality",
+    },
   },
   {
     slug: "kendwa-sunset",
     name: "Kendwa Beach & Sunset",
-    region: "North Zanzibar",
-    duration: "Half day",
-    priceFrom: 40,
+    region: "north",
+    regionLabel: "North Zanzibar",
     category: "coast",
     image: "/images/hero-resort.jpg",
     summary:
-      "A relaxed escape known for its wide beach, swimming, and a sunset that becomes the evening’s entire conversation.",
-    details:
-      "Kendwa holds its swimming water through the tides. We arrive as the heat softens, swim, and stay for the sky — a northern Zanzibar ritual done properly.",
-    includes: ["Transfers", "Beach time", "Sunset seating"],
-    notes: "Ideal for families and guests who prefer a quieter north.",
+      "A relaxed beach escape known for its wide sandy beach, swimming, spectacular sunsets and evening atmosphere.",
     destination: "kendwa",
+    coordinates: {
+      lat: -5.7537979,
+      lng: 39.2867377,
+      label: "Kendwa beachfront",
+      precision: "locality",
+    },
   },
   {
     slug: "nungwi-turtles",
     name: "Nungwi Turtle Sanctuary",
-    region: "North Zanzibar",
-    duration: "2 hours",
-    priceFrom: 25,
+    region: "north",
+    regionLabel: "North Zanzibar",
     category: "nature",
     image: "/images/resort-palms.jpg",
     summary:
-      "A conservation sanctuary where rescued sea turtles are protected, studied, and — when ready — returned to the ocean.",
-    details:
-      "Visit with a conservation briefing. Guests meet the work behind the postcard: rescue, rehabilitation, and the slower ethics of marine protection.",
-    includes: ["Entrance", "Conservation briefing", "Guide"],
-    notes: "A portion of every visit supports sanctuary work.",
+      "Visit a conservation sanctuary where you can learn about and observe rescued sea turtles and marine protection.",
     destination: "nungwi",
+    coordinates: {
+      lat: -5.72249,
+      lng: 39.30271,
+      label: "Mnarani marine turtle conservation area",
+      precision: "site",
+    },
   },
   {
     slug: "mnemba",
     name: "Mnemba Island Marine Experience",
-    region: "North Zanzibar",
-    duration: "Full day",
-    priceFrom: 160,
+    region: "north",
+    regionLabel: "North Zanzibar",
     category: "marine",
     image: "/images/nungwi-boats.jpg",
     summary:
-      "One of Zanzibar’s finest marine theatres — reef colour, sandbanks, and the chance of dolphins in open water.",
-    details:
-      "A boat day into the Mnemba conservation area. Snorkel the reef, rest on a sandbank, and travel with skippers who know when to keep distance from wildlife.",
-    includes: ["Boat", "Snorkel equipment", "Lunch", "Marine guide"],
-    notes: "Responsible viewing only. No chasing of dolphins.",
+      "Explore one of Zanzibar’s best-known marine areas with snorkeling, clear water, colorful reef life, sandbanks and dolphin-spotting opportunities.",
     destination: "nungwi",
+    coordinates: {
+      lat: -5.8206139,
+      lng: 39.3836917,
+      label: "Mnemba Island marine area",
+      precision: "area",
+    },
   },
   {
     slug: "dolphin-north",
-    name: "Northern Dolphin Morning",
-    region: "North Zanzibar",
-    duration: "Half day",
-    priceFrom: 90,
+    name: "Dolphin Experience",
+    region: "north",
+    regionLabel: "North Zanzibar",
     category: "marine",
     image: "/images/hero-adventure.jpg",
     summary:
-      "An early boat into the Indian Ocean in search of dolphins — memorable, and done with restraint.",
-    details:
-      "We leave at first light. If dolphins appear, we watch from a respectful distance. The morning remains beautiful even when the ocean keeps its secrets.",
-    includes: ["Boat", "Captain & guide", "Light breakfast"],
-    notes: "Wildlife is never guaranteed. Weather decides the route.",
+      "Head out by boat in search of dolphins and enjoy a memorable morning on the Indian Ocean, with responsible wildlife viewing recommended.",
     destination: "nungwi",
+    coordinates: {
+      lat: -5.7249,
+      lng: 39.3016,
+      label: "Nungwi boat departure area",
+      precision: "departure",
+    },
   },
   {
     slug: "mkokotoni",
     name: "Mkokotoni & North Coast Villages",
-    region: "North Zanzibar",
-    duration: "Half day",
-    priceFrom: 55,
+    region: "north",
+    regionLabel: "North Zanzibar",
     category: "culture",
     image: "/images/nungwi-boats.jpg",
     summary:
-      "Traditional fishing communities and a quieter north that most resort itineraries never reach.",
-    details:
-      "A cultural drive through the working coast — markets, boat yards, and conversations that belong to the island rather than the brochure.",
-    includes: ["Guide", "Village visit", "Transfers"],
-    notes: "Dress modestly in villages. Photography with permission.",
+      "Discover local coastal life, traditional fishing communities and a quieter side of northern Zanzibar.",
     destination: "nungwi",
+    coordinates: {
+      lat: -5.8748653,
+      lng: 39.2558883,
+      label: "Mkokotoni",
+      precision: "locality",
+    },
   },
   {
     slug: "paje-beach",
     name: "Paje Beach",
-    region: "East Coast",
-    duration: "Half or full day",
-    priceFrom: 40,
+    region: "east",
+    regionLabel: "East Coast Zanzibar",
     category: "coast",
     image: "/images/hero-adventure.jpg",
     summary:
-      "Palm-fringed east-coast sand — swimming, stillness, and the laid-back atmosphere that defines this shore.",
-    details:
-      "Time on Paje’s lagoon beach, with optional kite watching in season and long walks when the tide withdraws toward the reef.",
-    includes: ["Transfers", "Beach club day pass on request"],
-    notes: "Low tide reveals a vast walkable lagoon.",
+      "A beautiful palm-fringed beach ideal for swimming, relaxing, kitesurfing and enjoying the laid-back east-coast atmosphere.",
     destination: "paje",
+    coordinates: {
+      lat: -6.266745,
+      lng: 39.534072,
+      label: "Paje beachfront",
+      precision: "locality",
+    },
   },
   {
     slug: "jambiani-village",
-    name: "Jambiani Village Walk",
-    region: "East Coast",
-    duration: "3 hours",
-    priceFrom: 35,
+    name: "Jambiani Village",
+    region: "east",
+    regionLabel: "East Coast Zanzibar",
     category: "culture",
     image: "/images/hero-resort.jpg",
     summary:
-      "Coastal life as it is lived — fishing, seaweed farms, and the peaceful beauty of the south-east.",
-    details:
-      "Walk with a local host through Jambiani: homes, boats, and the seaweed gardens that appear at low tide like a second coastline.",
-    includes: ["Village host", "Tasting stop", "Transfers"],
-    notes: "Best at mid to low tide.",
+      "Experience authentic coastal life, local culture, traditional fishing and the peaceful beauty of the south-eastern coast.",
     destination: "jambiani",
+    coordinates: {
+      lat: -6.321892,
+      lng: 39.546793,
+      label: "Jambiani village",
+      precision: "locality",
+    },
   },
   {
     slug: "kuza-cave",
     name: "Kuza Cave",
-    region: "East Coast",
-    duration: "2–3 hours",
-    priceFrom: 30,
+    region: "east",
+    regionLabel: "East Coast Zanzibar",
     category: "nature",
     image: "/images/resort-palms.jpg",
     summary:
-      "A limestone cave of clear underground water, wrapped in tropical shade.",
-    details:
-      "Descend into a still, mineral-blue pool. Swim, listen to the village story of the cave, and return to the heat with the feeling of having slipped into another century.",
-    includes: ["Entrance", "Guide", "Transfers"],
-    notes: "Bring a swimsuit and water shoes.",
-    destination: "paje",
+      "Explore a natural limestone cave with clear underground water and a tranquil setting surrounded by tropical vegetation.",
+    destination: "jambiani",
+    coordinates: {
+      lat: -6.3038005,
+      lng: 39.5333981,
+      label: "Kuza Cave",
+      precision: "site",
+    },
   },
   {
     slug: "the-rock",
     name: "The Rock Restaurant",
-    region: "East Coast",
-    duration: "Lunch",
-    priceFrom: 85,
+    region: "east",
+    regionLabel: "East Coast Zanzibar",
     category: "coast",
     image: "/images/hero-resort.jpg",
     summary:
-      "Zanzibar’s iconic dining room — a restaurant set on a rock in the sea, reached by foot or boat depending on the tide.",
-    details:
-      "We time the reservation to the tide and the light. The meal is memorable; the crossing is the theatre.",
-    includes: ["Reservation handling", "Transfers", "Tide planning"],
-    notes: "Menu priced separately. Weather and tide can move the table time.",
+      "Visit Zanzibar’s iconic oceanfront restaurant, dramatically positioned on a small rock in the sea, for a memorable dining experience.",
     destination: "paje",
+    coordinates: {
+      lat: -6.1519,
+      lng: 39.5193,
+      label: "The Rock, Pingwe",
+      precision: "site",
+    },
+  },
+  {
+    slug: "michamvi-chwaka-bay",
+    name: "Michamvi & Chwaka Bay",
+    region: "east",
+    regionLabel: "East Coast Zanzibar",
+    category: "coast",
+    image: "/images/hero-nungwi.jpg",
+    summary:
+      "Enjoy scenic coastal landscapes, quiet beaches, mangroves and beautiful views around the bay.",
+    destination: "paje",
+    coordinates: {
+      lat: -6.1445297,
+      lng: 39.4955208,
+      label: "Michamvi and Chwaka Bay area",
+      precision: "area",
+    },
   },
   {
     slug: "blue-lagoon",
     name: "Blue Lagoon Snorkeling",
-    region: "East Coast",
-    duration: "Half day",
-    priceFrom: 70,
+    region: "east",
+    regionLabel: "East Coast Zanzibar",
     category: "marine",
     image: "/images/hero-nungwi.jpg",
     summary:
-      "Shallow, clear water and coral gardens — one of the east coast’s most graceful snorkel hours.",
-    details:
-      "A guided snorkel in protected shallows. Colourful reef fish, easy swimming, and a picnic on the sand if the day allows.",
-    includes: ["Boat or transfer", "Equipment", "Guide"],
-    notes: "Coral is living. No standing on reef.",
+      "Discover colorful coral, tropical fish and clear shallow waters in one of the east coast’s popular snorkeling areas.",
     destination: "paje",
+    coordinates: {
+      lat: -6.1406461,
+      lng: 39.5149761,
+      label: "Blue Lagoon snorkeling area",
+      precision: "area",
+    },
   },
   {
     slug: "kite-surfing",
     name: "Kite Surfing Experience",
-    region: "East Coast",
-    duration: "2–4 hours",
-    priceFrom: 95,
+    region: "east",
+    regionLabel: "East Coast Zanzibar",
     category: "adventure",
     image: "/images/jetski.jpg",
     summary:
-      "Zanzibar’s signature wind sport along the beaches of Paje and Jambiani — try it, or simply watch the sky fill with colour.",
-    details:
-      "Lessons with certified instructors, or a spectator afternoon with a camera and a cold drink. The east coast wind is the real host.",
-    includes: ["Instructor", "Equipment", "Safety briefing"],
-    notes: "Seasonal winds. We confirm conditions the evening before.",
+      "Try or watch one of Zanzibar’s signature water sports along the windy beaches of Paje and Jambiani.",
     destination: "paje",
+    coordinates: {
+      lat: -6.266745,
+      lng: 39.534072,
+      label: "Paje and Jambiani kite coast",
+      precision: "area",
+    },
   },
   {
     slug: "kizimkazi-dolphin",
     name: "Kizimkazi Dolphin Excursion",
-    region: "South Zanzibar",
-    duration: "Half day",
-    priceFrom: 80,
+    region: "south",
+    regionLabel: "South Zanzibar",
     category: "marine",
     image: "/images/hero-adventure.jpg",
     summary:
-      "A southern boat morning — dolphin waters, swimming when the sea allows, and a coastline of old fishing memory.",
-    details:
-      "Depart from Kizimkazi with skippers who work these waters daily. We follow a strict code: no crowding, no chasing, and the swim is optional.",
-    includes: ["Boat", "Life jackets", "Guide"],
-    notes: "Responsible viewing only. Conditions decide whether swimming is offered.",
+      "Explore the southern coast by boat, with opportunities for dolphin spotting and swimming in the Indian Ocean when conditions allow.",
     destination: "kizimkazi",
+    coordinates: {
+      lat: -6.450169,
+      lng: 39.4710186,
+      label: "Kizimkazi Mkunguni boat departure area",
+      precision: "departure",
+    },
   },
   {
     slug: "kizimkazi-mosque",
     name: "Kizimkazi Village & Old Mosque",
-    region: "South Zanzibar",
-    duration: "2 hours",
-    priceFrom: 30,
+    region: "south",
+    regionLabel: "South Zanzibar",
     category: "culture",
     image: "/images/nungwi-boats.jpg",
     summary:
-      "One of Zanzibar’s historic coastal settlements and a mosque that remembers the island’s earliest Islamic chapters.",
-    details:
-      "A quiet cultural hour: the village, the old mosque, and the long relationship between this coast and the sea.",
-    includes: ["Guide", "Entrance where required"],
-    notes: "Shoulders and knees covered.",
+      "Discover one of Zanzibar’s historic coastal settlements and learn about its long connection with fishing and maritime culture.",
     destination: "kizimkazi",
+    coordinates: {
+      lat: -6.4361303,
+      lng: 39.4623692,
+      label: "Kizimkazi Dimbani old mosque area",
+      precision: "site",
+    },
   },
   {
     slug: "mtende",
     name: "Mtende Beach",
-    region: "South Zanzibar",
-    duration: "Half day",
-    priceFrom: 55,
+    region: "south",
+    regionLabel: "South Zanzibar",
     category: "coast",
     image: "/images/hero-nungwi.jpg",
     summary:
-      "A less-developed southern beach of rock drama, turquoise water, and almost no crowd.",
-    details:
-      "For guests who want the island without the soundtrack. Cliffs, clear water, and a picnic if you wish to stay through the afternoon.",
-    includes: ["Transfers", "Guide", "Picnic on request"],
-    notes: "Bring sun protection; shade is limited.",
+      "Visit a dramatic and less-developed southern beach known for striking rock formations, turquoise water and beautiful scenery.",
     destination: "kizimkazi",
+    coordinates: {
+      lat: -6.4616229,
+      lng: 39.5395887,
+      label: "Mtende Beach",
+      precision: "site",
+    },
   },
   {
     slug: "maalum-cave",
-    name: "Maalum Cave Swim",
-    region: "South Zanzibar",
-    duration: "2–3 hours",
-    priceFrom: 35,
+    name: "Maalum Cave",
+    region: "south",
+    regionLabel: "South Zanzibar",
     category: "nature",
     image: "/images/resort-palms.jpg",
     summary:
-      "A natural swimming cave held in tropical vegetation — cool, mineral, and unexpectedly still.",
-    details:
-      "Swim in a collapsed limestone chamber. Light falls in from above. It is one of the south’s most intimate hours.",
-    includes: ["Entrance", "Transfers"],
-    notes: "Not suitable for non-swimmers without a flotation vest.",
-    destination: "kizimkazi",
+      "Enjoy a natural swimming experience in a beautiful cave surrounded by lush tropical vegetation.",
+    destination: "paje",
+    coordinates: {
+      lat: -6.2774216,
+      lng: 39.5303717,
+      label: "Maalum Cave",
+      precision: "site",
+    },
   },
   {
     slug: "menai-bay",
     name: "Menai Bay Conservation Area",
-    region: "South Zanzibar",
-    duration: "Full day",
-    priceFrom: 140,
+    region: "south",
+    regionLabel: "South Zanzibar",
     category: "marine",
     image: "/images/nungwi-boats.jpg",
     summary:
-      "Protected waters, islands and sandbanks — a guided boat day through one of Zanzibar’s most important marine reserves.",
-    details:
-      "Sail or motor into Menai Bay. Snorkel, walk a sandbank, and eat lunch with your feet in the water. Conservation fees support the reserve.",
-    includes: ["Boat", "Lunch", "Snorkel gear", "Park fees"],
-    notes: "Seas are kindest from June to October.",
+      "Explore protected coastal waters, islands, sandbanks and marine life through a guided boat experience.",
     destination: "kizimkazi",
+    coordinates: {
+      lat: -6.4007748,
+      lng: 39.3323682,
+      label: "Menai Bay Conservation Area",
+      precision: "area",
+    },
   },
   {
     slug: "pungume",
     name: "Pungume Island & Sandbank",
-    region: "South Zanzibar",
-    duration: "Full day",
-    priceFrom: 170,
+    region: "south",
+    regionLabel: "South Zanzibar",
     category: "marine",
     image: "/images/hero-nungwi.jpg",
     summary:
-      "A private-island feeling: pristine sandbanks, snorkelling, and the luxury of having the horizon almost to yourself.",
-    details:
-      "We leave early, claim a sandbank while the tide is generous, and let the day become swimming, shade and silence.",
-    includes: ["Private boat", "Picnic", "Shade, chairs, snorkel"],
-    notes: "Tide window is essential. We design the day around it.",
+      "Spend time on pristine sandbanks and clear waters, with opportunities for snorkeling, swimming and a private island-style escape.",
     destination: "kizimkazi",
+    coordinates: {
+      lat: -6.42528,
+      lng: 39.33667,
+      label: "Pungume Island and nearby sandbanks",
+      precision: "area",
+    },
   },
   {
     slug: "stone-town",
-    name: "Stone Town Heritage Walk",
-    region: "West & Central",
-    duration: "3–4 hours",
-    priceFrom: 40,
+    name: "Stone Town Heritage Tour",
+    region: "west-central",
+    regionLabel: "West & Central Zanzibar",
     category: "culture",
     image: "/images/nungwi-boats.jpg",
     summary:
-      "Narrow streets, Swahili architecture, markets and the cultural landmarks of Zanzibar’s historic old town.",
-    details:
-      "A historian-guide walk: doors, palaces, the old fort, rooftops, and the stories that sit between the coral walls. We finish when the light turns amber.",
-    includes: ["Historian guide", "Entrance fees", "Spice tea"],
-    notes: "Wear comfortable shoes. Alleys are uneven and beautiful.",
+      "Walk through Zanzibar’s historic Old Town, exploring narrow streets, Swahili architecture, historic buildings, markets and cultural landmarks.",
     destination: "stone-town",
+    coordinates: {
+      lat: -6.1626528,
+      lng: 39.1896552,
+      label: "Stone Town",
+      precision: "area",
+    },
   },
   {
     slug: "spice-farm",
     name: "Spice Farm Tour",
-    region: "West & Central",
-    duration: "Half day",
-    priceFrom: 35,
+    region: "west-central",
+    regionLabel: "West & Central Zanzibar",
     category: "culture",
     image: "/images/resort-palms.jpg",
     summary:
-      "Clove, vanilla, cinnamon, cardamom — the living reason the world once called this the Spice Island.",
-    details:
-      "Walk a working farm with a grower, not a performer. Smell, taste, and understand the plants that built Zanzibar’s fortune.",
-    includes: ["Farm host", "Tastings", "Transfers"],
-    notes: "Combine beautifully with Stone Town or Jozani.",
+      "Discover Zanzibar’s famous spice heritage with a guided visit to a farm where you can see, smell and learn about cloves, vanilla, cinnamon, cardamom and other tropical plants.",
     destination: "stone-town",
+    coordinates: {
+      lat: -6.1068864,
+      lng: 39.2524734,
+      label: "Kijichi spice-farm area",
+      precision: "area",
+    },
   },
   {
     slug: "prison-island",
     name: "Prison Island",
-    region: "West & Central",
-    duration: "Half day",
-    priceFrom: 65,
+    region: "west-central",
+    regionLabel: "West & Central Zanzibar",
     category: "culture",
     image: "/images/hero-nungwi.jpg",
     summary:
-      "A short boat crossing to giant Aldabra tortoises, a colonial prison story, and snorkelling off the island’s edge.",
-    details:
-      "Cross from Stone Town, walk the island, meet the tortoises, and swim if the reef is clear.",
-    includes: ["Boat", "Entrance", "Guide"],
-    notes: "Tortoise feeding is regulated. Follow sanctuary rules.",
+      "Take a boat across the sea to explore the island’s history, visit the giant Aldabra tortoises and enjoy snorkeling in the surrounding waters.",
     destination: "stone-town",
+    coordinates: {
+      lat: -6.1192184,
+      lng: 39.1660983,
+      label: "Changuu (Prison) Island",
+      precision: "site",
+    },
   },
   {
     slug: "forodhani",
-    name: "Forodhani Gardens Evening",
-    region: "West & Central",
-    duration: "2–3 hours",
-    priceFrom: 25,
+    name: "Forodhani Gardens",
+    region: "west-central",
+    regionLabel: "West & Central Zanzibar",
     category: "culture",
     image: "/images/hero-resort.jpg",
     summary:
-      "Stone Town’s waterfront at night — smoke, spice, grilled seafood, and the island’s most democratic theatre.",
-    details:
-      "We arrive as the stalls open. Taste with a local host who knows which grills to trust, then walk the seafront as the fort lights come on.",
-    includes: ["Host", "Food tasting budget", "Old Town walk"],
-    notes: "Evenings only. Vegetarian paths available.",
+      "Experience the atmosphere of Stone Town’s waterfront and discover Zanzibar’s popular evening food scene.",
     destination: "stone-town",
+    coordinates: {
+      lat: -6.1605962,
+      lng: 39.1887981,
+      label: "Forodhani Gardens",
+      precision: "site",
+    },
   },
   {
     slug: "darajani",
     name: "Darajani Market",
-    region: "West & Central",
-    duration: "2 hours",
-    priceFrom: 20,
+    region: "west-central",
+    regionLabel: "West & Central Zanzibar",
     category: "culture",
     image: "/images/nungwi-boats.jpg",
     summary:
-      "Produce, spices, seafood and fabric — the everyday island, at full volume.",
-    details:
-      "A guided market hour that is as much about listening as buying. The best souvenirs are often stories, and a paper cone of cloves.",
-    includes: ["Guide", "Market tasting"],
-    notes: "Mornings are freshest and coolest.",
+      "Explore one of Stone Town’s main markets and experience local produce, spices, seafood, fabrics and everyday island life.",
     destination: "stone-town",
+    coordinates: {
+      lat: -6.1622107,
+      lng: 39.1937312,
+      label: "Darajani Market",
+      precision: "site",
+    },
   },
   {
     slug: "house-of-wonders",
-    name: "House of Wonders & Old Fort",
-    region: "West & Central",
-    duration: "2 hours",
-    priceFrom: 25,
+    name: "House of Wonders & Old Fort Area",
+    region: "west-central",
+    regionLabel: "West & Central Zanzibar",
     category: "culture",
     image: "/images/nungwi-boats.jpg",
     summary:
-      "The historic heart of Stone Town — palaces, the fort, and the long trade memory of the Indian Ocean.",
-    details:
-      "Architecture and history without the lecture tone. We move through the ceremonial core of the old city and read it as a living street.",
-    includes: ["Guide", "Entrances as open"],
-    notes: "Some interiors have seasonal opening times.",
+      "Discover the historic heart of Stone Town and learn about Zanzibar’s rich cultural and trading history.",
     destination: "stone-town",
+    coordinates: {
+      lat: -6.1609088,
+      lng: 39.1896248,
+      label: "House of Wonders and Old Fort area",
+      precision: "site",
+    },
   },
   {
     slug: "jozani",
-    name: "Jozani Forest Walk",
-    region: "West & Central",
-    duration: "3 hours",
-    priceFrom: 45,
+    name: "Jozani Forest",
+    region: "west-central",
+    regionLabel: "West & Central Zanzibar",
     category: "nature",
     image: "/images/resort-palms.jpg",
     summary:
-      "Zanzibar’s forest — endemic red colobus monkeys and a walk through the island’s green interior.",
-    details:
-      "A ranger-led walk. The monkeys are the headline; the forest is the point. We add the mangrove boardwalk when time and tide agree.",
-    includes: ["Park fees", "Ranger", "Transfers"],
-    notes: "Keep distance from wildlife. No feeding.",
+      "Walk through Zanzibar’s famous forest and look for the endemic Zanzibar red colobus monkey while learning about the island’s unique ecosystem.",
     destination: "jozani",
+    coordinates: {
+      lat: -6.2624536,
+      lng: 39.4150035,
+      label: "Jozani Forest",
+      precision: "area",
+    },
   },
   {
     slug: "mangrove",
     name: "Mangrove Forest Experience",
-    region: "West & Central",
-    duration: "2–3 hours",
-    priceFrom: 40,
+    region: "west-central",
+    regionLabel: "West & Central Zanzibar",
     category: "nature",
     image: "/images/hero-adventure.jpg",
     summary:
-      "A guided walk or boat through coastal mangroves — the living architecture that protects Zanzibar’s shore.",
-    details:
-      "Learn why these trees matter: nurseries for fish, shields against storms, and a quieter kind of beauty.",
-    includes: ["Guide", "Boat or boardwalk", "Transfers"],
-    notes: "Mosquito protection recommended at dusk.",
+      "Explore coastal mangroves by guided walk or boat and learn about these important ecosystems and their role in protecting Zanzibar’s shoreline.",
     destination: "jozani",
+    coordinates: {
+      lat: -6.228119,
+      lng: 39.4041533,
+      label: "Jozani–Chwaka Bay National Park mangrove area",
+      precision: "area",
+    },
   },
   {
     slug: "sunset-dhow",
     name: "Sunset Dhow Cruise",
-    region: "West & Central",
-    duration: "2 hours",
-    priceFrom: 75,
+    region: "west-central",
+    regionLabel: "West & Central Zanzibar",
     category: "coast",
     image: "/images/nungwi-boats.jpg",
     summary:
-      "Sail a traditional dhow along the coast as the wind softens and Zanzibar performs its evening.",
-    details:
-      "A private or shared lateen sail, cold drinks, and the particular silence that arrives when the engine is not invited.",
-    includes: ["Dhow", "Captain", "Drinks & canapés on private sail"],
-    notes: "Private dhows book quickly in high season.",
+      "Sail along the coast on a traditional dhow while enjoying the ocean breeze and a beautiful Zanzibar sunset.",
     destination: "stone-town",
+    coordinates: {
+      lat: -6.1605962,
+      lng: 39.1887981,
+      label: "Stone Town waterfront departure area",
+      precision: "departure",
+    },
   },
 ];
+
+export const guideTravelNotes = [
+  "Excursions are best planned according to weather, sea conditions and guest preferences.",
+  "Marine and wildlife experiences should be conducted responsibly, respecting animals, coral reefs and protected areas.",
+  "Some attractions have seasonal opening times or conservation requirements; confirm operational details before departure.",
+  "Private and shared experiences can be arranged depending on the desired level of comfort and flexibility.",
+] as const;
 
 export function getExperience(slug: string) {
   return experiences.find((item) => item.slug === slug);

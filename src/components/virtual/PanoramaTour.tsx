@@ -7,12 +7,7 @@ import { Canvas, useFrame, useLoader } from "@react-three/fiber";
 import { Float, Sparkles } from "@react-three/drei";
 import { TextureLoader, type Group } from "three";
 import { useExperienceMode } from "@/components/world/useExperienceMode";
-
-const scenes = [
-  { slug: "nungwi", name: "Nungwi coast" },
-  { slug: "resort", name: "Palm shore" },
-  { slug: "adventure", name: "East-coast water" },
-] as const;
+import { coastFilms } from "@/content/media";
 
 function MediaChamber({ src }: { src: string }) {
   const texture = useLoader(TextureLoader, src);
@@ -84,22 +79,22 @@ export function PanoramaTour({ src, activeSlug }: { src: string; activeSlug: str
             {staticMode ? "Cinematic still" : "Move your pointer to look across the frame"}
           </p>
           <p className="mt-1 text-xs text-ivory/35">
-            Framed spatial film · genuine 360° capture coming with future expeditions
+            Framed spatial still · genuine 360° capture coming with future expeditions
           </p>
         </div>
         <nav className="flex flex-wrap gap-2" aria-label="Virtual tour scenes">
-          {scenes.map((scene) => (
+          {coastFilms.map((film) => (
             <Link
-              key={scene.slug}
-              href={`/virtual-tours/${scene.slug}`}
-              aria-current={activeSlug === scene.slug ? "page" : undefined}
+              key={film.slug}
+              href={`/virtual-tours/${film.slug}`}
+              aria-current={activeSlug === film.slug ? "page" : undefined}
               className={`rounded-full border px-3 py-1.5 text-[9px] tracking-[0.16em] uppercase ${
-                activeSlug === scene.slug
+                activeSlug === film.slug
                   ? "border-gold bg-gold text-ink"
                   : "border-ivory/25 bg-ink/50 text-ivory"
               }`}
             >
-              {scene.name}
+              {film.navLabel}
             </Link>
           ))}
         </nav>

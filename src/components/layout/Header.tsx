@@ -4,6 +4,7 @@ import Link from "next/link";
 import { useEffect, useRef, useState } from "react";
 import { AnimatePresence, motion } from "framer-motion";
 import { Logo } from "@/components/brand/Logo";
+import { TourCartHeaderButton } from "@/components/booking/TourCart";
 import { brand, nav, secondaryNav } from "@/content/brand";
 import { cx } from "@/lib/utils";
 
@@ -87,6 +88,7 @@ export function Header() {
         </nav>
 
         <div className="flex items-center gap-5">
+          <TourCartHeaderButton />
           <Link
             href="/enquire"
             className="hidden text-[11px] tracking-[0.28em] uppercase text-gold md:inline-flex"

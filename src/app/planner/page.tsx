@@ -3,15 +3,15 @@ import { AIPlanner } from "@/components/planner/AIPlanner";
 import { PageHero } from "@/components/ui/PageHero";
 import { Container, Section } from "@/components/ui/Section";
 
-export const metadata: Metadata = { title: "AI Planner" };
+export const metadata: Metadata = { title: "Excursion Planner" };
 
 export default function PlannerPage() {
   return (
     <>
       <PageHero
-        eyebrow="A private intelligence"
-        title="Ask the house how the days should fall."
-        copy="Answer four questions. Receive a composition drawn from the Zanzibar excursions in our guide."
+        eyebrow="Editorial planning aid"
+        title="See one way the guide excursions could flow."
+        copy="Answer four questions for a sample composition drawn from the Zanzibar guide. It is not an official package or availability confirmation."
       />
       <Section>
         <Container>

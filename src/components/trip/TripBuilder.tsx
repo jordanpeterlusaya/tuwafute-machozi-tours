@@ -89,7 +89,10 @@ export function TripBuilder() {
           </div>
         )}
         {step === 3 && (
-          <p className="mt-6 font-display text-3xl">A first composition. We will refine it with you.</p>
+          <p className="mt-6 font-display text-3xl">
+            An editorial sample, not an official package. A person can refine
+            each requested excursion with you.
+          </p>
         )}
         <div className="mt-10 flex gap-3">
           {step > 0 && (
@@ -110,7 +113,7 @@ export function TripBuilder() {
       </div>
 
       <aside className="bg-ink p-8 text-ivory md:p-10">
-        <p className="eyebrow">The sketch</p>
+        <p className="eyebrow">Editorial sample</p>
         <h3 className="mt-4 font-display text-4xl">{suggestion?.name}</h3>
         <p className="mt-3 text-ivory/60">{suggestion?.summary}</p>
         <p className="mt-6 text-sm text-gold">

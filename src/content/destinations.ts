@@ -1,3 +1,5 @@
+import { coastFilms } from "@/content/media";
+
 export type Region = "north" | "east" | "south" | "west";
 
 export type Destination = {
@@ -10,6 +12,8 @@ export type Destination = {
   story: string;
   image: string;
   video?: string;
+  mobileVideo?: string;
+  videoLabel?: string;
   coords: { x: number; y: number; lat: number; lng: number };
   scene: {
     position: [number, number, number];
@@ -34,8 +38,10 @@ export const destinations: Destination[] = [
       "Zanzibar’s celebrated northern coastline — powder sand, turquoise shallows, and sunsets that turn the Indian Ocean to molten gold.",
     story:
       "Nungwi is where the island thins into light. Fishermen still push wooden ngalawa into the morning tide, while the beach unfurls in a long, pale curve toward Kendwa. We bring guests here not only for the postcard, but for the slower hour after it — village lanes, turtle conservation, and the first stars over the dhows.",
-    image: "/images/hero-nungwi.jpg",
-    video: "/media/hero-nungwi.mp4",
+    image: coastFilms[0].poster,
+    video: coastFilms[0].video,
+    mobileVideo: coastFilms[0].mobileVideo,
+    videoLabel: `${coastFilms[0].title} · exact location unrecorded`,
     coords: { x: 48, y: 8, lat: -5.726, lng: 39.299 },
     scene: { position: [-0.25, 0.42, -3.25], camera: [-0.2, 2.1, 4.2], accent: "#56d8cf", elevation: 0.42 },
     highlights: ["White-sand coast", "Sunset village life", "Turtle sanctuary"],
@@ -53,8 +59,10 @@ export const destinations: Destination[] = [
       "A quieter sister to Nungwi — a broad beach that holds its swimming tide, and evenings that arrive like a ceremony.",
     story:
       "Kendwa is made for lingering. The beach is generous, the water stays deep enough to swim through the tides, and the sky performs every dusk. It is the island at its most cinematic, without ever needing to raise its voice.",
-    image: "/images/resort-palms.jpg",
-    video: "/media/hero-resort.mp4",
+    image: coastFilms[1].poster,
+    video: coastFilms[1].video,
+    mobileVideo: coastFilms[1].mobileVideo,
+    videoLabel: `${coastFilms[1].title} · exact location unrecorded`,
     coords: { x: 44, y: 12, lat: -5.75, lng: 39.28 },
     scene: { position: [-0.62, 0.32, -2.75], camera: [-1.1, 1.8, 3.8], accent: "#e8c985", elevation: 0.32 },
     highlights: ["All-tide swimming", "Golden hour", "Evening atmosphere"],
@@ -72,8 +80,10 @@ export const destinations: Destination[] = [
       "A palm-fringed east-coast village where kites colour the sky and the lagoon stays warm and shallow for hours.",
     story:
       "Paje belongs to the wind. In season the lagoon fills with kite-surfers; out of season it returns to fishermen, coconut groves, and long walks at low tide. We use it as a base for the east — Kuza Cave, The Rock, and the quieter villages beyond.",
-    image: "/images/hero-adventure.jpg",
-    video: "/media/hero-adventure.mp4",
+    image: coastFilms[2].poster,
+    video: coastFilms[2].video,
+    mobileVideo: coastFilms[2].mobileVideo,
+    videoLabel: `${coastFilms[2].title} · exact location unrecorded`,
     coords: { x: 78, y: 58, lat: -6.266, lng: 39.534 },
     scene: { position: [1.1, 0.28, 0.65], camera: [2.8, 1.7, 4.1], accent: "#42cfc2", elevation: 0.28 },
     highlights: ["Kite lagoon", "Palm coast", "East-coast ease"],

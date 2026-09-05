@@ -28,7 +28,7 @@ export default function AboutPage() {
             <p className="mt-6 leading-8 text-ink/65">
               This is not an orphanage mark. It is jewelry-line work: the tear for those who need support,
               the ocean for Zanzibar, the palm for island life, the sun for a future that is allowed to arrive.
-              Travel, safaris, social impact — written underneath as equal lines.
+              Zanzibar travel, excursions and social impact — held as equal lines.
             </p>
             <div className="mt-10 flex items-center gap-6">
               <LogoMark className="h-24 w-20" />

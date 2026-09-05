@@ -35,13 +35,20 @@ export default async function DestinationPage({ params }: Props) {
         {item.video ? (
           <CinematicVideo
             src={item.video}
+            mobileSrc={item.mobileVideo}
             poster={item.image}
             className="absolute inset-0 h-full w-full object-cover"
+            ariaLabel={item.videoLabel}
           />
         ) : (
-          <Image src={item.image} alt={item.name} fill className="object-cover" priority />
+          <Image src={item.image} alt={item.name} fill className="object-cover" preload />
         )}
         <div className="absolute inset-0 bg-gradient-to-t from-ink via-ink/20 to-ink/30" />
+        {item.videoLabel ? (
+          <p className="absolute right-5 top-24 z-10 max-w-[16rem] text-right text-[9px] tracking-[0.18em] uppercase text-ivory/55 md:right-16">
+            {item.videoLabel}
+          </p>
+        ) : null}
         <div className="relative z-10 flex min-h-[80vh] flex-col justify-end px-5 pb-16 md:px-16">
           <Eyebrow>{item.regionLabel}</Eyebrow>
           <h1 className="mt-4 font-display text-6xl md:text-8xl">{item.name}</h1>
@@ -75,12 +82,12 @@ export default async function DestinationPage({ params }: Props) {
       {related.length > 0 && (
         <Section dark>
           <Container>
-            <Eyebrow>Experiences</Eyebrow>
+            <Eyebrow>Guide excursions</Eyebrow>
             <div className="mt-8 grid gap-6 md:grid-cols-3">
               {related.map((exp) => (
                 <Link key={exp.slug} href={`/experiences/${exp.slug}`} className="border border-gold/15 p-6 hover:border-gold">
                   <h3 className="font-display text-2xl">{exp.name}</h3>
-                  <p className="mt-2 text-sm text-ivory/55">{exp.duration}</p>
+                  <p className="mt-2 line-clamp-3 text-sm leading-6 text-ivory/55">{exp.summary}</p>
                 </Link>
               ))}
             </div>

@@ -5,15 +5,15 @@ export const faqs = [
   },
   {
     q: "Are marine and dolphin trips responsible?",
-    a: "They are, or we do not operate them. We work with skippers who do not chase wildlife, do not crowd pods, and will turn for home if the sea or the animals ask for it. Swimming with dolphins is never guaranteed and never forced.",
+    a: "The excursions guide recommends responsible wildlife viewing and respect for animals, coral reefs and protected areas. Conditions and sightings vary, and a dolphin encounter is never guaranteed.",
   },
   {
     q: "How does the social impact work?",
-    a: "A portion of every journey supports community education, marine conservation and family welfare projects in Zanzibar. Guests may visit — as guests, not spectators. We do not sell orphanage tourism. The name Tuwafute Machozi is a promise of dignity.",
+    a: "Tuwafute Machozi’s stated policy is that 60% of revenue goes to charity and community impact. We do not publish beneficiary names or impact metrics here unless they can be verified.",
   },
   {
     q: "Do you offer private or shared experiences?",
-    a: "Both. Private is our default for heritage walks, dhows and boat days. Shared can be arranged where it adds atmosphere — a sunset sail, a market evening — and where it does not diminish the experience.",
+    a: "The excursions guide says private and shared experiences can be arranged depending on the desired comfort and flexibility. Ask for the current options for your date.",
   },
   {
     q: "Is Zanzibar suitable for families?",
@@ -25,7 +25,7 @@ export const faqs = [
   },
   {
     q: "How do we book?",
-    a: "Begin with the trip builder, the AI planner, or a simple enquiry. We reply with a considered proposal — not an automated quote. WhatsApp is often the fastest conversation. Nothing is confirmed until you have seen the thinking.",
+    a: "Add one or more excursions to a tour request, enter your party and date details, then send it on WhatsApp. This is a booking request, not payment or confirmed inventory; the team confirms price and availability with you.",
   },
   {
     q: "Can you handle flights and visas?",

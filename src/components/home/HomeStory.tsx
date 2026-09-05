@@ -33,7 +33,7 @@ export function HomeStory() {
               <div className="mt-8 flex flex-wrap gap-8 text-sm tracking-wide text-ink/55">
                 <span>TRAVEL</span>
                 <span className="text-gold">•</span>
-                <span>SAFARIS</span>
+                <span>ZANZIBAR TOURS</span>
                 <span className="text-gold">•</span>
                 <span>SOCIAL IMPACT</span>
               </div>
@@ -112,7 +112,7 @@ export function HomeStory() {
                   />
                 </div>
                 <p className="mt-5 text-[11px] tracking-[0.24em] uppercase text-gold">
-                  {experience.region} · {experience.duration}
+                  {experience.regionLabel} · {experience.category}
                 </p>
                 <h3 className="mt-2 font-display text-3xl group-hover:text-gold">
                   {experience.name}
@@ -144,9 +144,9 @@ export function HomeStory() {
                   href={`/experiences/${item.slug}`}
                   className="border border-ink/8 bg-sand/50 p-6 transition-colors hover:border-gold"
                 >
-                  <p className="text-[10px] tracking-[0.24em] uppercase text-gold">{item.region}</p>
+                  <p className="text-[10px] tracking-[0.24em] uppercase text-gold">{item.regionLabel}</p>
                   <h3 className="mt-3 font-display text-2xl">{item.name}</h3>
-                  <p className="mt-2 text-sm text-ink/55">{item.duration}</p>
+                  <p className="mt-2 text-sm text-ink/55">Request current price</p>
                 </Link>
               ))}
             </div>
@@ -165,8 +165,8 @@ export function HomeStory() {
               Every journey leaves the island kinder.
             </h2>
             <p className="mt-6 max-w-lg text-ivory/70 leading-8">
-              A portion of every booking supports education, marine conservation and family welfare
-              in Zanzibar. Guests may visit — as guests, never as spectators.
+              Our policy is that 60% of revenue goes to charity and community
+              impact. Follow the official profile for current work and updates.
             </p>
             <Button href="/impact" className="mt-8">
               The impact chapter
@@ -177,8 +177,8 @@ export function HomeStory() {
 
       <Section>
         <Container>
-          <Eyebrow>Journeys</Eyebrow>
-          <h2 className="mt-4 font-display text-5xl">Itineraries with room to breathe</h2>
+          <Eyebrow>Editorial itinerary ideas</Eyebrow>
+          <h2 className="mt-4 font-display text-5xl">Sample compositions with room to breathe</h2>
           <div className="mt-12 grid gap-8 md:grid-cols-2">
             {itineraries.map((item) => (
               <Link key={item.slug} href={`/itineraries/${item.slug}`} className="group grid gap-5 md:grid-cols-2">

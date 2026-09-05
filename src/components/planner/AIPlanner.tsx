@@ -68,7 +68,8 @@ export function AIPlanner() {
         </label>
         <Button type="submit">{loading ? "Composing…" : "Compose with the house"}</Button>
         <p className="text-xs leading-6 text-ink/45">
-          A private planner trained on our excursions, lodges and impact principles — not a generic chatbot.
+          A rule-based editorial aid using the guide excursions. It does not
+          create an official package, quote a price, or confirm availability.
         </p>
       </form>
 
@@ -76,7 +77,7 @@ export function AIPlanner() {
         {!plan && <p className="font-display text-3xl text-ink/40">Your itinerary will appear here.</p>}
         {plan && (
           <div>
-            <p className="eyebrow">{plan.days} days</p>
+            <p className="eyebrow">Editorial sample · {plan.days} days</p>
             <h3 className="mt-3 font-display text-4xl">{plan.title}</h3>
             <p className="mt-4 text-ink/65">{plan.story}</p>
             <p className="mt-3 text-sm italic text-ink/50">{plan.note}</p>
@@ -88,7 +89,7 @@ export function AIPlanner() {
               ))}
             </ol>
             <Button href="/enquire?interest=planner" className="mt-8">
-              Place this with a human
+              Discuss with a human
             </Button>
           </div>
         )}

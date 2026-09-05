@@ -5,12 +5,20 @@ import { useEffect, useRef, useState } from "react";
 
 export function CinematicVideo({
   src,
+  mobileSrc,
   poster,
   className,
+  ariaLabel,
+  posterSizes = "100vw",
+  preloadPoster = true,
 }: {
   src: string;
+  mobileSrc?: string;
   poster: string;
   className?: string;
+  ariaLabel?: string;
+  posterSizes?: string;
+  preloadPoster?: boolean;
 }) {
   const video = useRef<HTMLVideoElement>(null);
   const [reduceMotion, setReduceMotion] = useState(true);
@@ -38,7 +46,16 @@ export function CinematicVideo({
   }, [reduceMotion]);
 
   if (reduceMotion) {
-    return <Image src={poster} alt="" fill className={className} priority />;
+    return (
+      <Image
+        src={poster}
+        alt={ariaLabel ?? ""}
+        fill
+        className={className}
+        sizes={posterSizes}
+        preload={preloadPoster}
+      />
+    );
   }
 
   return (
@@ -51,8 +68,13 @@ export function CinematicVideo({
       playsInline
       preload="metadata"
       poster={poster}
+      aria-label={ariaLabel}
     >
+      {mobileSrc ? (
+        <source src={mobileSrc} type="video/mp4" media="(max-width: 767px)" />
+      ) : null}
       <source src={src} type="video/mp4" />
+      Your browser does not support HTML video.
     </video>
   );
 }

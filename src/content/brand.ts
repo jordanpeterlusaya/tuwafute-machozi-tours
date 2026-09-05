@@ -6,21 +6,21 @@ export const brand = {
     secondary: "MACHOZI",
   },
   tagline: "Discover. Experience. Give Back.",
-  descriptor: "Travel · Safaris · Social Impact",
+  descriptor: "Zanzibar Excursions · Social Impact",
   meaning:
     "In Kiswahili, tuwafute machozi means let us wipe their tears. Every journey we design is an invitation to see Zanzibar fully — and to leave it kinder than we found it.",
   location: "Zanzibar",
   instagram: "tuwafute_255",
-  instagramUrl: "https://www.instagram.com/tuwafute_255",
+  instagramUrl: "https://www.instagram.com/tuwafute_255?igsi=d3FhNWZ4YjUxMDBx",
   email: "hello@tuwafutemachozi.com",
-  phoneDisplay: "+255 772 455 255",
-  whatsapp: "255772455255",
+  phoneDisplay: "+255 622 434 657",
+  whatsapp: "255622434657",
   founded: "Zanzibar",
 } as const;
 
 export const nav = [
   { href: "/destinations", label: "Destinations" },
-  { href: "/experiences", label: "Experiences" },
+  { href: "/experiences", label: "Zanzibar Tours" },
   { href: "/stays", label: "Stays" },
   { href: "/itineraries", label: "Journeys" },
   { href: "/impact", label: "Impact" },
@@ -28,12 +28,12 @@ export const nav = [
 ] as const;
 
 export const secondaryNav = [
-  { href: "/explorer", label: "3D Explorer" },
-  { href: "/map", label: "Map" },
+  { href: "/explorer", label: "Island Explorer" },
+  { href: "/map", label: "Excursion Map" },
   { href: "/trip-builder", label: "Trip Builder" },
-  { href: "/planner", label: "AI Planner" },
+  { href: "/planner", label: "Excursion Planner" },
   { href: "/gallery", label: "Gallery" },
-  { href: "/virtual-tours", label: "360° Tours" },
+  { href: "/virtual-tours", label: "Immersive Views" },
   { href: "/about", label: "The House" },
   { href: "/faq", label: "FAQ" },
 ] as const;

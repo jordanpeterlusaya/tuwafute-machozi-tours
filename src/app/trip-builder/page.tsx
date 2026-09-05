@@ -9,9 +9,9 @@ export default function TripBuilderPage() {
   return (
     <>
       <PageHero
-        eyebrow="Compose"
+        eyebrow="Compose an editorial sample"
         title="Build the journey before we write it in ink."
-        copy="A few precise questions. A living sketch. Then a human conversation."
+        copy="A few questions produce a sample composition from guide excursions. It is not an official package, price, or booking confirmation."
       />
       <Section>
         <Container>
