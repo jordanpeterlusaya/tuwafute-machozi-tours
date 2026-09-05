@@ -11,7 +11,7 @@ export default function PlannerPage() {
       <PageHero
         eyebrow="A private intelligence"
         title="Ask the house how the days should fall."
-        copy="Answer four questions. Receive a composition drawn from our real excursions, lodges and safari chapters."
+        copy="Answer four questions. Receive a composition drawn from the Zanzibar excursions in our guide."
       />
       <Section>
         <Container>

@@ -12,7 +12,7 @@ export default function JournalPage() {
     <>
       <PageHero
         eyebrow="Field notes"
-        title="Essays from the island and the grass."
+        title="Essays from the island and the tide."
         copy="How to arrive, when to obey the tide, and why the name is a compass."
       />
       <Section>

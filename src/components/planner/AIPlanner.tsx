@@ -62,7 +62,7 @@ export function AIPlanner() {
           A must — in your words
           <input
             name="must"
-            placeholder="Stone Town, a sandbank, perhaps the Serengeti…"
+            placeholder="Stone Town, a sandbank, Jozani, perhaps Mnemba…"
             className="border-b border-ink/15 bg-transparent py-3 outline-none focus:border-gold"
           />
         </label>

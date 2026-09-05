@@ -1,11 +1,7 @@
 export const faqs = [
   {
     q: "When is the best time to visit Zanzibar?",
-    a: "The island is beautiful year-round. June to October is dry, clear and excellent for safari combinations. December to March is warmer, with lush gardens and strong kite winds on the east coast. April and May are the long rains — quieter, greener, and often more intimate.",
-  },
-  {
-    q: "Can you arrange both island and safari in one journey?",
-    a: "Yes. It is our signature. We typically begin in Stone Town, move to the coast, then fly to the Serengeti or Ngorongoro — or the reverse, ending with salt air. The bridge is designed so you never feel rushed between worlds.",
+    a: "The island is beautiful year-round. June to October is dry and clear. December to March is warmer, with lush gardens and strong kite winds on the east coast. April and May are the long rains — quieter, greener, and often more intimate.",
   },
   {
     q: "Are marine and dolphin trips responsible?",
@@ -25,7 +21,7 @@ export const faqs = [
   },
   {
     q: "What should we pack?",
-    a: "Linen, a light layer for Stone Town evenings and safari dawns, reef-safe sunscreen, modest clothing for villages and mosques, and shoes you can walk alleys in. We send a complete list once dates are held.",
+    a: "Linen, a light layer for Stone Town evenings, reef-safe sunscreen, modest clothing for villages and mosques, and shoes you can walk alleys in. We send a complete list once dates are held.",
   },
   {
     q: "How do we book?",
@@ -33,10 +29,10 @@ export const faqs = [
   },
   {
     q: "Can you handle flights and visas?",
-    a: "We advise on e-visas and inter-park or island–mainland flights, and we can arrange the internal air. International long-haul is usually booked by you or your home agent; we are happy to coordinate.",
+    a: "We advise on e-visas and Zanzibar arrival logistics. International flights are usually booked by you or your home agent; we are happy to coordinate transfers around them.",
   },
   {
     q: "What is your cancellation thinking?",
-    a: "Camps and lodges hold their own policies, which we state clearly before you pay. We favour partners who are human when the world changes. Travel insurance is required.",
+    a: "Accommodation and excursion partners hold their own policies, which we state clearly before you pay. We favour partners who are human when the world changes. Travel insurance is strongly recommended.",
   },
 ];

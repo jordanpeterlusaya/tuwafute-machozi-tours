@@ -1,29 +1,64 @@
 "use client";
 
 import Link from "next/link";
-import { useEffect, useState } from "react";
+import { useEffect, useRef, useState } from "react";
 import { AnimatePresence, motion } from "framer-motion";
 import { Logo } from "@/components/brand/Logo";
 import { brand, nav, secondaryNav } from "@/content/brand";
 import { cx } from "@/lib/utils";
 
 export function Header() {
+  const menuButton = useRef<HTMLButtonElement>(null);
+  const menuPanel = useRef<HTMLDivElement>(null);
   const [open, setOpen] = useState(false);
   const [scrolled, setScrolled] = useState(false);
-  const [ready, setReady] = useState(false);
 
   useEffect(() => {
-    setReady(true);
     const onScroll = () => setScrolled(window.scrollY > 40);
-    onScroll();
+    const frame = window.requestAnimationFrame(onScroll);
     window.addEventListener("scroll", onScroll, { passive: true });
-    return () => window.removeEventListener("scroll", onScroll);
+    return () => {
+      window.cancelAnimationFrame(frame);
+      window.removeEventListener("scroll", onScroll);
+    };
   }, []);
 
   useEffect(() => {
     document.body.style.overflow = open ? "hidden" : "";
+    if (!open) return;
+
+    const focusable = () =>
+      Array.from(
+        menuPanel.current?.querySelectorAll<HTMLElement>(
+          'a[href], button:not([disabled]), [tabindex]:not([tabindex="-1"])',
+        ) ?? [],
+      );
+    const first = focusable()[0];
+    window.requestAnimationFrame(() => first?.focus());
+
+    const onKeyDown = (event: KeyboardEvent) => {
+      if (event.key === "Escape") {
+        setOpen(false);
+        menuButton.current?.focus();
+        return;
+      }
+      if (event.key !== "Tab") return;
+      const items = focusable();
+      if (!items.length) return;
+      const firstItem = items[0];
+      const lastItem = items[items.length - 1];
+      if (event.shiftKey && document.activeElement === firstItem) {
+        event.preventDefault();
+        lastItem.focus();
+      } else if (!event.shiftKey && document.activeElement === lastItem) {
+        event.preventDefault();
+        firstItem.focus();
+      }
+    };
+    window.addEventListener("keydown", onKeyDown);
     return () => {
       document.body.style.overflow = "";
+      window.removeEventListener("keydown", onKeyDown);
     };
   }, [open]);
 
@@ -31,7 +66,7 @@ export function Header() {
     <header
       className={cx(
         "fixed inset-x-0 top-0 z-50 transition-all duration-500",
-        ready && (scrolled || open) ? "bg-ink/88 backdrop-blur-md" : "bg-transparent",
+        scrolled || open ? "bg-ink/88 backdrop-blur-md" : "bg-transparent",
       )}
     >
       <div className="flex items-center justify-between px-5 py-4 md:px-8">
@@ -59,6 +94,7 @@ export function Header() {
             Enquire
           </Link>
           <button
+            ref={menuButton}
             type="button"
             className="relative h-10 w-10 text-ivory"
             aria-expanded={open}
@@ -90,6 +126,10 @@ export function Header() {
       <AnimatePresence>
         {open && (
           <motion.div
+            ref={menuPanel}
+            role="dialog"
+            aria-modal="true"
+            aria-label="Site navigation"
             initial={{ opacity: 0 }}
             animate={{ opacity: 1 }}
             exit={{ opacity: 0 }}

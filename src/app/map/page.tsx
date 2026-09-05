@@ -10,8 +10,8 @@ export default function MapPage() {
     <>
       <PageHero
         eyebrow="Cartography"
-        title="Tanzania in two gestures: grass, then salt."
-        copy="Touch a gold point. The island and the northern circuit, held on one page."
+        title="Zanzibar, held in one gesture."
+        copy="Touch a gold point. The island destinations from our excursions guide, held on one page."
       />
       <Section>
         <Container>

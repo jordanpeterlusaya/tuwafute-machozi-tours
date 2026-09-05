@@ -4,15 +4,14 @@ import { destinations } from "@/content/destinations";
 import { experiences } from "@/content/experiences";
 import { itineraries } from "@/content/itineraries";
 import { journal } from "@/content/journal";
-import { safaris } from "@/content/safaris";
 import { testimonials } from "@/content/testimonials";
 import { Button } from "@/components/ui/Button";
 import { Container, Eyebrow, Section } from "@/components/ui/Section";
 import { Reveal, SplitHeading } from "@/components/motion/Reveal";
-import { formatPrice } from "@/lib/utils";
+import { ScrollStory } from "@/components/home/ScrollStory";
 
 const featured = destinations.filter((item) =>
-  ["nungwi", "stone-town", "paje", "serengeti"].includes(item.slug),
+  ["nungwi", "stone-town", "paje", "kizimkazi"].includes(item.slug),
 );
 
 export function HomeStory() {
@@ -27,10 +26,9 @@ export function HomeStory() {
             </Reveal>
             <Reveal delay={0.15}>
               <p className="text-lg leading-8 text-ink/70">
-                Tuwafute Machozi is a Zanzibar-born atelier for guests who want the Indian Ocean,
-                the Serengeti, and a reason that outlasts the photograph. We compose private
-                journeys across island, savannah and community — with the restraint of a great
-                hotel and the heart of a neighbour.
+                Tuwafute Machozi is a Zanzibar-born atelier for guests who want to know the island,
+                not simply see it. We compose private journeys across coast, culture and community —
+                with the restraint of a great host and the heart of a neighbour.
               </p>
               <div className="mt-8 flex flex-wrap gap-8 text-sm tracking-wide text-ink/55">
                 <span>TRAVEL</span>
@@ -44,27 +42,7 @@ export function HomeStory() {
         </Container>
       </Section>
 
-      <section className="relative min-h-[80vh] overflow-hidden bg-ink">
-        <video
-          className="absolute inset-0 h-full w-full object-cover opacity-80"
-          autoPlay
-          muted
-          loop
-          playsInline
-          poster="/images/hero-resort.jpg"
-        >
-          <source src="/media/hero-resort.mp4" type="video/mp4" />
-        </video>
-        <div className="absolute inset-0 bg-ink/45" />
-        <div className="relative z-10 flex min-h-[80vh] items-end px-5 py-20 md:px-16">
-          <Reveal>
-            <p className="eyebrow">A tear becomes an island</p>
-            <h2 className="mt-4 max-w-3xl font-display text-4xl text-ivory md:text-6xl">
-              Palm, wave, sunrise — the mark is a compass, not a donation plate.
-            </h2>
-          </Reveal>
-        </div>
-      </section>
+      <ScrollStory />
 
       <Section>
         <Container>
@@ -105,24 +83,41 @@ export function HomeStory() {
 
       <Section dark>
         <Container>
-          <Eyebrow>Safaris</Eyebrow>
+          <Eyebrow>Marine journeys</Eyebrow>
           <div className="mt-4 flex flex-col justify-between gap-8 lg:flex-row lg:items-end">
-            <h2 className="max-w-2xl font-display text-5xl md:text-6xl">From salt air to endless grass</h2>
-            <Button href="/safaris" variant="ghost">
-              View safaris
+            <h2 className="max-w-2xl font-display text-5xl md:text-6xl">
+              The Indian Ocean, experienced with care
+            </h2>
+            <Button href="/experiences?category=marine" variant="ghost">
+              View ocean experiences
             </Button>
           </div>
           <div className="mt-14 grid gap-8 md:grid-cols-3">
-            {safaris.slice(0, 3).map((safari) => (
-              <Link key={safari.slug} href={`/safaris/${safari.slug}`} className="group">
+            {experiences
+              .filter((experience) => experience.category === "marine")
+              .slice(0, 3)
+              .map((experience) => (
+              <Link
+                key={experience.slug}
+                href={`/experiences/${experience.slug}`}
+                className="group"
+              >
                 <div className="image-reveal relative aspect-[3/4] overflow-hidden">
-                  <Image src={safari.image} alt={safari.name} fill className="object-cover" sizes="33vw" />
+                  <Image
+                    src={experience.image}
+                    alt={experience.name}
+                    fill
+                    className="object-cover"
+                    sizes="33vw"
+                  />
                 </div>
                 <p className="mt-5 text-[11px] tracking-[0.24em] uppercase text-gold">
-                  {safari.days} days · from {formatPrice(safari.priceFrom)}
+                  {experience.region} · {experience.duration}
                 </p>
-                <h3 className="mt-2 font-display text-3xl group-hover:text-gold">{safari.name}</h3>
-                <p className="mt-3 text-sm leading-7 text-ivory/60">{safari.summary}</p>
+                <h3 className="mt-2 font-display text-3xl group-hover:text-gold">
+                  {experience.name}
+                </h3>
+                <p className="mt-3 text-sm leading-7 text-ivory/60">{experience.summary}</p>
               </Link>
             ))}
           </div>

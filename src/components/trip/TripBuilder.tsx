@@ -4,13 +4,11 @@ import { useMemo, useState } from "react";
 import { Button } from "@/components/ui/Button";
 import { experiences } from "@/content/experiences";
 import { itineraries } from "@/content/itineraries";
-import { safaris } from "@/content/safaris";
 
 const interests = [
   { id: "coast", label: "Coast & stillness" },
   { id: "culture", label: "Stone Town & spice" },
   { id: "marine", label: "Reef & dhow" },
-  { id: "safari", label: "Safari" },
   { id: "impact", label: "Social impact" },
   { id: "adventure", label: "Wind & water" },
 ];
@@ -23,13 +21,11 @@ export function TripBuilder() {
   const [pace, setPace] = useState("unhurried");
 
   const suggestion = useMemo(() => {
-    if (chosen.includes("safari") && Number(days) >= 8) return itineraries.find((i) => i.slug === "ocean-and-plain");
     if (chosen.includes("adventure")) return itineraries.find((i) => i.slug === "east-and-south");
     return itineraries.find((i) => i.slug === "zanzibar-essential");
-  }, [chosen, days]);
+  }, [chosen]);
 
   const extras = experiences.filter((item) => chosen.includes(item.category)).slice(0, 4);
-  const safari = chosen.includes("safari") ? safaris[0] : null;
 
   return (
     <div className="grid gap-10 lg:grid-cols-[0.9fr_1.1fr]">
@@ -120,11 +116,6 @@ export function TripBuilder() {
         <p className="mt-6 text-sm text-gold">
           {guests} · {days} days · {pace}
         </p>
-        {safari && (
-          <p className="mt-6 text-sm text-ivory/70">
-            Safari chapter · {safari.name}
-          </p>
-        )}
         <ul className="mt-6 space-y-2 text-sm text-ivory/65">
           {extras.map((item) => (
             <li key={item.slug}>— {item.name}</li>

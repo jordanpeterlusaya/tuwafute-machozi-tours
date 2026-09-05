@@ -149,7 +149,7 @@ export const experiences: Experience[] = [
     duration: "2–3 hours",
     priceFrom: 30,
     category: "nature",
-    image: "https://images.unsplash.com/photo-1501785888041-af3ef285b470?auto=format&fit=crop&w=1600&q=80",
+    image: "/images/resort-palms.jpg",
     summary:
       "A limestone cave of clear underground water, wrapped in tropical shade.",
     details:
@@ -165,7 +165,7 @@ export const experiences: Experience[] = [
     duration: "Lunch",
     priceFrom: 85,
     category: "coast",
-    image: "https://images.unsplash.com/photo-1559827260-dc66d52bef19?auto=format&fit=crop&w=1600&q=80",
+    image: "/images/hero-resort.jpg",
     summary:
       "Zanzibar’s iconic dining room — a restaurant set on a rock in the sea, reached by foot or boat depending on the tide.",
     details:
@@ -229,7 +229,7 @@ export const experiences: Experience[] = [
     duration: "2 hours",
     priceFrom: 30,
     category: "culture",
-    image: "https://images.unsplash.com/photo-1578895101408-1a36b834405b?auto=format&fit=crop&w=1600&q=80",
+    image: "/images/nungwi-boats.jpg",
     summary:
       "One of Zanzibar’s historic coastal settlements and a mosque that remembers the island’s earliest Islamic chapters.",
     details:
@@ -261,7 +261,7 @@ export const experiences: Experience[] = [
     duration: "2–3 hours",
     priceFrom: 35,
     category: "nature",
-    image: "https://images.unsplash.com/photo-1507525428034-b723cf961d3e?auto=format&fit=crop&w=1600&q=80",
+    image: "/images/resort-palms.jpg",
     summary:
       "A natural swimming cave held in tropical vegetation — cool, mineral, and unexpectedly still.",
     details:
@@ -309,8 +309,7 @@ export const experiences: Experience[] = [
     duration: "3–4 hours",
     priceFrom: 40,
     category: "culture",
-    image:
-      "https://images.unsplash.com/photo-1589197331516-4d84b72eb2e3?auto=format&fit=crop&w=1600&q=80",
+    image: "/images/nungwi-boats.jpg",
     summary:
       "Narrow streets, Swahili architecture, markets and the cultural landmarks of Zanzibar’s historic old town.",
     details:
@@ -326,8 +325,7 @@ export const experiences: Experience[] = [
     duration: "Half day",
     priceFrom: 35,
     category: "culture",
-    image:
-      "https://images.unsplash.com/photo-1596040033229-a9821ebd058d?auto=format&fit=crop&w=1600&q=80",
+    image: "/images/resort-palms.jpg",
     summary:
       "Clove, vanilla, cinnamon, cardamom — the living reason the world once called this the Spice Island.",
     details:
@@ -343,8 +341,7 @@ export const experiences: Experience[] = [
     duration: "Half day",
     priceFrom: 65,
     category: "culture",
-    image:
-      "https://images.unsplash.com/photo-1583212292454-1fe6229603b7?auto=format&fit=crop&w=1600&q=80",
+    image: "/images/hero-nungwi.jpg",
     summary:
       "A short boat crossing to giant Aldabra tortoises, a colonial prison story, and snorkelling off the island’s edge.",
     details:
@@ -360,8 +357,7 @@ export const experiences: Experience[] = [
     duration: "2–3 hours",
     priceFrom: 25,
     category: "culture",
-    image:
-      "https://images.unsplash.com/photo-1559339352-11d035aa65de?auto=format&fit=crop&w=1600&q=80",
+    image: "/images/hero-resort.jpg",
     summary:
       "Stone Town’s waterfront at night — smoke, spice, grilled seafood, and the island’s most democratic theatre.",
     details:
@@ -377,8 +373,7 @@ export const experiences: Experience[] = [
     duration: "2 hours",
     priceFrom: 20,
     category: "culture",
-    image:
-      "https://images.unsplash.com/photo-1556909114-f6e7ad7d3136?auto=format&fit=crop&w=1600&q=80",
+    image: "/images/nungwi-boats.jpg",
     summary:
       "Produce, spices, seafood and fabric — the everyday island, at full volume.",
     details:
@@ -394,8 +389,7 @@ export const experiences: Experience[] = [
     duration: "2 hours",
     priceFrom: 25,
     category: "culture",
-    image:
-      "https://images.unsplash.com/photo-1523805009345-7448845a9e53?auto=format&fit=crop&w=1600&q=80",
+    image: "/images/nungwi-boats.jpg",
     summary:
       "The historic heart of Stone Town — palaces, the fort, and the long trade memory of the Indian Ocean.",
     details:
@@ -411,8 +405,7 @@ export const experiences: Experience[] = [
     duration: "3 hours",
     priceFrom: 45,
     category: "nature",
-    image:
-      "https://images.unsplash.com/photo-1441974231531-c6227db76b6e?auto=format&fit=crop&w=1600&q=80",
+    image: "/images/resort-palms.jpg",
     summary:
       "Zanzibar’s forest — endemic red colobus monkeys and a walk through the island’s green interior.",
     details:
@@ -428,8 +421,7 @@ export const experiences: Experience[] = [
     duration: "2–3 hours",
     priceFrom: 40,
     category: "nature",
-    image:
-      "https://images.unsplash.com/photo-1507525428034-b723cf961d3e?auto=format&fit=crop&w=1600&q=80",
+    image: "/images/hero-adventure.jpg",
     summary:
       "A guided walk or boat through coastal mangroves — the living architecture that protects Zanzibar’s shore.",
     details:
@@ -445,8 +437,7 @@ export const experiences: Experience[] = [
     duration: "2 hours",
     priceFrom: 75,
     category: "coast",
-    image:
-      "https://images.unsplash.com/photo-1544551763-46a013bb70d5?auto=format&fit=crop&w=1600&q=80",
+    image: "/images/nungwi-boats.jpg",
     summary:
       "Sail a traditional dhow along the coast as the wind softens and Zanzibar performs its evening.",
     details:

@@ -4,7 +4,6 @@ import { notFound } from "next/navigation";
 import { getStay, stays } from "@/content/stays";
 import { Button } from "@/components/ui/Button";
 import { Container, Eyebrow, Section } from "@/components/ui/Section";
-import { formatPrice } from "@/lib/utils";
 
 type Props = { params: Promise<{ slug: string }> };
 
@@ -40,8 +39,8 @@ export default async function StayPage({ params }: Props) {
             <p className="mt-6 text-ink/60 leading-8">{item.vibe}</p>
           </div>
           <div>
-            <p className="font-display text-5xl">{formatPrice(item.from)}</p>
-            <p className="text-sm text-ink/45">from, per night</p>
+            <p className="font-display text-5xl">Tailored shortlist</p>
+            <p className="mt-2 text-sm text-ink/45">Current options confirmed for your dates</p>
             <ul className="mt-8 space-y-2">
               {item.amenities.map((line) => (
                 <li key={line} className="text-ink/70">

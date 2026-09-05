@@ -45,28 +45,6 @@ export const itineraries: Itinerary[] = [
     ],
   },
   {
-    slug: "ocean-and-plain",
-    name: "Ocean & Plain",
-    days: 10,
-    image:
-      "https://images.unsplash.com/photo-1516426122078-c23e76319801?auto=format&fit=crop&w=1800&q=80",
-    summary:
-      "The house signature — Zanzibar’s coast, then the Serengeti or Ngorongoro, with a community visit woven in.",
-    who: "Guests who want Tanzania whole",
-    daysPlan: [
-      { title: "Stone Town", copy: "Arrive. Heritage walk. Sleep in a merchant house." },
-      { title: "Spice & Jozani", copy: "The island’s interior — scent and forest." },
-      { title: "North coast", copy: "Nungwi light. Sunset dhow." },
-      { title: "Marine day", copy: "Mnemba or a private sandbank." },
-      { title: "Impact morning", copy: "A community visit — not a performance, a conversation." },
-      { title: "Fly inland", copy: "Serengeti or crater highlands." },
-      { title: "Safari I", copy: "Light and movement. No checklist." },
-      { title: "Safari II", copy: "A second full day. The unexpected is the point." },
-      { title: "Safari III", copy: "Dawn drive. Picnic. Last fire." },
-      { title: "Return", copy: "Zanzibar swim or Arusha departure." },
-    ],
-  },
-  {
     slug: "honeymoon-light",
     name: "Honeymoon Light",
     days: 8,

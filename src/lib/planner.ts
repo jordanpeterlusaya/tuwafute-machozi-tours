@@ -9,14 +9,11 @@ export type PlannerInput = {
 };
 
 export function planJourney(input: PlannerInput) {
-  const wantsSafari = /safari|serengeti|ngorongoro|tarangire/i.test(input.must);
-  const days = wantsSafari || input.energy === "full" ? 10 : 7;
+  const days = input.energy === "full" ? 10 : 7;
 
   const base =
-    wantsSafari
-      ? itineraries.find((item) => item.slug === "ocean-and-plain")
-      : input.energy === "full"
-        ? itineraries.find((item) => item.slug === "east-and-south")
+    input.energy === "full"
+      ? itineraries.find((item) => item.slug === "east-and-south")
         : itineraries.find((item) => item.slug === "zanzibar-essential");
 
   const picks = experiences
@@ -33,7 +30,7 @@ export function planJourney(input: PlannerInput) {
       ? "April–May favours forest, spice and empty beaches. We keep boat days flexible."
       : input.season === "kite"
         ? "East-coast winds are the host. We leave mornings free for the lagoon."
-        : "Dry-season light is crystalline. Safari pairing is especially strong.";
+        : "Dry-season light is crystalline, with calm conditions for island exploration.";
 
   return {
     title: base?.name ?? "A private composition",

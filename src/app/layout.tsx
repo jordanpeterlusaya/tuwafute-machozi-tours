@@ -1,4 +1,5 @@
 import type { Metadata } from "next";
+import type { ReactNode } from "react";
 import { Cormorant_Garamond, Italiana, Outfit } from "next/font/google";
 import { Footer } from "@/components/layout/Footer";
 import { Header } from "@/components/layout/Header";
@@ -31,11 +32,11 @@ export const metadata: Metadata = {
     template: `%s · ${brand.name}`,
   },
   description:
-    "Luxury Zanzibar and Tanzania journeys — travel, safaris and social impact. Discover. Experience. Give Back.",
+    "Private Zanzibar excursions, cultural journeys and social impact. Discover. Experience. Give Back.",
   openGraph: {
     title: `${brand.name} · ${brand.tagline}`,
     description:
-      "A cinematic house of travel for Zanzibar and the Tanzanian wilderness.",
+      "A cinematic Zanzibar travel house for coast, culture, nature and community.",
     images: ["/images/hero-nungwi.jpg"],
     type: "website",
     locale: "en_US",
@@ -49,15 +50,14 @@ export const metadata: Metadata = {
   icons: { icon: "/favicon.svg" },
   keywords: [
     "Zanzibar tours",
-    "Tanzania safari",
     "Tuwafute Machozi",
-    "luxury travel Africa",
+    "luxury Zanzibar travel",
     "Stone Town",
-    "Serengeti",
+    "Zanzibar excursions",
   ],
 };
 
-export default function RootLayout({ children }: LayoutProps<"/">) {
+export default function RootLayout({ children }: { children: ReactNode }) {
   return (
     <html
       lang="en"
@@ -66,8 +66,16 @@ export default function RootLayout({ children }: LayoutProps<"/">) {
     >
       <body className="min-h-full bg-ivory font-sans text-ink">
         <Providers>
+          <a
+            href="#main-content"
+            className="fixed left-4 top-3 z-[100] -translate-y-20 bg-gold px-4 py-2 text-sm text-ink transition-transform focus:translate-y-0"
+          >
+            Skip to main content
+          </a>
           <Header />
-          <main className="flex-1">{children}</main>
+          <main id="main-content" tabIndex={-1} className="flex-1">
+            {children}
+          </main>
           <Footer />
           <WhatsAppButton />
         </Providers>

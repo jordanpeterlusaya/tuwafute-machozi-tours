@@ -20,6 +20,13 @@ export function SmoothScroll() {
 
     lenis.on("scroll", ScrollTrigger.update);
 
+    const onWorldInteraction = (event: Event) => {
+      const custom = event as CustomEvent<{ active: boolean }>;
+      if (custom.detail.active) lenis.stop();
+      else lenis.start();
+    };
+    window.addEventListener("tuwafute:world-interaction", onWorldInteraction);
+
     const ticker = (time: number) => {
       lenis.raf(time * 1000);
     };
@@ -30,6 +37,7 @@ export function SmoothScroll() {
 
     return () => {
       gsap.ticker.remove(ticker);
+      window.removeEventListener("tuwafute:world-interaction", onWorldInteraction);
       lenis.destroy();
       document.documentElement.classList.remove("lenis", "lenis-smooth");
     };

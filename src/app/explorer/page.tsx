@@ -10,7 +10,7 @@ export default function ExplorerPage() {
       <PageHero
         eyebrow="Hold the island"
         title="Rotate. Zoom. Touch a gold light."
-        copy="A lightweight 3D atlas of Zanzibar and the safari circuit — built to stay fast on a phone."
+        copy="A lightweight 3D atlas of the Zanzibar destinations in our excursions guide — built to stay fast on a phone."
       />
       <IslandExplorer />
     </>

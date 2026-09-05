@@ -12,16 +12,6 @@ const frames = [
   { src: "/images/resort-palms.jpg", alt: "Resort palms", caption: "The garden shore" },
   { src: "/images/hero-adventure.jpg", alt: "Jet ski adventure", caption: "East-coast wind" },
   { src: "/images/jetski.jpg", alt: "Ocean adventure", caption: "Salt and speed" },
-  {
-    src: "https://images.unsplash.com/photo-1589197331516-4d84b72eb2e3?auto=format&fit=crop&w=1600&q=80",
-    alt: "Stone Town",
-    caption: "Stone Town alleys",
-  },
-  {
-    src: "https://images.unsplash.com/photo-1516426122078-c23e76319801?auto=format&fit=crop&w=1600&q=80",
-    alt: "Safari",
-    caption: "The plain",
-  },
 ];
 
 export default function GalleryPage() {
@@ -30,7 +20,7 @@ export default function GalleryPage() {
       <PageHero
         eyebrow="Light"
         title="A private reel from the island."
-        copy="Original footage from the house, with a few mainland stills. More chapters as the seasons turn."
+        copy="Original Zanzibar footage from the house. More island chapters as the seasons turn."
       />
       <Section>
         <Container className="columns-1 gap-5 md:columns-2 lg:columns-3">

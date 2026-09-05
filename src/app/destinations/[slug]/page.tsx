@@ -7,6 +7,7 @@ import { experiences } from "@/content/experiences";
 import { stays } from "@/content/stays";
 import { Button } from "@/components/ui/Button";
 import { Container, Eyebrow, Section } from "@/components/ui/Section";
+import { CinematicVideo } from "@/components/media/CinematicVideo";
 
 type Props = { params: Promise<{ slug: string }> };
 
@@ -32,9 +33,11 @@ export default async function DestinationPage({ params }: Props) {
     <>
       <section className="relative min-h-[80vh] overflow-hidden bg-ink text-ivory">
         {item.video ? (
-          <video className="absolute inset-0 h-full w-full object-cover" autoPlay muted loop playsInline poster={item.image}>
-            <source src={item.video} type="video/mp4" />
-          </video>
+          <CinematicVideo
+            src={item.video}
+            poster={item.image}
+            className="absolute inset-0 h-full w-full object-cover"
+          />
         ) : (
           <Image src={item.image} alt={item.name} fill className="object-cover" priority />
         )}

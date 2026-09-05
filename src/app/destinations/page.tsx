@@ -7,7 +7,7 @@ import { Container, Section } from "@/components/ui/Section";
 
 export const metadata: Metadata = {
   title: "Destinations",
-  description: "North, east, south and west Zanzibar, plus the Tanzanian safari circuit.",
+  description: "Explore north, east, south, west and central Zanzibar.",
 };
 
 export default function DestinationsPage() {
@@ -15,8 +15,8 @@ export default function DestinationsPage() {
     <>
       <PageHero
         eyebrow="The map"
-        title="An island of many climates, and a mainland of grass."
-        copy="From Nungwi’s northern light to the Serengeti’s horizon — destinations composed as chapters, not checklists."
+        title="One island. Many ways to experience it."
+        copy="From Nungwi’s northern light to Stone Town’s living history — Zanzibar composed as chapters, not checklists."
       />
       {regions.map((region) => {
         const items = destinations.filter((item) => item.region === region.id);

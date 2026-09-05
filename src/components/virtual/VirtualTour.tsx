@@ -7,6 +7,6 @@ const PanoramaTour = dynamic(
   { ssr: false, loading: () => <div className="h-[70vh] bg-ink" /> },
 );
 
-export function VirtualTour({ src }: { src: string }) {
-  return <PanoramaTour src={src} />;
+export function VirtualTour({ src, activeSlug }: { src: string; activeSlug: string }) {
+  return <PanoramaTour src={src} activeSlug={activeSlug} />;
 }

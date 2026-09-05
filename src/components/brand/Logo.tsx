@@ -1,4 +1,3 @@
-import { useId } from "react";
 import { cx } from "@/lib/utils";
 
 type LogoProps = {
@@ -12,21 +11,13 @@ type LogoProps = {
 export function LogoMark({ className, inverted = false }: { className?: string; inverted?: boolean }) {
   const gold = inverted ? "#E4D2A6" : "#C9A86A";
   const ink = inverted ? "#FAF6F0" : "#12201C";
-  const gradientId = useId();
 
   return (
     <svg viewBox="0 0 80 96" className={cx("overflow-visible", className)} aria-hidden>
-      <defs>
-        <linearGradient id={gradientId} x1="0" y1="0" x2="1" y2="1">
-          <stop offset="0%" stopColor="#E4D2A6" />
-          <stop offset="55%" stopColor={gold} />
-          <stop offset="100%" stopColor="#8C6A32" />
-        </linearGradient>
-      </defs>
       <path
         d="M40 6C40 6 16 34 16 56c0 14.36 10.75 26 24 26s24-11.64 24-26C64 34 40 6 40 6Z"
         fill="none"
-        stroke={`url(#${gradientId})`}
+        stroke={gold}
         strokeWidth="1.6"
       />
       <path

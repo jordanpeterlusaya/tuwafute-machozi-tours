@@ -7,9 +7,9 @@ export const testimonials = [
   },
   {
     quote:
-      "The safari was impeccable. What stayed with our children was the morning at the school, and the fact that nobody asked us to clap.",
+      "The island days were impeccable. What stayed with our children was the morning at the school, and the fact that nobody asked us to clap.",
     name: "The Okonkwo family",
-    place: "Lagos · Ocean & Plain",
+    place: "Lagos · Island Essential",
   },
   {
     quote:

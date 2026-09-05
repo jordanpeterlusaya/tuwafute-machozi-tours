@@ -1,5 +1,3 @@
-import { Eyebrow } from "@/components/ui/Section";
-
 export function PageHero({
   eyebrow,
   title,

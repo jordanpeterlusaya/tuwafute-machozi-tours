@@ -40,7 +40,7 @@ export default async function VirtualTourPage({ params }: Props) {
   return (
     <>
       <PageHero eyebrow="360°" title={tour.title} copy={tour.copy} />
-      <VirtualTour src={tour.image} />
+      <VirtualTour src={tour.image} activeSlug={slug} />
     </>
   );
 }
