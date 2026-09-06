@@ -30,8 +30,8 @@ export default function ImpactPage() {
     <>
       <section className="relative min-h-[72vh] bg-ink text-ivory">
         <Image
-          src="/images/nungwi-boats.jpg"
-          alt="Fishing boats on the Zanzibar coast"
+          src="/images/impact-community.jpg"
+          alt="A child concentrating on schoolwork, the kind of community work the tours help fund"
           fill
           className="object-cover"
           sizes="100vw"

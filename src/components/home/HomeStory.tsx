@@ -6,13 +6,14 @@ import { experiences } from "@/content/experiences";
 import { itineraries } from "@/content/itineraries";
 import { safaris } from "@/content/safaris";
 import { brand } from "@/content/brand";
+import { founder, foundation } from "@/content/founder";
 import { Button } from "@/components/ui/Button";
 import { Container, Eyebrow, Section } from "@/components/ui/Section";
 import { Reveal } from "@/components/motion/Reveal";
 import { whatsappLink } from "@/lib/utils";
 
 const featured = destinations.filter((item) =>
-  ["nungwi-beach", "stone-town", "paje-beach", "kizimkazi-dolphin"].includes(
+  ["paje-beach", "kizimkazi-dolphin", "kendwa-sunset", "jambiani-village"].includes(
     item.slug,
   ),
 );
@@ -34,6 +35,47 @@ export function HomeStory() {
   return (
     <>
       <Section>
+        <Container className="grid items-center gap-12 lg:grid-cols-[0.85fr_1.15fr]">
+          <div className="relative aspect-[3/4] overflow-hidden bg-forest md:aspect-[4/5]">
+            <Image
+              src={founder.portrait}
+              alt={founder.portraitAlt}
+              fill
+              className="object-cover object-[center_15%]"
+              sizes="(max-width: 1024px) 100vw, 40vw"
+              priority
+            />
+          </div>
+          <div>
+            <Eyebrow>The founder</Eyebrow>
+            <p className="mt-3 text-[11px] tracking-[0.22em] uppercase text-gold">
+              {founder.role}
+            </p>
+            <h2 className="mt-4 font-display text-4xl leading-snug md:text-6xl">
+              Travel funds the work that wipes tears.
+            </h2>
+            <p className="mt-5 max-w-xl text-lg leading-8 text-ink/70">
+              {foundation.name} began on {foundation.foundedOn}. The house was
+              started by “{founder.documentCredit}” and other community members
+              — about {foundation.membersApprox} people now. In Kiswahili,{" "}
+              <em>tuwafute machozi</em> means let us wipe their tears. Sixty
+              percent of tour revenue goes to charity in Zanzibar.
+            </p>
+            <p className="mt-4 max-w-xl leading-8 text-ink/65">
+              {foundation.visitCaption} Guests book the island. The foundation
+              does the work.
+            </p>
+            <div className="mt-8 flex flex-wrap gap-4">
+              <Button href="/about">Meet the founder</Button>
+              <Button href="/impact" variant="line">
+                The foundation
+              </Button>
+            </div>
+          </div>
+        </Container>
+      </Section>
+
+      <Section className="pt-0">
         <Container>
           <div className="max-w-3xl">
             <Eyebrow>Zanzibar tours</Eyebrow>

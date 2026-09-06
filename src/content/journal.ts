@@ -14,7 +14,7 @@ export const journal: JournalEntry[] = [
     title: "The meaning of Machozi",
     date: "March 2026",
     read: "4 min",
-    image: "/images/hero-nungwi.jpg",
+    image: "/images/journal/attention.jpg",
     excerpt:
       "Why a luxury travel house chose a name that means let us wipe their tears — and why elegance and empathy are not opposites.",
     body: [
@@ -29,7 +29,7 @@ export const journal: JournalEntry[] = [
     title: "How to arrive in Stone Town",
     date: "January 2026",
     read: "5 min",
-    image: "/images/nungwi-boats.jpg",
+    image: "/images/journal/art-alley.jpg",
     excerpt:
       "Do not rush the old town. The alleys have a temperature, a soundtrack, and a correct first hour.",
     body: [
@@ -43,7 +43,7 @@ export const journal: JournalEntry[] = [
     title: "The tide is the itinerary",
     date: "November 2025",
     read: "3 min",
-    image: "/images/nungwi-boats.jpg",
+    image: "/images/journal/tide.jpg",
     excerpt:
       "On the east coast, clocks are a suggestion. The moon writes the day.",
     body: [
@@ -57,7 +57,7 @@ export const journal: JournalEntry[] = [
     title: "After the photograph",
     date: "August 2025",
     read: "4 min",
-    image: "/images/resort-palms.jpg",
+    image: "/images/journal/palm-shore.jpg",
     excerpt:
       "Island photographs are easy. What happens to the community beyond the frame is the longer question.",
     body: [

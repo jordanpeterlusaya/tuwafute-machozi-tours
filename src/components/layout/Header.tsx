@@ -111,7 +111,7 @@ export function Header() {
           <div className="min-h-0 flex-1 overflow-y-auto overscroll-contain bg-ink">
             <div className="mx-auto grid max-w-6xl gap-12 px-6 pb-[calc(3rem+env(safe-area-inset-bottom))] pt-6 md:grid-cols-[1.2fr_1fr] md:px-10">
               <div className="flex flex-col gap-5">
-                {[...nav, { href: "/about", label: "The House" }, { href: "/enquire", label: "Enquire" }].map(
+                {[...nav, { href: "/enquire", label: "Enquire" }].map(
                   (item, index) => (
                     <motion.div
                       key={item.href}

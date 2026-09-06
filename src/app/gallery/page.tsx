@@ -9,15 +9,35 @@ export const metadata: Metadata = { title: "Gallery" };
 
 const frames = [
   {
-    src: "/images/hero-nungwi.jpg",
-    alt: "Aerial view of turquoise Zanzibar shallows",
-    caption: "Zanzibar shallows · location unrecorded",
+    src: "/images/nungwi-boats.jpg",
+    alt: "Traditional wooden boats in turquoise water",
+    caption: "Dhows at rest",
   },
-  { src: "/images/nungwi-boats.jpg", alt: "Traditional boats along the coast", caption: "Dhows at rest" },
-  { src: "/images/hero-resort.jpg", alt: "Palm-lined Zanzibar coast", caption: "Palm and tide" },
-  { src: "/images/resort-palms.jpg", alt: "Resort palms", caption: "The garden shore" },
-  { src: "/images/hero-adventure.jpg", alt: "Jet ski on turquoise water", caption: "Ocean motion" },
-  { src: "/images/jetski.jpg", alt: "Ocean adventure", caption: "Salt and speed" },
+  {
+    src: "/images/resort-palms.jpg",
+    alt: "Palm-lined Zanzibar shore with beach cabanas",
+    caption: "The garden shore",
+  },
+  {
+    src: "/images/jetski.jpg",
+    alt: "Ocean adventure on turquoise water",
+    caption: "Salt and speed",
+  },
+  {
+    src: "/images/gallery/sea-walk.jpg",
+    alt: "Guests on a guided underwater helmet walk among reef fish",
+    caption: "Under the reef",
+  },
+  {
+    src: "/images/gallery/reef.jpg",
+    alt: "Snorkellers swimming over coral with tropical fish",
+    caption: "Clear-water reef",
+  },
+  {
+    src: "/images/gallery/anemone-crab.jpg",
+    alt: "Spotted porcelain crab in a sea anemone",
+    caption: "Small life on the reef",
+  },
 ];
 
 export default function GalleryPage() {

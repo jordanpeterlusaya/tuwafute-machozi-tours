@@ -17,7 +17,7 @@ export const stays: Stay[] = [
     name: "North Coast Beach Stay",
     place: "Kendwa · North",
     kind: "Accommodation style",
-    image: "/images/hero-resort.jpg",
+    image: "/images/stays/north-villa.jpg",
     summary:
       "A handpicked beach base near Kendwa and Nungwi, selected around your preferred atmosphere and budget.",
     details:
@@ -31,7 +31,7 @@ export const stays: Stay[] = [
     name: "South Coast Private Stay",
     place: "Southwest coast",
     kind: "Accommodation style",
-    image: "/images/resort-palms.jpg",
+    image: "/images/stays/south-overwater.jpg",
     summary:
       "A quieter villa or boutique base for Kizimkazi, Menai Bay and Zanzibar’s southern coastline.",
     details:
@@ -45,7 +45,7 @@ export const stays: Stay[] = [
     name: "Stone Town Heritage Stay",
     place: "Stone Town",
     kind: "Accommodation style",
-    image: "/images/nungwi-boats.jpg",
+    image: "/images/stays/stone-town-coast.jpg",
     summary:
       "A restored heritage address among Stone Town’s carved doors, rooftop light and living streets.",
     details:

@@ -33,7 +33,12 @@ export function Footer() {
           <div>
             <p className="eyebrow mb-5">The house</p>
             <ul className="space-y-3">
-              {secondaryNav.slice(0, 6).map((item) => (
+              <li>
+                <Link href="/about" className="text-ivory/70 transition-colors hover:text-gold">
+                  The House · Founder
+                </Link>
+              </li>
+              {secondaryNav.map((item) => (
                 <li key={item.href}>
                   <Link href={item.href} className="text-ivory/70 transition-colors hover:text-gold">
                     {item.label}

@@ -75,8 +75,8 @@ export function CinematicHero() {
           className="mt-8 flex flex-wrap gap-4"
         >
           <Button href="/experiences">Browse Zanzibar tours</Button>
-          <Button href="/enquire" variant="ghost">
-            Plan a trip
+          <Button href="/about" variant="ghost">
+            Meet the founder
           </Button>
         </motion.div>
       </div>

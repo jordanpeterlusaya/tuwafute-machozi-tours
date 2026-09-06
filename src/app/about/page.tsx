@@ -11,40 +11,34 @@ export const metadata: Metadata = { title: "The House" };
 export default function AboutPage() {
   return (
     <>
-      <section className="bg-ink px-5 pb-20 pt-36 text-ivory md:px-16">
-        <Eyebrow>The house</Eyebrow>
-        <h1 className="mt-5 max-w-4xl font-display text-5xl md:text-8xl">{brand.tagline}</h1>
-        <p className="mt-6 max-w-2xl text-lg text-ivory/65">{brand.meaning}</p>
-      </section>
-
-      <Section>
-        <Container className="grid items-center gap-14 lg:grid-cols-[0.9fr_1.1fr]">
+      <section className="bg-ink px-5 pb-16 pt-32 text-ivory md:px-16 md:pb-20 md:pt-36">
+        <Container className="grid items-center gap-12 lg:grid-cols-[0.85fr_1.15fr]">
           <div className="relative aspect-[3/4] overflow-hidden bg-forest">
             <Image
               src={founder.portrait}
               alt={founder.portraitAlt}
               fill
               className="object-cover object-[center_15%]"
-              sizes="(max-width: 1024px) 100vw, 45vw"
+              sizes="(max-width: 1024px) 100vw, 40vw"
               priority
             />
           </div>
           <div>
-            <Eyebrow>About the founder</Eyebrow>
+            <Eyebrow>The founder</Eyebrow>
             <p className="mt-3 text-[11px] tracking-[0.22em] uppercase text-gold">
               {founder.role}
             </p>
-            <h2 className="mt-4 font-display text-4xl leading-snug md:text-5xl">
+            <h1 className="mt-4 font-display text-4xl leading-snug md:text-6xl lg:text-7xl">
               One house. Two doors: the island, and the work that travel funds.
-            </h2>
-            <p className="mt-6 leading-8 text-ink/65">
+            </h1>
+            <p className="mt-6 max-w-2xl text-lg leading-8 text-ivory/70">
               The founder of Tuwafute Machozi Foundation and Tuwafute Machozi
               Tours is the same person guests meet in this portrait — a
               hospitality professional in the house shirt, thumbs up, standing
               for a simple contract: come to Zanzibar, and leave something
               standing for those who need it.
             </p>
-            <p className="mt-5 leading-8 text-ink/65">
+            <p className="mt-5 max-w-2xl leading-8 text-ivory/65">
               We do not publish a legal name that is not clearly given. The
               founding note for the charity says the organisation was created by
               “{founder.documentCredit}” together with other community members.
@@ -53,20 +47,31 @@ export default function AboutPage() {
               {foundation.foundedOn}, and the tours company exists so that
               guests can fund it.
             </p>
-            <p className="mt-5 leading-8 text-ink/65">
+            <p className="mt-5 max-w-2xl leading-8 text-ivory/65">
               In Kiswahili, <em>tuwafute machozi</em> means let us wipe their
               tears. Sixty percent of tour revenue is directed to charity and
-              community impact in Zanzibar. The remaining house keeps boats,
-              guides and days precise. Travel is not a slogan around the
-              charity. It is how the charity is paid for.
+              community impact in Zanzibar. About {foundation.membersApprox}{" "}
+              members now contribute. {foundation.visitCaption}
             </p>
             <div className="mt-10 flex flex-wrap gap-4">
               <Button href="/impact">The foundation chapter</Button>
-              <Button href="/experiences" variant="line">
+              <Button href="/experiences" variant="ghost">
                 Browse island tours
               </Button>
             </div>
           </div>
+        </Container>
+      </section>
+
+      <Section>
+        <Container>
+          <Eyebrow>The house</Eyebrow>
+          <h2 className="mt-5 max-w-4xl font-display text-4xl md:text-6xl">
+            {brand.tagline}
+          </h2>
+          <p className="mt-6 max-w-2xl text-lg leading-8 text-ink/65">
+            {brand.meaning}
+          </p>
         </Container>
       </Section>
 

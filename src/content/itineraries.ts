@@ -17,7 +17,7 @@ export const itineraries: Itinerary[] = [
     slug: "zanzibar-essential",
     name: "North, Heritage & Reef",
     days: 7,
-    image: "/images/places/stone-town.jpg",
+    image: "/images/itineraries/island-heritage.jpg",
     summary:
       "An editorial seven-day sequence combining seven individual excursions from the guide.",
     who: "A sample composition only — not an official guide package",
@@ -63,7 +63,7 @@ export const itineraries: Itinerary[] = [
     slug: "east-and-south",
     name: "East Coast & Wild South",
     days: 6,
-    image: "/images/places/paje-beach.jpg",
+    image: "/images/itineraries/east-coast.jpg",
     summary:
       "An editorial six-day sequence of east- and south-coast excursions from the guide.",
     who: "A sample composition only — weather and sea conditions still govern",
@@ -104,7 +104,7 @@ export const itineraries: Itinerary[] = [
     slug: "honeymoon-light",
     name: "Coast, Caves & Dhow",
     days: 8,
-    image: "/images/places/kendwa-sunset.jpg",
+    image: "/images/itineraries/dhow-sail.jpg",
     summary:
       "An editorial eight-day sequence using only named excursions from the supplied guide.",
     who: "A sample composition only — each excursion is requested separately",

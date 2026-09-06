@@ -27,6 +27,7 @@ export const nav = [
   { href: "/stays", label: "Stays" },
   { href: "/itineraries", label: "Journeys" },
   { href: "/impact", label: "Impact" },
+  { href: "/about", label: "The House" },
   { href: "/journal", label: "Journal" },
 ] as const;
 
@@ -37,6 +38,5 @@ export const secondaryNav = [
   { href: "/planner", label: "Excursion Planner" },
   { href: "/gallery", label: "Gallery" },
   { href: "/virtual-tours", label: "Immersive Views" },
-  { href: "/about", label: "The House" },
   { href: "/faq", label: "FAQ" },
 ] as const;
