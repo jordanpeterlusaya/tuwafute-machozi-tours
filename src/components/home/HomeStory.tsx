@@ -10,7 +10,9 @@ import { Container, Eyebrow, Section } from "@/components/ui/Section";
 import { Reveal } from "@/components/motion/Reveal";
 
 const featured = destinations.filter((item) =>
-  ["nungwi", "stone-town", "paje", "kizimkazi"].includes(item.slug),
+  ["nungwi-beach", "stone-town", "paje-beach", "kizimkazi-dolphin"].includes(
+    item.slug,
+  ),
 );
 
 const featuredTours = [

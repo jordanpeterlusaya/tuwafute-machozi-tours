@@ -72,9 +72,12 @@ export default async function DestinationPage({ params }: Props) {
               ))}
             </ul>
             <p className="mt-8 text-sm tracking-wide text-ink/45">Best season · {item.season}</p>
-            <Button href="/enquire" className="mt-8">
-              Enquire about {item.name}
-            </Button>
+            <div className="mt-8 flex flex-wrap gap-3">
+              <Button href={`/experiences/${item.slug}`}>Book this tour</Button>
+              <Button href="/enquire" variant="line">
+                Enquire about {item.name}
+              </Button>
+            </div>
           </div>
         </Container>
       </Section>

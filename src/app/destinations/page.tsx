@@ -7,16 +7,17 @@ import { Container, Section } from "@/components/ui/Section";
 
 export const metadata: Metadata = {
   title: "Destinations",
-  description: "Explore north, east, south, west and central Zanzibar.",
+  description:
+    "All 28 destinations from the Zanzibar Excursions & Experiences Guide — north, east, south, west and central.",
 };
 
 export default function DestinationsPage() {
   return (
     <>
       <PageHero
-        eyebrow="The map"
-        title="One island. Many ways to experience it."
-        copy="From Nungwi’s northern light to Stone Town’s living history — Zanzibar composed as chapters, not checklists."
+        eyebrow="Zanzibar Excursions Guide · 28 destinations"
+        title="Every place named in the guide."
+        copy="North, east, south, west and central Zanzibar — the complete list, nothing added."
       />
       {regions.map((region) => {
         const items = destinations.filter((item) => item.region === region.id);
@@ -26,18 +27,26 @@ export default function DestinationsPage() {
             <Container>
               <p className="eyebrow">{region.label}</p>
               <p className="mt-3 max-w-xl text-ink/60">{region.copy}</p>
-              <div className="mt-10 grid gap-6 md:grid-cols-3">
+              <div className="mt-10 grid gap-6 sm:grid-cols-2 xl:grid-cols-3">
                 {items.map((item) => (
-                  <Link key={item.slug} href={`/destinations/${item.slug}`} className="image-reveal group">
-                    <div className="relative aspect-[4/5] overflow-hidden">
-                      <Image src={item.image} alt={item.name} fill className="object-cover" sizes="33vw" />
-                      <div className="absolute inset-0 bg-gradient-to-t from-ink/75 to-transparent" />
-                      <div className="absolute bottom-0 p-6 text-ivory">
-                        <h2 className="font-display text-3xl">{item.name}</h2>
-                        <p className="mt-2 text-sm text-ivory/70">{item.eyebrow}</p>
+                  <article key={item.slug} className="flex flex-col">
+                    <Link href={`/destinations/${item.slug}`} className="image-reveal group">
+                      <div className="relative aspect-[4/5] overflow-hidden">
+                        <Image src={item.image} alt={item.name} fill className="object-cover" sizes="33vw" />
+                        <div className="absolute inset-0 bg-gradient-to-t from-ink/75 to-transparent" />
+                        <div className="absolute bottom-0 p-6 text-ivory">
+                          <h2 className="font-display text-3xl">{item.name}</h2>
+                          <p className="mt-2 line-clamp-2 text-sm text-ivory/70">{item.summary}</p>
+                        </div>
                       </div>
-                    </div>
-                  </Link>
+                    </Link>
+                    <Link
+                      href={`/experiences/${item.slug}`}
+                      className="mt-4 self-start text-[10px] tracking-[0.2em] uppercase text-gold hover:text-ink"
+                    >
+                      Book this tour →
+                    </Link>
+                  </article>
                 ))}
               </div>
             </Container>
