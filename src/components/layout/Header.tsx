@@ -91,21 +91,21 @@ export function Header() {
           exit={{ opacity: 0 }}
           className="fixed inset-0 z-[200] flex h-[100dvh] w-screen flex-col overflow-hidden bg-ink text-ivory"
         >
-          <div className="flex h-[calc(4.25rem+env(safe-area-inset-top))] shrink-0 items-center justify-between px-5 pt-[env(safe-area-inset-top)] md:px-8">
-            <Link href="/" aria-label={brand.legalName} onClick={() => setOpen(false)}>
+          <div className="flex h-[var(--header-height)] shrink-0 items-center justify-between gap-3 px-4 pt-[env(safe-area-inset-top)] sm:px-6 md:px-8">
+            <Link href="/" className="inline-flex min-w-0 items-center leading-none" aria-label={brand.legalName} onClick={() => setOpen(false)}>
               <Logo inverted compact />
             </Link>
             <button
               type="button"
-              className="relative h-10 w-10 text-ivory"
+              className="relative h-11 w-11 shrink-0 text-ivory"
               aria-label="Close menu"
               onClick={() => {
                 setOpen(false);
                 menuButton.current?.focus();
               }}
             >
-              <span className="absolute left-2 right-2 top-5 h-px rotate-45 bg-current" />
-              <span className="absolute left-2 right-2 top-5 h-px -rotate-45 bg-current" />
+              <span className="absolute left-2.5 right-2.5 top-[22px] h-px rotate-45 bg-current" />
+              <span className="absolute left-2.5 right-2.5 top-[22px] h-px -rotate-45 bg-current" />
             </button>
           </div>
           <div className="min-h-0 flex-1 overflow-y-auto overscroll-contain bg-ink">
@@ -154,41 +154,41 @@ export function Header() {
   );
 
   return (
-    <header className={cx("fixed inset-x-0 top-0 [--header-height:calc(4.25rem+env(safe-area-inset-top))]", open ? "z-[200]" : "z-50")}>
+    <header className={cx("fixed inset-x-0 top-0 [--header-height:calc(4.5rem+env(safe-area-inset-top))]", open ? "z-[200]" : "z-50")}>
       <div
         className={cx(
-          "relative z-50 flex h-[var(--header-height)] items-center justify-between px-5 pt-[env(safe-area-inset-top)] transition-colors duration-500 md:px-8",
+          "relative z-50 grid h-[var(--header-height)] grid-cols-[minmax(0,1fr)_auto] items-center gap-3 px-4 pt-[env(safe-area-inset-top)] transition-colors duration-500 sm:px-6 md:px-8 xl:grid-cols-[minmax(0,1fr)_auto_minmax(0,1fr)] xl:gap-6",
           open || scrolled ? "bg-ink" : "bg-ink/40 backdrop-blur-sm",
         )}
       >
-        <Link href="/" aria-label={brand.legalName} onClick={() => setOpen(false)}>
+        <Link href="/" className="inline-flex min-w-0 items-center justify-self-start leading-none" aria-label={brand.legalName} onClick={() => setOpen(false)}>
           <Logo inverted compact />
         </Link>
 
-        <nav className="hidden items-center gap-8 lg:flex" aria-label="Primary">
+        <nav className="hidden items-center justify-center gap-5 whitespace-nowrap xl:flex 2xl:gap-8" aria-label="Primary">
           {nav.map((item) => (
             <Link
               key={item.href}
               href={item.href}
-              className="text-[11px] tracking-[0.22em] uppercase text-ivory/78 transition-colors hover:text-gold"
+              className="text-[11px] tracking-[0.18em] uppercase text-ivory/78 transition-colors hover:text-gold 2xl:tracking-[0.22em]"
             >
               {item.label}
             </Link>
           ))}
         </nav>
 
-        <div className="flex items-center gap-5">
+        <div className="flex shrink-0 items-center justify-self-end gap-3 sm:gap-4 xl:col-start-3">
           <TourCartHeaderButton />
           <Link
             href="/enquire"
-            className="hidden text-[11px] tracking-[0.28em] uppercase text-gold md:inline-flex"
+            className="hidden text-[11px] tracking-[0.22em] uppercase text-gold md:inline-flex"
           >
             Enquire
           </Link>
           <button
             ref={menuButton}
             type="button"
-            className="relative h-10 w-10 text-ivory"
+            className="relative h-11 w-11 shrink-0 text-ivory"
             aria-expanded={open}
             aria-label={open ? "Close menu" : "Open menu"}
             aria-controls="site-navigation-dialog"
@@ -196,20 +196,20 @@ export function Header() {
           >
             <span
               className={cx(
-                "absolute left-2 right-2 h-px bg-current transition-transform",
-                open ? "top-5 rotate-45" : "top-3.5",
+                "absolute left-2.5 right-2.5 h-px bg-current transition-transform",
+                open ? "top-[22px] rotate-45" : "top-[15px]",
               )}
             />
             <span
               className={cx(
-                "absolute left-2 right-2 top-5 h-px bg-current transition-opacity",
+                "absolute left-2.5 right-2.5 top-[22px] h-px bg-current transition-opacity",
                 open && "opacity-0",
               )}
             />
             <span
               className={cx(
-                "absolute left-2 right-2 h-px bg-current transition-transform",
-                open ? "top-5 -rotate-45" : "top-[26px]",
+                "absolute left-2.5 right-2.5 h-px bg-current transition-transform",
+                open ? "top-[22px] -rotate-45" : "top-[29px]",
               )}
             />
           </button>

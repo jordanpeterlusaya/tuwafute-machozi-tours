@@ -214,7 +214,7 @@ export function TourCartHeaderButton() {
       type="button"
       onClick={open}
       aria-label={`Open tour request${itemCount ? ` with ${itemCount} excursions` : ""}`}
-      className="inline-flex items-center gap-2 text-[10px] tracking-[0.2em] uppercase text-gold md:text-[11px]"
+      className="inline-flex shrink-0 items-center gap-2 whitespace-nowrap text-[10px] tracking-[0.2em] uppercase text-gold md:text-[11px]"
     >
       <span className="hidden sm:inline">Tour request</span>
       <span

@@ -59,11 +59,15 @@ export function Logo({
 
   if (compact) {
     return (
-      <span className={cx("inline-flex items-center gap-2", className)}>
-        <LogoMark inverted={inverted} className={cx("h-9 w-7", markClassName)} />
-        <span className={cx("leading-none", text)}>
-          <span className="block font-accent text-[11px] tracking-[0.26em]">TUWAFUTE MACHOZI</span>
-          <span className="mt-0.5 block text-[9px] tracking-[0.32em] text-gold">TOURS</span>
+      <span className={cx("inline-flex max-w-full items-center gap-2 leading-none sm:gap-2.5", className)}>
+        <LogoMark inverted={inverted} className={cx("h-8 w-[1.375rem] shrink-0 sm:h-9 sm:w-7", markClassName)} />
+        <span className={cx("min-w-0 leading-none", text)}>
+          <span className="block font-accent text-[11px] tracking-[0.16em] sm:text-[13px] sm:tracking-[0.2em]">
+            TUWAFUTE
+          </span>
+          <span className="mt-[3px] block text-[8px] tracking-[0.18em] text-gold sm:text-[9px] sm:tracking-[0.24em]">
+            MACHOZI TOURS
+          </span>
         </span>
       </span>
     );
