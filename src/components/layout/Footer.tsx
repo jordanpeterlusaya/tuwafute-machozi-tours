@@ -1,5 +1,6 @@
 import Link from "next/link";
 import { Logo } from "@/components/brand/Logo";
+import { TrustStrip } from "@/components/brand/TrustStrip";
 import { brand, nav, secondaryNav } from "@/content/brand";
 
 export function Footer() {
@@ -53,6 +54,8 @@ export function Footer() {
             </ul>
           </div>
         </div>
+
+        <TrustStrip inverted />
 
         <div className="gold-line mt-16" />
         <div className="mt-8 flex flex-col justify-between gap-4 text-xs tracking-wide text-ivory/40 md:flex-row">
