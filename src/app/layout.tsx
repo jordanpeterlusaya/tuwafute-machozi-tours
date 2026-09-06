@@ -55,6 +55,9 @@ export const metadata: Metadata = {
     "luxury Zanzibar travel",
     "Stone Town",
     "Zanzibar excursions",
+    "Tanzania safari",
+    "Serengeti",
+    "Kilimanjaro",
   ],
 };
 

@@ -23,6 +23,7 @@ export const brand = {
 export const nav = [
   { href: "/destinations", label: "Destinations" },
   { href: "/experiences", label: "Zanzibar Tours" },
+  { href: "/safaris", label: "Safaris" },
   { href: "/stays", label: "Stays" },
   { href: "/itineraries", label: "Journeys" },
   { href: "/impact", label: "Impact" },

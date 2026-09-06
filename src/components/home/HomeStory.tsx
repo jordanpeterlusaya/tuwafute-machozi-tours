@@ -4,10 +4,12 @@ import { AddToTourCartButton } from "@/components/booking/TourCart";
 import { destinations } from "@/content/destinations";
 import { experiences } from "@/content/experiences";
 import { itineraries } from "@/content/itineraries";
+import { safaris } from "@/content/safaris";
 import { brand } from "@/content/brand";
 import { Button } from "@/components/ui/Button";
 import { Container, Eyebrow, Section } from "@/components/ui/Section";
 import { Reveal } from "@/components/motion/Reveal";
+import { whatsappLink } from "@/lib/utils";
 
 const featured = destinations.filter((item) =>
   ["nungwi-beach", "stone-town", "paje-beach", "kizimkazi-dolphin"].includes(
@@ -92,6 +94,61 @@ export function HomeStory() {
             <Button href="/experiences" variant="line">
               See all 28 tours
             </Button>
+          </div>
+        </Container>
+      </Section>
+
+      <Section className="pt-0">
+        <Container>
+          <div className="flex flex-wrap items-end justify-between gap-6">
+            <div className="max-w-2xl">
+              <Eyebrow>Tanzania safaris</Eyebrow>
+              <h2 className="mt-4 font-display text-4xl md:text-5xl">
+                Mainland by request.
+              </h2>
+              <p className="mt-4 text-sm leading-7 text-ink/60">
+                Serengeti, Ngorongoro, Tarangire and Kilimanjaro — arranged from
+                the Zanzibar house. Not listed in the island excursions guide.
+                Price on request.
+              </p>
+            </div>
+            <Button href="/safaris" variant="line">
+              All safaris
+            </Button>
+          </div>
+          <div className="mt-10 grid gap-5 sm:grid-cols-2 lg:grid-cols-4">
+            {safaris.map((item) => (
+              <article key={item.slug} className="flex flex-col">
+                <Link href={`/safaris/${item.slug}`} className="group block">
+                  <div className="relative aspect-[4/3] overflow-hidden bg-forest">
+                    <Image
+                      src={item.image}
+                      alt={item.name}
+                      fill
+                      className="object-cover"
+                      sizes="(max-width: 640px) 100vw, (max-width: 1024px) 50vw, 25vw"
+                    />
+                  </div>
+                  <h3 className="mt-4 font-display text-2xl group-hover:text-lagoon">
+                    {item.name}
+                  </h3>
+                </Link>
+                <p className="mt-2 line-clamp-2 flex-1 text-sm leading-6 text-ink/58">
+                  {item.summary}
+                </p>
+                <a
+                  href={whatsappLink(
+                    brand.whatsapp,
+                    `Hello ${brand.name} — I would like to request the price for: ${item.name}.`,
+                  )}
+                  target="_blank"
+                  rel="noreferrer"
+                  className="mt-4 inline-flex self-start text-[10px] tracking-[0.2em] uppercase text-gold"
+                >
+                  Request price →
+                </a>
+              </article>
+            ))}
           </div>
         </Container>
       </Section>

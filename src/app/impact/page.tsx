@@ -1,7 +1,9 @@
 import type { Metadata } from "next";
 import Image from "next/image";
+import { Button } from "@/components/ui/Button";
 import { Container, Eyebrow, Section } from "@/components/ui/Section";
 import { brand } from "@/content/brand";
+import { founder, foundation } from "@/content/founder";
 
 export const metadata: Metadata = {
   title: "Social Impact",
@@ -15,7 +17,7 @@ const principles = [
   },
   {
     title: "60% of revenue",
-    copy: "Our stated policy is that 60% of revenue goes to charity and community impact in Zanzibar. When you book an excursion, you enable that allocation.",
+    copy: "Our stated policy is that 60% of revenue goes to charity and community impact in Zanzibar. When you book an excursion or a mainland journey, you enable that allocation.",
   },
   {
     title: "Dignity, not spectacle",
@@ -41,25 +43,65 @@ export default function ImpactPage() {
             Why guests travel with us
           </p>
           <h1 className="mt-2 max-w-5xl font-display text-5xl md:text-7xl">
-            Your safari enables charity in Zanzibar.
+            Your journey enables charity in Zanzibar.
           </h1>
         </div>
       </section>
 
       <Section>
-        <Container>
-          <p className="max-w-3xl font-display text-3xl leading-snug md:text-4xl">
-            Book the island. Fund the work. That is the whole sentence.
-          </p>
-          <p className="mt-6 max-w-3xl text-lg leading-8 text-ink/65">
-            The owner wants every visitor to understand this before they
-            enquire: Tuwafute Machozi Tours exists so that a journey across
-            Zanzibar can wipe a tear in Zanzibar. Sixty percent of revenue is
-            directed to charity and community impact. The remaining house keeps
-            the guiding, boats and days precise.
-          </p>
+        <Container className="grid items-start gap-14 lg:grid-cols-[0.85fr_1.15fr]">
+          <div className="relative aspect-[3/4] overflow-hidden bg-forest">
+            <Image
+              src={founder.portrait}
+              alt={founder.portraitAlt}
+              fill
+              className="object-cover object-[center_15%]"
+              sizes="(max-width: 1024px) 100vw, 40vw"
+            />
+          </div>
+          <div>
+            <Eyebrow>{foundation.name}</Eyebrow>
+            <h2 className="mt-4 font-display text-4xl leading-snug md:text-5xl">
+              The charity the tours were built to fund.
+            </h2>
+            <p className="mt-6 text-lg leading-8 text-ink/65">
+              Book the island. Fund the work. That is the whole sentence. The
+              founder started {foundation.name} on {foundation.foundedOn} with
+              other community members — the founding note names “
+              {founder.documentCredit}” among those who created it — so that
+              dedicated resources could reach people society and government do
+              not always protect.
+            </p>
+            <p className="mt-5 leading-8 text-ink/65">
+              Children often depend entirely on parents or carers for safety,
+              guidance and daily needs. The foundation was created to fill those
+              gaps: food, care and presence for the most vulnerable, without
+              turning anyone into a tourist attraction.
+            </p>
+            <p className="mt-5 leading-8 text-ink/65">
+              Work began the same day as a WhatsApp group, so members could
+              share ideas and take part. About {foundation.membersApprox}{" "}
+              members now contribute. {foundation.visitCaption} The founding
+              papers also include a chart of how leaders flow; we do not invent
+              titles that are not clearly published here.
+            </p>
+            <p className="mt-5 leading-8 text-ink/65">
+              Tuwafute Machozi Tours is the travel door of the same mission.
+              Sixty percent of revenue is directed to charity and community
+              impact in Zanzibar. Mainland safaris requested from this house
+              follow the same policy. The remaining house keeps the guiding,
+              boats and days precise.
+            </p>
+            <Button href="/about" variant="line" className="mt-10">
+              Meet the founder
+            </Button>
+          </div>
+        </Container>
+      </Section>
 
-          <div className="mt-16 grid gap-10 md:grid-cols-3">
+      <Section className="pt-0">
+        <Container>
+          <div className="grid gap-10 md:grid-cols-3">
             {principles.map((item) => (
               <article key={item.title} className="border-t border-gold pt-6">
                 <h2 className="font-display text-3xl">{item.title}</h2>

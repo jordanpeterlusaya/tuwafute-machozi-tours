@@ -4,6 +4,7 @@ import { experiences } from "@/content/experiences";
 import { itineraries } from "@/content/itineraries";
 import { journal } from "@/content/journal";
 import { coastFilms } from "@/content/media";
+import { safaris } from "@/content/safaris";
 import { stays } from "@/content/stays";
 
 const staticRoutes = [
@@ -32,6 +33,7 @@ export default function sitemap(): MetadataRoute.Sitemap {
     ...staticRoutes,
     ...destinations.map((item) => `/destinations/${item.slug}`),
     ...experiences.map((item) => `/experiences/${item.slug}`),
+    ...safaris.map((item) => `/safaris/${item.slug}`),
     ...stays.map((item) => `/stays/${item.slug}`),
     ...itineraries.map((item) => `/itineraries/${item.slug}`),
     ...journal.map((item) => `/journal/${item.slug}`),

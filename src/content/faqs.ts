@@ -9,7 +9,11 @@ export const faqs = [
   },
   {
     q: "How does the social impact work?",
-    a: "The house is called Tuwafute Machozi Tours because the name means let us wipe their tears. Guests who book enable charity in Zanzibar: 60% of revenue goes to charity and community impact. We do not publish unverified beneficiary names or treat people as attractions.",
+    a: "The house is called Tuwafute Machozi Tours because the name means let us wipe their tears. Tuwafute Machozi Foundation was created on 1 June 2023 to support the most vulnerable, including children. Guests who book enable that work: 60% of revenue goes to charity and community impact. We do not publish unverified beneficiary names or treat people as attractions.",
+  },
+  {
+    q: "Do you offer mainland safaris and Kilimanjaro?",
+    a: "Yes — Serengeti National Park, Ngorongoro Crater, Tarangire National Park and a Kilimanjaro trek can be arranged from the Zanzibar house. They are requested mainland journeys with prices on request, and they are not listed in the Zanzibar Excursions Guide.",
   },
   {
     q: "Do you offer private or shared experiences?",
