@@ -98,11 +98,22 @@ export default function ExperiencesPage() {
                     </p>
                     <div className="mt-5 flex flex-wrap items-center gap-3">
                       <AddToTourCartButton slug={item.slug} />
+                      <a
+                        href={whatsappLink(
+                          brand.whatsapp,
+                          `Hello ${brand.name} — I would like to book: ${item.name}`,
+                        )}
+                        target="_blank"
+                        rel="noreferrer"
+                        className="inline-flex items-center justify-center bg-[#25D366] px-6 py-3 text-[10px] tracking-[0.2em] uppercase text-white hover:opacity-90"
+                      >
+                        Book via WhatsApp
+                      </a>
                       <Link
                         href={`/experiences/${item.slug}`}
                         className="px-2 py-3 text-[10px] tracking-[0.2em] uppercase text-ink/60 hover:text-gold"
                       >
-                        Read details →
+                        View tour →
                       </Link>
                     </div>
                   </article>
