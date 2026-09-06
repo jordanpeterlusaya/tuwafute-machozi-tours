@@ -1,10 +1,9 @@
 export const founder = {
+  name: "Joseph Kitali",
   portrait: "/images/founder.jpg",
   portraitAlt:
-    "The founder of Tuwafute Machozi Foundation and Tours, in a white hospitality shirt, offering a thumbs-up",
+    "Joseph Kitali, founder of Tuwafute Machozi Foundation and Tours, in a white hospitality shirt, offering a thumbs-up",
   role: "Founder, Tuwafute Machozi Foundation & Tours",
-  /** Wording from the founding document; not treated as a verified legal name. */
-  documentCredit: "zuri stuffs",
 } as const;
 
 export const foundation = {

@@ -21,11 +21,11 @@ const marks = [
     invertOnDark: false,
   },
   {
-    src: "/images/trust/tanapa-logo.svg",
+    src: "/images/trust/tanapa.png",
     name: "TANAPA",
     caption: "TANAPA",
-    className: "h-10 w-10",
-    invertOnDark: true,
+    className: "h-12 w-12",
+    invertOnDark: false,
   },
   {
     src: "/images/trust/safaribookings-logo.svg",

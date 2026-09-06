@@ -24,7 +24,7 @@ export default function AboutPage() {
             />
           </div>
           <div>
-            <Eyebrow>The founder</Eyebrow>
+            <Eyebrow>Joseph Kitali</Eyebrow>
             <p className="mt-3 text-[11px] tracking-[0.22em] uppercase text-gold">
               {founder.role}
             </p>
@@ -32,20 +32,16 @@ export default function AboutPage() {
               One house. Two doors: the island, and the work that travel funds.
             </h1>
             <p className="mt-6 max-w-2xl text-lg leading-8 text-ivory/70">
-              The founder of Tuwafute Machozi Foundation and Tuwafute Machozi
-              Tours is the same person guests meet in this portrait — a
+              Joseph Kitali founded Tuwafute Machozi Foundation and Tuwafute
+              Machozi Tours. He is the person guests meet in this portrait — a
               hospitality professional in the house shirt, thumbs up, standing
               for a simple contract: come to Zanzibar, and leave something
               standing for those who need it.
             </p>
             <p className="mt-5 max-w-2xl leading-8 text-ivory/65">
-              We do not publish a legal name that is not clearly given. The
-              founding note for the charity says the organisation was created by
-              “{founder.documentCredit}” together with other community members.
-              We keep that wording as it appears on the document. What is
-              certain is the work: {foundation.name} began on{" "}
-              {foundation.foundedOn}, and the tours company exists so that
-              guests can fund it.
+              Joseph Kitali started the charity with other community members.{" "}
+              {foundation.name} began on {foundation.foundedOn}, and the tours
+              company exists so that guests can fund it.
             </p>
             <p className="mt-5 max-w-2xl leading-8 text-ivory/65">
               In Kiswahili, <em>tuwafute machozi</em> means let us wipe their

@@ -36,7 +36,7 @@ export function Footer() {
             <ul className="space-y-3">
               <li>
                 <Link href="/about" className="text-ivory/70 transition-colors hover:text-gold">
-                  The House · Founder
+                  The House · Joseph Kitali
                 </Link>
               </li>
               {secondaryNav.map((item) => (

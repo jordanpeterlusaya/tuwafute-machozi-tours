@@ -65,12 +65,10 @@ export default function ImpactPage() {
               The charity the tours were built to fund.
             </h2>
             <p className="mt-6 text-lg leading-8 text-ink/65">
-              Book the island. Fund the work. That is the whole sentence. The
-              founder started {foundation.name} on {foundation.foundedOn} with
-              other community members — the founding note names “
-              {founder.documentCredit}” among those who created it — so that
-              dedicated resources could reach people society and government do
-              not always protect.
+              Book the island. Fund the work. That is the whole sentence.
+              Joseph Kitali started {foundation.name} on {foundation.foundedOn}{" "}
+              with other community members, so that dedicated resources could
+              reach people society and government do not always protect.
             </p>
             <p className="mt-5 leading-8 text-ink/65">
               Children often depend entirely on parents or carers for safety,
@@ -93,7 +91,7 @@ export default function ImpactPage() {
               boats and days precise.
             </p>
             <Button href="/about" variant="line" className="mt-10">
-              Meet the founder
+              Meet Joseph Kitali
             </Button>
           </div>
         </Container>

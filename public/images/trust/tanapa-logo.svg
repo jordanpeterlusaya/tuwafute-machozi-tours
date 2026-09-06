@@ -1,6 +1,0 @@
-<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64" role="img" aria-label="TANAPA">
-  <title>TANAPA</title>
-  <circle cx="32" cy="32" r="29" fill="none" stroke="currentColor" stroke-width="2.5"/>
-  <circle cx="32" cy="32" r="22.5" fill="none" stroke="currentColor" stroke-width="1.2" opacity="0.5"/>
-  <path fill="currentColor" d="M32 14c-6.8 8.6-10.5 15.5-10.5 22.1 0 5.8 4.7 10.5 10.5 10.5s10.5-4.7 10.5-10.5C42.5 29.5 38.8 22.6 32 14zm0 27.8c-3.1 0-5.7-2.5-5.7-5.7 0-4.4 2.7-9.2 5.7-13.8 3 4.6 5.7 9.4 5.7 13.8 0 3.2-2.6 5.7-5.7 5.7z"/>
-</svg>

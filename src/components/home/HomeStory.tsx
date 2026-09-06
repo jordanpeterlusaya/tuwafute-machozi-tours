@@ -1,7 +1,6 @@
 import Image from "next/image";
 import Link from "next/link";
 import { AddToTourCartButton } from "@/components/booking/TourCart";
-import { TrustStrip } from "@/components/brand/TrustStrip";
 import { destinations } from "@/content/destinations";
 import { experiences } from "@/content/experiences";
 import { itineraries } from "@/content/itineraries";
@@ -35,8 +34,6 @@ const featuredTours = [
 export function HomeStory() {
   return (
     <>
-      <TrustStrip />
-
       <Section>
         <Container>
           <div className="max-w-3xl">
@@ -239,7 +236,7 @@ export function HomeStory() {
             />
           </div>
           <div>
-            <Eyebrow>The founder</Eyebrow>
+            <Eyebrow>Joseph Kitali</Eyebrow>
             <p className="mt-3 text-[11px] tracking-[0.22em] uppercase text-gold">
               {founder.role}
             </p>
@@ -247,9 +244,9 @@ export function HomeStory() {
               Travel funds the work that wipes tears.
             </h2>
             <p className="mt-5 max-w-xl text-lg leading-8 text-ink/70">
-              {foundation.name} began on {foundation.foundedOn}. The house was
-              started by “{founder.documentCredit}” and other community members
-              — about {foundation.membersApprox} people now. In Kiswahili,{" "}
+              {foundation.name} began on {foundation.foundedOn}. Joseph Kitali
+              started the house with other community members — about{" "}
+              {foundation.membersApprox} people now. In Kiswahili,{" "}
               <em>tuwafute machozi</em> means let us wipe their tears. Sixty
               percent of tour revenue goes to charity in Zanzibar.
             </p>
@@ -258,7 +255,7 @@ export function HomeStory() {
               does the work.
             </p>
             <div className="mt-8 flex flex-wrap gap-4">
-              <Button href="/about">Meet the founder</Button>
+              <Button href="/about">Meet Joseph Kitali</Button>
               <Button href="/impact" variant="line">
                 The foundation
               </Button>
