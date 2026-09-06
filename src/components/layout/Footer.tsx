@@ -51,7 +51,7 @@ export function Footer() {
 
         <div className="gold-line mt-16" />
         <div className="mt-8 flex flex-col justify-between gap-4 text-xs tracking-wide text-ivory/40 md:flex-row">
-          <p>© 2026 {brand.name}. Zanzibar.</p>
+          <p>© 2026 {brand.legalName}. Zanzibar.</p>
           <p>Crafted as a cinematic house of travel — not a catalogue.</p>
         </div>
       </div>

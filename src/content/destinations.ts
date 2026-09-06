@@ -38,7 +38,7 @@ export const destinations: Destination[] = [
       "Zanzibar’s celebrated northern coastline — powder sand, turquoise shallows, and sunsets that turn the Indian Ocean to molten gold.",
     story:
       "Nungwi is where the island thins into light. Fishermen still push wooden ngalawa into the morning tide, while the beach unfurls in a long, pale curve toward Kendwa. We bring guests here not only for the postcard, but for the slower hour after it — village lanes, turtle conservation, and the first stars over the dhows.",
-    image: coastFilms[0].poster,
+    image: "/images/places/nungwi-beach.jpg",
     video: coastFilms[0].video,
     mobileVideo: coastFilms[0].mobileVideo,
     videoLabel: `${coastFilms[0].title} · exact location unrecorded`,
@@ -59,7 +59,7 @@ export const destinations: Destination[] = [
       "A quieter sister to Nungwi — a broad beach that holds its swimming tide, and evenings that arrive like a ceremony.",
     story:
       "Kendwa is made for lingering. The beach is generous, the water stays deep enough to swim through the tides, and the sky performs every dusk. It is the island at its most cinematic, without ever needing to raise its voice.",
-    image: coastFilms[1].poster,
+    image: "/images/places/kendwa-sunset.jpg",
     video: coastFilms[1].video,
     mobileVideo: coastFilms[1].mobileVideo,
     videoLabel: `${coastFilms[1].title} · exact location unrecorded`,
@@ -80,7 +80,7 @@ export const destinations: Destination[] = [
       "A palm-fringed east-coast village where kites colour the sky and the lagoon stays warm and shallow for hours.",
     story:
       "Paje belongs to the wind. In season the lagoon fills with kite-surfers; out of season it returns to fishermen, coconut groves, and long walks at low tide. We use it as a base for the east — Kuza Cave, The Rock, and the quieter villages beyond.",
-    image: coastFilms[2].poster,
+    image: "/images/places/paje-beach.jpg",
     video: coastFilms[2].video,
     mobileVideo: coastFilms[2].mobileVideo,
     videoLabel: `${coastFilms[2].title} · exact location unrecorded`,
@@ -101,7 +101,7 @@ export const destinations: Destination[] = [
       "Authentic coastal life — seaweed farms at low tide, wooden boats, and a pace that still belongs to the sea.",
     story:
       "Jambiani is Zanzibar without the filter. Women tend seaweed plots that appear like gardens when the tide withdraws. Children play football on the coral sand. It is one of the most honest places on the island to understand how the coast still lives.",
-    image: "/images/nungwi-boats.jpg",
+    image: "/images/places/jambiani-village.jpg",
     coords: { x: 80, y: 68, lat: -6.316, lng: 39.545 },
     scene: { position: [1.18, 0.24, 1.42], camera: [2.7, 1.5, 4.2], accent: "#73c9b5", elevation: 0.24 },
     highlights: ["Seaweed farms", "Village culture", "Quiet beaches"],
@@ -119,7 +119,7 @@ export const destinations: Destination[] = [
       "A historic fishing settlement, dramatic southern beaches, and boat mornings across Menai Bay.",
     story:
       "Kizimkazi holds one of East Africa’s oldest mosques and a maritime memory that predates tourism. From here the southern waters open toward dolphins, sandbanks, and the protected sweep of Menai Bay. We travel with guides who treat the ocean as a neighbour, not a stage.",
-    image: "/images/hero-nungwi.jpg",
+    image: "/images/places/kizimkazi-dolphin.jpg",
     coords: { x: 62, y: 88, lat: -6.45, lng: 39.47 },
     scene: { position: [0.48, 0.3, 3.08], camera: [1.2, 1.8, 5.3], accent: "#d8ad72", elevation: 0.3 },
     highlights: ["Historic mosque", "Dolphin waters", "Menai Bay"],
@@ -137,7 +137,7 @@ export const destinations: Destination[] = [
       "A UNESCO labyrinth of carved doors, rooftop light, spice markets, and centuries of Indian Ocean trade.",
     story:
       "Stone Town is not a museum. It is a living archive — Omani palaces, Swahili courtyards, Indian balconies, and the evening theatre of Forodhani. We walk it at the right hours, when the alleys are cool and the call to prayer moves through coral-stone walls.",
-    image: "/images/nungwi-boats.jpg",
+    image: "/images/places/stone-town.jpg",
     coords: { x: 28, y: 48, lat: -6.163, lng: 39.198 },
     scene: { position: [-1.18, 0.45, -0.15], camera: [-3.2, 2.1, 3.3], accent: "#d4a55f", elevation: 0.45 },
     highlights: ["Heritage lanes", "Forodhani night market", "Spice heritage"],
@@ -155,7 +155,7 @@ export const destinations: Destination[] = [
       "Zanzibar’s last great forest — red colobus monkeys, mangrove boardwalks, and a quieter island ecology.",
     story:
       "Away from the beaches, Jozani is where the island remembers it is also a forest. Endemic red colobus move through the canopy. Mangroves hold the shoreline together. Time here is an education in what luxury actually protects.",
-    image: "/images/resort-palms.jpg",
+    image: "/images/places/jozani.jpg",
     coords: { x: 52, y: 62, lat: -6.232, lng: 39.408 },
     scene: { position: [0.02, 0.72, 0.95], camera: [0.5, 2.5, 4], accent: "#4c8e68", elevation: 0.72 },
     highlights: ["Red colobus", "Mangrove walk", "Island ecology"],

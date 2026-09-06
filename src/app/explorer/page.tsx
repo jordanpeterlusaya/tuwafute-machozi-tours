@@ -5,7 +5,7 @@ import { PageHero } from "@/components/ui/PageHero";
 export const metadata: Metadata = {
   title: "Zanzibar Island Explorer",
   description:
-    "Explore all 28 Zanzibar excursions on a geographic satellite or OpenStreetMap map.",
+    "Explore all 28 Zanzibar excursions on a geographic satellite map of the island.",
 };
 
 export default function ExplorerPage() {
@@ -14,7 +14,7 @@ export default function ExplorerPage() {
       <PageHero
         eyebrow="The geographic island"
         title="See where every excursion begins."
-        copy="Explore all 28 guide locations on real map data. Satellite terrain and mapped 3D buildings appear with Mapbox coverage; OpenStreetMap remains available as the fallback."
+        copy="Explore all 28 guide locations on real Zanzibar map data. Satellite terrain and mapped buildings appear where coverage exists."
       />
       <IslandExplorer />
     </>

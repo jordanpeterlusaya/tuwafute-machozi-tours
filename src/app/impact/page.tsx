@@ -5,22 +5,21 @@ import { brand } from "@/content/brand";
 
 export const metadata: Metadata = {
   title: "Social Impact",
-  description:
-    "Tuwafute Machozi’s policy is to direct 60% of revenue to charity and community impact.",
+  description: brand.meaning,
 };
 
 const principles = [
   {
-    title: "A clear allocation",
-    copy: "The policy is based on revenue: 60% goes to charity and community impact.",
+    title: "The name is the work",
+    copy: "Tuwafute Machozi means let us wipe their tears. The house is called Tuwafute Machozi Tours so guests never mistake this for a slogan. Travel is how the work is funded.",
   },
   {
-    title: "Dignity in the telling",
-    copy: "Impact should not turn people into attractions. We share only details that can be verified and communicated with respect.",
+    title: "60% of revenue",
+    copy: "Our stated policy is that 60% of revenue goes to charity and community impact in Zanzibar. When you book an excursion, you enable that allocation.",
   },
   {
-    title: "Follow current work",
-    copy: "The official Tuwafute profile is the direct place to follow updates from the team.",
+    title: "Dignity, not spectacle",
+    copy: "Impact should not turn people into attractions. We do not sell orphanage tourism. Guests may visit as guests — never as spectators.",
   },
 ];
 
@@ -37,19 +36,30 @@ export default function ImpactPage() {
         />
         <div className="absolute inset-0 bg-gradient-to-t from-ink via-ink/55 to-ink/25" />
         <div className="relative z-10 flex min-h-[72vh] flex-col justify-end px-5 pb-16 md:px-16">
-          <Eyebrow>Give back</Eyebrow>
+          <Eyebrow>{brand.legalName}</Eyebrow>
           <p className="mt-5 text-[11px] tracking-[0.3em] uppercase text-gold">
-            Our stated revenue policy
+            Why guests travel with us
           </p>
-          <h1 className="mt-2 max-w-4xl font-display text-6xl md:text-8xl">
-            60% goes to charity and community impact.
+          <h1 className="mt-2 max-w-5xl font-display text-5xl md:text-7xl">
+            Your safari enables charity in Zanzibar.
           </h1>
         </div>
       </section>
 
       <Section>
         <Container>
-          <div className="grid gap-10 md:grid-cols-3">
+          <p className="max-w-3xl font-display text-3xl leading-snug md:text-4xl">
+            Book the island. Fund the work. That is the whole sentence.
+          </p>
+          <p className="mt-6 max-w-3xl text-lg leading-8 text-ink/65">
+            The owner wants every visitor to understand this before they
+            enquire: Tuwafute Machozi Tours exists so that a journey across
+            Zanzibar can wipe a tear in Zanzibar. Sixty percent of revenue is
+            directed to charity and community impact. The remaining house keeps
+            the guiding, boats and days precise.
+          </p>
+
+          <div className="mt-16 grid gap-10 md:grid-cols-3">
             {principles.map((item) => (
               <article key={item.title} className="border-t border-gold pt-6">
                 <h2 className="font-display text-3xl">{item.title}</h2>
@@ -66,9 +76,8 @@ export default function ImpactPage() {
                   Follow the work from its source.
                 </h2>
                 <p className="mt-4 max-w-2xl leading-7 text-ivory/60">
-                  We use existing local imagery here rather than copying social
-                  photographs. Open the official Instagram profile for current
-                  posts and updates.
+                  Current photographs and updates live on the official Instagram
+                  profile. We do not copy those images here.
                 </p>
               </div>
               <a

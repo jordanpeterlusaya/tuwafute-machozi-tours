@@ -34,16 +34,14 @@ export default async function ExperiencePage({ params }: Props) {
     "",
     "I understand this is a booking request and is pending human confirmation.",
   ].join("\n");
-  const osmUrl = `https://www.openstreetmap.org/?mlat=${item.coordinates.lat}&mlon=${item.coordinates.lng}#map=${Math.round(
-    item.coordinates.precision === "site" ? 15 : 12,
-  )}/${item.coordinates.lat}/${item.coordinates.lng}`;
+  const mapHref = `/explorer`;
 
   return (
     <>
       <section className="relative min-h-[70vh] bg-ink text-ivory">
         <Image
           src={item.image}
-          alt=""
+          alt={item.name}
           fill
           className="object-cover"
           priority
@@ -68,6 +66,9 @@ export default async function ExperiencePage({ params }: Props) {
             <p className="eyebrow">From the Zanzibar excursions guide</p>
             <p className="mt-5 max-w-3xl font-display text-3xl leading-snug md:text-4xl">
               {item.summary}
+            </p>
+            <p className="mt-8 max-w-3xl text-base leading-8 text-ink/70">
+              {item.details}
             </p>
             <div className="mt-9 border-l border-gold pl-5 text-sm leading-7 text-ink/60">
               The guide provides this description without a listed price,
@@ -112,13 +113,8 @@ export default async function ExperiencePage({ params }: Props) {
               <p className="mt-2 text-sm text-ink/70">
                 {item.coordinates.label}
               </p>
-              <a
-                href={osmUrl}
-                target="_blank"
-                rel="noreferrer"
-                className="mt-2 inline-flex text-xs text-gold"
-              >
-                View this pin on OpenStreetMap ↗
+              <a href={mapHref} className="mt-2 inline-flex text-xs text-gold">
+                See this place on the island map →
               </a>
               {(item.coordinates.precision === "area" ||
                 item.coordinates.precision === "departure") && (

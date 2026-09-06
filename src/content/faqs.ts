@@ -9,7 +9,7 @@ export const faqs = [
   },
   {
     q: "How does the social impact work?",
-    a: "Tuwafute Machozi’s stated policy is that 60% of revenue goes to charity and community impact. We do not publish beneficiary names or impact metrics here unless they can be verified.",
+    a: "The house is called Tuwafute Machozi Tours because the name means let us wipe their tears. Guests who book enable charity in Zanzibar: 60% of revenue goes to charity and community impact. We do not publish unverified beneficiary names or treat people as attractions.",
   },
   {
     q: "Do you offer private or shared experiences?",

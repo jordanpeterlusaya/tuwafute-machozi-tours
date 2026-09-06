@@ -25,8 +25,23 @@ export function Header() {
   }, []);
 
   useEffect(() => {
-    document.body.style.overflow = open ? "hidden" : "";
-    if (!open) return;
+    const main = document.getElementById("main-content");
+    const footer = document.querySelector("footer");
+    const whatsapp = document.querySelector<HTMLElement>("[data-whatsapp-cta]");
+    if (!open) {
+      main?.removeAttribute("inert");
+      main?.removeAttribute("aria-hidden");
+      footer?.removeAttribute("aria-hidden");
+      if (whatsapp) whatsapp.style.visibility = "";
+      return;
+    }
+
+    const previousOverflow = document.body.style.overflow;
+    document.body.style.overflow = "hidden";
+    main?.setAttribute("inert", "");
+    main?.setAttribute("aria-hidden", "true");
+    footer?.setAttribute("aria-hidden", "true");
+    if (whatsapp) whatsapp.style.visibility = "hidden";
 
     const focusable = () =>
       Array.from(
@@ -34,8 +49,7 @@ export function Header() {
           'a[href], button:not([disabled]), [tabindex]:not([tabindex="-1"])',
         ) ?? [],
       );
-    const first = focusable()[0];
-    window.requestAnimationFrame(() => first?.focus());
+    window.requestAnimationFrame(() => focusable()[0]?.focus());
 
     const onKeyDown = (event: KeyboardEvent) => {
       if (event.key === "Escape") {
@@ -58,20 +72,96 @@ export function Header() {
     };
     window.addEventListener("keydown", onKeyDown);
     return () => {
-      document.body.style.overflow = "";
+      document.body.style.overflow = previousOverflow;
       window.removeEventListener("keydown", onKeyDown);
     };
   }, [open]);
 
-  return (
-    <header
-      className={cx(
-        "fixed inset-x-0 top-0 z-50 transition-all duration-500",
-        scrolled || open ? "bg-ink/88 backdrop-blur-md" : "bg-transparent",
+  const menu = (
+    <AnimatePresence>
+      {open && (
+        <motion.div
+          id="site-navigation-dialog"
+          ref={menuPanel}
+          role="dialog"
+          aria-modal="true"
+          aria-label="Site navigation"
+          initial={{ opacity: 0 }}
+          animate={{ opacity: 1 }}
+          exit={{ opacity: 0 }}
+          className="fixed inset-0 z-[200] flex h-[100dvh] w-screen flex-col overflow-hidden bg-ink text-ivory"
+        >
+          <div className="flex h-[calc(4.25rem+env(safe-area-inset-top))] shrink-0 items-center justify-between px-5 pt-[env(safe-area-inset-top)] md:px-8">
+            <Link href="/" aria-label={brand.legalName} onClick={() => setOpen(false)}>
+              <Logo inverted compact />
+            </Link>
+            <button
+              type="button"
+              className="relative h-10 w-10 text-ivory"
+              aria-label="Close menu"
+              onClick={() => {
+                setOpen(false);
+                menuButton.current?.focus();
+              }}
+            >
+              <span className="absolute left-2 right-2 top-5 h-px rotate-45 bg-current" />
+              <span className="absolute left-2 right-2 top-5 h-px -rotate-45 bg-current" />
+            </button>
+          </div>
+          <div className="min-h-0 flex-1 overflow-y-auto overscroll-contain bg-ink">
+            <div className="mx-auto grid max-w-6xl gap-12 px-6 pb-[calc(3rem+env(safe-area-inset-bottom))] pt-6 md:grid-cols-[1.2fr_1fr] md:px-10">
+              <div className="flex flex-col gap-5">
+                {[...nav, { href: "/about", label: "The House" }, { href: "/enquire", label: "Enquire" }].map(
+                  (item, index) => (
+                    <motion.div
+                      key={item.href}
+                      initial={{ y: 18, opacity: 0 }}
+                      animate={{ y: 0, opacity: 1 }}
+                      transition={{ delay: 0.04 * index, duration: 0.4 }}
+                    >
+                      <Link
+                        href={item.href}
+                        onClick={() => setOpen(false)}
+                        className="font-display text-4xl text-ivory transition-colors hover:text-gold md:text-6xl"
+                      >
+                        {item.label}
+                      </Link>
+                    </motion.div>
+                  ),
+                )}
+              </div>
+              <div className="flex flex-col justify-end gap-4 border-t border-gold/20 pt-8 md:border-l md:border-t-0 md:pl-12 md:pt-0">
+                <p className="eyebrow">{brand.legalName}</p>
+                {secondaryNav.map((item) => (
+                  <Link
+                    key={item.href}
+                    href={item.href}
+                    onClick={() => setOpen(false)}
+                    className="text-sm tracking-wide text-ivory/70 hover:text-gold"
+                  >
+                    {item.label}
+                  </Link>
+                ))}
+                <p className="mt-8 max-w-xs text-sm leading-7 text-ivory/55">
+                  Travel with us and 60% of revenue supports charity in Zanzibar.
+                </p>
+              </div>
+            </div>
+          </div>
+        </motion.div>
       )}
-    >
-      <div className="flex items-center justify-between px-5 py-4 md:px-8">
-        <Link href="/" aria-label={brand.name} onClick={() => setOpen(false)}>
+    </AnimatePresence>
+  );
+
+  return (
+    <header className={cx("fixed inset-x-0 top-0 [--header-height:calc(4.25rem+env(safe-area-inset-top))]", open ? "z-[200]" : "z-50")}>
+      <div
+        className={cx(
+          "relative z-50 flex h-[var(--header-height)] items-center justify-between px-5 pt-[env(safe-area-inset-top)] transition-colors duration-500 md:px-8",
+          open || scrolled ? "bg-ink" : "bg-ink/40 backdrop-blur-sm",
+        )}
+      >
+        <Link href="/" aria-label={brand.legalName} onClick={() => setOpen(false)}>
           <Logo inverted compact />
         </Link>
 
@@ -101,6 +191,7 @@ export function Header() {
             className="relative h-10 w-10 text-ivory"
             aria-expanded={open}
             aria-label={open ? "Close menu" : "Open menu"}
+            aria-controls="site-navigation-dialog"
             onClick={() => setOpen((value) => !value)}
           >
             <span
@@ -124,59 +215,7 @@ export function Header() {
           </button>
         </div>
       </div>
-
-      <AnimatePresence>
-        {open && (
-          <motion.div
-            ref={menuPanel}
-            role="dialog"
-            aria-modal="true"
-            aria-label="Site navigation"
-            initial={{ opacity: 0 }}
-            animate={{ opacity: 1 }}
-            exit={{ opacity: 0 }}
-            className="fixed inset-0 top-[68px] z-40 bg-ink"
-          >
-            <div className="grain" />
-            <div className="relative mx-auto grid max-w-6xl gap-12 px-6 py-12 md:grid-cols-[1.2fr_1fr] md:px-10">
-              <div className="flex flex-col gap-5">
-                {[...nav, { href: "/about", label: "The House" }, { href: "/enquire", label: "Enquire" }].map(
-                  (item, index) => (
-                    <motion.div
-                      key={item.href}
-                      initial={{ y: 24, opacity: 0 }}
-                      animate={{ y: 0, opacity: 1 }}
-                      transition={{ delay: 0.05 * index, duration: 0.5 }}
-                    >
-                      <Link
-                        href={item.href}
-                        onClick={() => setOpen(false)}
-                        className="font-display text-4xl text-ivory transition-colors hover:text-gold md:text-6xl"
-                      >
-                        {item.label}
-                      </Link>
-                    </motion.div>
-                  ),
-                )}
-              </div>
-              <div className="flex flex-col justify-end gap-4 border-t border-gold/20 pt-8 md:border-l md:border-t-0 md:pl-12 md:pt-0">
-                <p className="eyebrow">The atelier</p>
-                {secondaryNav.map((item) => (
-                  <Link
-                    key={item.href}
-                    href={item.href}
-                    onClick={() => setOpen(false)}
-                    className="text-sm tracking-wide text-ivory/70 hover:text-gold"
-                  >
-                    {item.label}
-                  </Link>
-                ))}
-                <p className="mt-8 max-w-xs text-sm leading-7 text-ivory/50">{brand.tagline}</p>
-              </div>
-            </div>
-          </motion.div>
-        )}
-      </AnimatePresence>
+      {menu}
     </header>
   );
 }

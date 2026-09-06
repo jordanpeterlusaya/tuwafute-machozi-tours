@@ -29,11 +29,11 @@ const accent = Italiana({
 export const metadata: Metadata = {
   metadataBase: new URL("https://tuwafutemachozi.com"),
   title: {
-    default: `${brand.name} · ${brand.tagline}`,
-    template: `%s · ${brand.name}`,
+    default: `${brand.legalName} · ${brand.tagline}`,
+    template: `%s · ${brand.legalName}`,
   },
   description:
-    "Private Zanzibar excursions, cultural journeys and social impact. Discover. Experience. Give Back.",
+    "Tuwafute Machozi Tours: private Zanzibar excursions where 60% of revenue supports charity in Zanzibar.",
   openGraph: {
     title: `${brand.name} · ${brand.tagline}`,
     description:

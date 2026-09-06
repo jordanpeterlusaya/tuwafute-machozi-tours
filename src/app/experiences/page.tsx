@@ -79,7 +79,7 @@ export default function ExperiencesPage() {
                       <div className="relative aspect-[4/3] overflow-hidden bg-forest">
                         <Image
                           src={item.image}
-                          alt=""
+                          alt={item.name}
                           fill
                           className="object-cover"
                           sizes="(max-width: 768px) 100vw, (max-width: 1280px) 50vw, 33vw"

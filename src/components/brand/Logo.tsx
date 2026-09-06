@@ -61,7 +61,10 @@ export function Logo({
     return (
       <span className={cx("inline-flex items-center gap-2", className)}>
         <LogoMark inverted={inverted} className={cx("h-9 w-7", markClassName)} />
-        <span className={cx("font-accent tracking-[0.28em] text-[11px]", text)}>TUWAFUTE</span>
+        <span className={cx("leading-none", text)}>
+          <span className="block font-accent text-[11px] tracking-[0.26em]">TUWAFUTE MACHOZI</span>
+          <span className="mt-0.5 block text-[9px] tracking-[0.32em] text-gold">TOURS</span>
+        </span>
       </span>
     );
   }
@@ -72,7 +75,7 @@ export function Logo({
       <span className={cx("leading-none", text)}>
         <span className="block font-accent text-[15px] tracking-[0.34em]">TUWAFUTE</span>
         <span className="mt-1 block font-display text-[13px] tracking-[0.42em] text-gold">
-          MACHOZI
+          MACHOZI TOURS
         </span>
       </span>
     </span>

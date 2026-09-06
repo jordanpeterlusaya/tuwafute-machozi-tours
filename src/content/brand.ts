@@ -1,14 +1,16 @@
 export const brand = {
   name: "Tuwafute Machozi",
+  legalName: "Tuwafute Machozi Tours",
   shortName: "Tuwafute",
   wordmark: {
     primary: "TUWAFUTE",
     secondary: "MACHOZI",
+    tertiary: "TOURS",
   },
   tagline: "Discover. Experience. Give Back.",
-  descriptor: "Zanzibar Excursions · Social Impact",
+  descriptor: "Zanzibar Tours · Charity in Zanzibar",
   meaning:
-    "In Kiswahili, tuwafute machozi means let us wipe their tears. Every journey we design is an invitation to see Zanzibar fully — and to leave it kinder than we found it.",
+    "In Kiswahili, tuwafute machozi means let us wipe their tears. Guests who travel with us enable charity work in Zanzibar — 60% of revenue is directed to community impact. That is why the house is called Tuwafute Machozi Tours.",
   location: "Zanzibar",
   instagram: "tuwafute_255",
   instagramUrl: "https://www.instagram.com/tuwafute_255?igsi=d3FhNWZ4YjUxMDBx",
