@@ -2,6 +2,7 @@ import Link from "next/link";
 import { Logo } from "@/components/brand/Logo";
 import { TrustStrip } from "@/components/brand/TrustStrip";
 import { brand, nav, secondaryNav } from "@/content/brand";
+import { founder } from "@/content/founder";
 
 export function Footer() {
   return (
@@ -32,11 +33,15 @@ export function Footer() {
           </div>
 
           <div>
-            <p className="eyebrow mb-5">The house</p>
-            <ul className="space-y-3">
+            <p className="eyebrow mb-4">The house</p>
+            <p className="font-display text-3xl leading-tight md:text-4xl">{founder.name}</p>
+            <p className="mt-2 text-[11px] tracking-[0.22em] uppercase text-gold">
+              {founder.role}
+            </p>
+            <ul className="mt-6 space-y-3">
               <li>
                 <Link href="/about" className="text-ivory/70 transition-colors hover:text-gold">
-                  The House · Joseph Kitali
+                  The House
                 </Link>
               </li>
               {secondaryNav.map((item) => (

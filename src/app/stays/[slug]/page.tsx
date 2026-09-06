@@ -28,7 +28,9 @@ export default async function StayPage({ params }: Props) {
         <Image src={item.image} alt={item.name} fill className="object-cover" priority />
         <div className="absolute inset-0 bg-ink/35" />
         <div className="relative z-10 flex min-h-[75vh] flex-col justify-end px-5 pb-16 md:px-16">
-          <Eyebrow>{item.place}</Eyebrow>
+          <Eyebrow>
+            {item.stars}-star · {item.place}
+          </Eyebrow>
           <h1 className="mt-3 font-display text-6xl md:text-8xl">{item.name}</h1>
         </div>
       </section>
@@ -39,8 +41,10 @@ export default async function StayPage({ params }: Props) {
             <p className="mt-6 text-ink/60 leading-8">{item.vibe}</p>
           </div>
           <div>
-            <p className="font-display text-5xl">Tailored shortlist</p>
-            <p className="mt-2 text-sm text-ink/45">Current options confirmed for your dates</p>
+            <p className="font-display text-5xl">{item.stars}-star band</p>
+            <p className="mt-2 text-sm text-ink/45">
+              Price on request · current options confirmed for your dates
+            </p>
             <ul className="mt-8 space-y-2">
               {item.amenities.map((line) => (
                 <li key={line} className="text-ink/70">
@@ -48,9 +52,14 @@ export default async function StayPage({ params }: Props) {
                 </li>
               ))}
             </ul>
-            <Button href="/enquire?interest=stay" className="mt-10">
-              Request availability
-            </Button>
+            <div className="mt-10 flex flex-wrap gap-3">
+              <Button href={`/enquire?interest=${encodeURIComponent(item.name)}`}>
+                Request availability
+              </Button>
+              <Button href="/stays" variant="line">
+                All star bands
+              </Button>
+            </div>
           </div>
         </Container>
       </Section>

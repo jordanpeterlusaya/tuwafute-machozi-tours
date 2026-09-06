@@ -40,10 +40,10 @@ const regionMap: Record<ExperienceRegion, Region> = {
 };
 
 const stayByRegion: Record<Region, string[]> = {
-  north: ["north-coast-beach-stay"],
-  east: ["east-coast-boutique-stay"],
-  south: ["south-coast-private-stay"],
-  west: ["stone-town-heritage-stay"],
+  north: ["three-star", "four-star"],
+  east: ["two-star", "three-star"],
+  south: ["four-star", "five-star"],
+  west: ["two-star", "four-star"],
 };
 
 const accentByRegion: Record<Region, string> = {
@@ -72,7 +72,7 @@ export const destinationAliases: Record<string, string> = {
 
 function staysFor(item: Experience, region: Region) {
   if (item.region === "west-central" && item.category === "nature") {
-    return ["south-coast-private-stay"];
+    return ["five-star"];
   }
   return stayByRegion[region];
 }

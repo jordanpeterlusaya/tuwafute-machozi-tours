@@ -61,9 +61,15 @@ export default function ImpactPage() {
           </div>
           <div>
             <Eyebrow>{foundation.name}</Eyebrow>
-            <h2 className="mt-4 font-display text-4xl leading-snug md:text-5xl">
-              The charity the tours were built to fund.
+            <h2 className="mt-4 font-display text-5xl leading-[0.95] tracking-tight md:text-7xl">
+              {founder.name}
             </h2>
+            <p className="mt-4 text-[11px] tracking-[0.22em] uppercase text-gold">
+              {founder.role}
+            </p>
+            <p className="mt-6 font-display text-2xl leading-snug md:text-4xl">
+              The charity the tours were built to fund.
+            </p>
             <p className="mt-6 text-lg leading-8 text-ink/65">
               Book the island. Fund the work. That is the whole sentence.
               Joseph Kitali started {foundation.name} on {foundation.foundedOn}{" "}

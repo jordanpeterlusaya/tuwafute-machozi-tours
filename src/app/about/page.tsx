@@ -24,13 +24,16 @@ export default function AboutPage() {
             />
           </div>
           <div>
-            <Eyebrow>Joseph Kitali</Eyebrow>
-            <p className="mt-3 text-[11px] tracking-[0.22em] uppercase text-gold">
+            <Eyebrow>The founder</Eyebrow>
+            <h1 className="mt-4 font-display text-5xl leading-[0.95] tracking-tight md:text-7xl lg:text-8xl">
+              {founder.name}
+            </h1>
+            <p className="mt-4 text-[11px] tracking-[0.22em] uppercase text-gold">
               {founder.role}
             </p>
-            <h1 className="mt-4 font-display text-4xl leading-snug md:text-6xl lg:text-7xl">
+            <p className="mt-8 font-display text-2xl leading-snug text-ivory/90 md:text-4xl">
               One house. Two doors: the island, and the work that travel funds.
-            </h1>
+            </p>
             <p className="mt-6 max-w-2xl text-lg leading-8 text-ivory/70">
               Joseph Kitali founded Tuwafute Machozi Foundation and Tuwafute
               Machozi Tours. He is the person guests meet in this portrait — a

@@ -7,6 +7,7 @@ import { itineraries } from "@/content/itineraries";
 import { safaris } from "@/content/safaris";
 import { brand } from "@/content/brand";
 import { founder, foundation } from "@/content/founder";
+import { stays } from "@/content/stays";
 import { Button } from "@/components/ui/Button";
 import { Container, Eyebrow, Section } from "@/components/ui/Section";
 import { Reveal } from "@/components/motion/Reveal";
@@ -154,6 +155,58 @@ export function HomeStory() {
         </Container>
       </Section>
 
+      <Section className="pt-0">
+        <Container>
+          <div className="flex flex-wrap items-end justify-between gap-6">
+            <div className="max-w-2xl">
+              <Eyebrow>Stays</Eyebrow>
+              <h2 className="mt-4 font-display text-4xl md:text-5xl">
+                2-star to 5-star Zanzibar hotels.
+              </h2>
+              <p className="mt-4 text-sm leading-7 text-ink/60">
+                Four star bands, shortlisted around your dates and coast. Price
+                on request. We do not list partner brands or published rates.
+              </p>
+            </div>
+            <Button href="/stays" variant="line">
+              All stays
+            </Button>
+          </div>
+          <div className="mt-10 grid gap-5 sm:grid-cols-2 lg:grid-cols-4">
+            {stays.map((item) => (
+              <article key={item.slug} className="flex flex-col">
+                <Link href={`/stays/${item.slug}`} className="group block">
+                  <div className="relative aspect-[4/3] overflow-hidden bg-forest">
+                    <Image
+                      src={item.image}
+                      alt={item.name}
+                      fill
+                      className="object-cover"
+                      sizes="(max-width: 640px) 100vw, (max-width: 1024px) 50vw, 25vw"
+                    />
+                  </div>
+                  <p className="mt-4 text-[10px] tracking-[0.22em] uppercase text-gold">
+                    {item.kind}
+                  </p>
+                  <h3 className="mt-1 font-display text-2xl group-hover:text-lagoon">
+                    {item.name}
+                  </h3>
+                </Link>
+                <p className="mt-2 line-clamp-2 flex-1 text-sm leading-6 text-ink/58">
+                  {item.summary}
+                </p>
+                <Link
+                  href={`/stays/${item.slug}`}
+                  className="mt-4 inline-flex self-start text-[10px] tracking-[0.2em] uppercase text-gold"
+                >
+                  View stay →
+                </Link>
+              </article>
+            ))}
+          </div>
+        </Container>
+      </Section>
+
       <Section dark>
         <Container>
           <div className="mb-10 flex items-end justify-between gap-6">
@@ -236,13 +289,16 @@ export function HomeStory() {
             />
           </div>
           <div>
-            <Eyebrow>Joseph Kitali</Eyebrow>
-            <p className="mt-3 text-[11px] tracking-[0.22em] uppercase text-gold">
+            <Eyebrow>The founder</Eyebrow>
+            <h2 className="mt-4 font-display text-5xl leading-[0.95] tracking-tight md:text-7xl lg:text-8xl">
+              {founder.name}
+            </h2>
+            <p className="mt-4 text-[11px] tracking-[0.22em] uppercase text-gold">
               {founder.role}
             </p>
-            <h2 className="mt-4 font-display text-4xl leading-snug md:text-6xl">
+            <p className="mt-6 font-display text-2xl leading-snug md:text-4xl">
               Travel funds the work that wipes tears.
-            </h2>
+            </p>
             <p className="mt-5 max-w-xl text-lg leading-8 text-ink/70">
               {foundation.name} began on {foundation.foundedOn}. Joseph Kitali
               started the house with other community members — about{" "}
