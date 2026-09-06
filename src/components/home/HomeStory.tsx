@@ -164,8 +164,8 @@ export function HomeStory() {
                 2-star to 5-star Zanzibar hotels.
               </h2>
               <p className="mt-4 text-sm leading-7 text-ink/60">
-                Four star bands, shortlisted around your dates and coast. Price
-                on request. We do not list partner brands or published rates.
+                Four star bands, each with a real island hotel as an example.
+                Booked on request. No partner list and no published room rate.
               </p>
             </div>
             <Button href="/stays" variant="line">

@@ -40,10 +40,10 @@ const regionMap: Record<ExperienceRegion, Region> = {
 };
 
 const stayByRegion: Record<Region, string[]> = {
-  north: ["three-star", "four-star"],
-  east: ["two-star", "three-star"],
-  south: ["four-star", "five-star"],
-  west: ["two-star", "four-star"],
+  north: ["four-star", "three-star"],
+  east: ["four-star", "two-star"],
+  south: ["five-star", "four-star"],
+  west: ["two-star", "three-star"],
 };
 
 const accentByRegion: Record<Region, string> = {

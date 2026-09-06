@@ -14,7 +14,7 @@ export default function StaysPage() {
       <PageHero
         eyebrow="2-star to 5-star"
         title="Zanzibar hotels, arranged around you."
-        copy="Four star bands — not a partner hotel list. We shortlist current houses after your dates and coast. Price on request. No published rate, no invented brand alliance."
+        copy="Four star bands, each shown with a real island hotel in that standard. Those houses are examples we can request — not official partners, and no published room rate."
       />
       <Section>
         <Container className="grid gap-10 md:grid-cols-2">

@@ -18,61 +18,62 @@ export const stayAliases: Record<string, string> = {
   "east-coast-boutique-stay": "two-star",
 };
 
+// Photo credits: public/images/stays/CREDITS.md (Wikimedia Commons, CC).
 export const stays: Stay[] = [
   {
     slug: "two-star",
-    name: "2-star stays",
+    name: "2-star · Shangani Hotel",
     stars: 2,
-    place: "Zanzibar",
+    place: "Stone Town",
     kind: "2-star",
     image: "/images/stays/two-star.jpg",
     summary:
-      "Simple guesthouses and modest hotels. A clean room, a local host, and a base near the coast or town.",
+      "Simple Stone Town houses in this band. Shangani Hotel on Kenyatta Road is a real named example — a modest street hotel, booked on request.",
     details:
-      "We shortlist current 2-star houses after your dates and preferred coast. No hotel brand is claimed here, and no rate is published until a house is confirmed for you.",
-    amenities: ["Simple rooms", "Local houses", "Verified shortlist"],
+      "Shangani Hotel is a working Stone Town house in this simpler standard, not an official partner and not the only option. We shortlist current 2-star guesthouses after your dates. No published room rate.",
+    amenities: ["Simple rooms", "Stone Town base", "Availability on request"],
     vibe: "Straightforward island rest",
   },
   {
     slug: "three-star",
-    name: "3-star stays",
+    name: "3-star · Tembo House Hotel",
     stars: 3,
-    place: "Zanzibar",
+    place: "Stone Town seafront",
     kind: "3-star",
     image: "/images/stays/three-star.jpg",
     summary:
-      "Comfortable mid-range hotels. Breakfast, a garden or small pool in many houses, and an easy island pace.",
+      "Mid-range Stone Town hotels. Tembo House Hotel on the Forodhani seafront is a real island house in this standard — confirmed live, never as a catalogue rate.",
     details:
-      "Three-star stays are the usual working choice for families and couples who want comfort without a luxury brief. We confirm what is open and suitable for your dates.",
-    amenities: ["Mid-range comfort", "Breakfast in most houses", "Verified shortlist"],
+      "Tembo House Hotel is a known Stone Town seafront hotel used here as an example of the 3-star band. We do not own it and we do not claim a partnership. We check what is open for your dates, then request current availability.",
+    amenities: ["Mid-range comfort", "Seafront town position", "Availability on request"],
     vibe: "Easy, practical comfort",
   },
   {
     slug: "four-star",
-    name: "4-star stays",
+    name: "4-star · Ocean Paradise",
     stars: 4,
-    place: "Zanzibar",
+    place: "Pwani Mchangani",
     kind: "4-star",
     image: "/images/stays/four-star.jpg",
     summary:
-      "Boutique and upscale hotels. Stronger service and a better beach or town position, still chosen around you.",
+      "East-coast 4-star resorts. Ocean Paradise Resort & Spa at Pwani Mchangani is a real named house in this band — arranged around your dates, not from a partner list.",
     details:
-      "Four-star houses are shortlisted from what is actually available — not from a partner list. We do not invent a hotel alliance or a published price.",
-    amenities: ["Upscale rooms", "Stronger service", "Verified shortlist"],
+      "Ocean Paradise is a known 4-star resort on Zanzibar’s north-east coast, shown as an example of this standard. We do not publish a rate and we do not claim a brand alliance. Ask and we confirm current availability.",
+    amenities: ["Upscale rooms", "East-coast beach resort", "Availability on request"],
     vibe: "Polished island stay",
   },
   {
     slug: "five-star",
-    name: "5-star stays",
+    name: "5-star · Baraza Resort",
     stars: 5,
-    place: "Zanzibar",
+    place: "Bwejuu",
     kind: "5-star",
     image: "/images/stays/five-star.jpg",
     summary:
-      "Luxury resorts and private villas. Privacy, space and a slower morning — confirmed live, never as a catalogue rate.",
+      "Luxury east-coast resorts. Baraza Resort & Spa on Bwejuu Beach is a real 5-star island hotel in this band — booked on request, never as a printed price.",
     details:
-      "Five-star stays are arranged by request. We match the house to your dates and the coast you want. We do not claim brand partnerships or print a price that has not been confirmed.",
-    amenities: ["Luxury rooms or villas", "Privacy first", "Verified shortlist"],
+      "Baraza Resort & Spa is a known luxury house on the south-east coast, used as an example of the 5-star standard. We do not own the hotel and we do not claim an official partnership. We match dates and coast, then request current availability.",
+    amenities: ["Luxury rooms or villas", "South-east coast", "Availability on request"],
     vibe: "Quiet luxury",
   },
 ];
