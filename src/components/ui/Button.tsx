@@ -5,11 +5,11 @@ const variants = {
   gold:
     "bg-gold text-ink hover:bg-gold-soft",
   ghost:
-    "border border-gold/40 text-ivory hover:border-gold hover:bg-gold/10",
+    "border border-gold/45 text-ivory hover:border-gold hover:bg-gold/8",
   ink:
     "bg-ink text-ivory hover:bg-ink-soft",
   line:
-    "border border-ink/15 text-ink hover:border-gold hover:text-forest",
+    "border border-ink/12 text-ink hover:border-gold hover:text-gold",
 };
 
 type Common = {
@@ -31,12 +31,25 @@ export function Button({
   onClick?: () => void;
 }) {
   const cls = cx(
-    "inline-flex items-center justify-center gap-2 px-7 py-3 text-[11px] tracking-[0.28em] uppercase transition-colors duration-300",
+    "inline-flex items-center justify-center gap-2 rounded-none px-7 py-3.5 text-[10px] tracking-[0.3em] uppercase transition-colors duration-300",
     variants[variant],
     className,
   );
 
   if (href) {
+    const external = /^(https?:|tel:|mailto:)/.test(href);
+    if (external) {
+      const newTab = href.startsWith("http");
+      return (
+        <a
+          href={href}
+          className={cls}
+          {...(newTab ? { target: "_blank", rel: "noreferrer" } : undefined)}
+        >
+          {children}
+        </a>
+      );
+    }
     return (
       <Link href={href} className={cls}>
         {children}

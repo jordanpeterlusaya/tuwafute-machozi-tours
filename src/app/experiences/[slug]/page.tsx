@@ -47,7 +47,7 @@ export default async function ExperiencePage({ params }: Props) {
           priority
           sizes="100vw"
         />
-        <div className="absolute inset-0 bg-gradient-to-t from-ink via-ink/35 to-ink/20" />
+        <div className="absolute inset-0 bg-gradient-to-t from-ink/50 via-transparent to-ink/20" />
         <div className="relative z-10 flex min-h-[70vh] flex-col justify-end px-5 pb-14 md:px-16">
           <Eyebrow>{item.regionLabel}</Eyebrow>
           <h1 className="mt-4 max-w-4xl font-display text-5xl md:text-7xl">
@@ -88,17 +88,27 @@ export default async function ExperiencePage({ params }: Props) {
             <h2 className="mt-3 font-display text-3xl">Plan with a person.</h2>
             <p className="mt-3 text-sm leading-7 text-ink/60">
               Add it to a multi-excursion request, or begin a direct WhatsApp
-              conversation. No payment is taken here.
+              conversation. Call{" "}
+              <a href={brand.phoneHref} className="text-gold hover:text-ink">
+                {brand.phoneDisplay}
+              </a>
+              . No payment is taken here.
             </p>
             <div className="mt-6 grid gap-3">
               <AddToTourCartButton slug={item.slug} className="w-full" />
               <a
+                href={brand.phoneHref}
+                className="inline-flex w-full items-center justify-center bg-gold px-6 py-3.5 text-[10px] tracking-[0.22em] uppercase text-ink hover:bg-gold-soft"
+              >
+                Call {brand.phoneDisplay}
+              </a>
+              <a
                 href={whatsappLink(brand.whatsapp, directMessage)}
                 target="_blank"
                 rel="noreferrer"
-                className="inline-flex w-full items-center justify-center bg-[#25D366] px-6 py-3 text-[10px] tracking-[0.2em] uppercase text-white"
+                className="inline-flex w-full items-center justify-center border border-ink/12 px-6 py-3.5 text-[10px] tracking-[0.22em] uppercase hover:border-gold"
               >
-                Book via WhatsApp
+                WhatsApp {brand.whatsappDisplay}
               </a>
             </div>
             <p className="mt-5 text-xs leading-6 text-ink/50">

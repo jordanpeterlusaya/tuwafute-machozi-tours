@@ -91,23 +91,32 @@ export default async function SafariPage({ params }: Props) {
             <p className="eyebrow">Request this journey</p>
             <h2 className="mt-3 font-display text-3xl">Plan with a person.</h2>
             <p className="mt-3 text-sm leading-7 text-ink/60">
-              Ask for current price and availability. No payment is taken
-              here.
+              Ask for current price and availability. Call{" "}
+              <a href={brand.phoneHref} className="text-gold hover:text-ink">
+                {brand.phoneDisplay}
+              </a>
+              {" "}or WhatsApp {brand.whatsappDisplay}. No payment is taken here.
             </p>
             <div className="mt-6 grid gap-3">
               <Link
                 href={`/enquire?interest=${encodeURIComponent(item.name)}`}
-                className="inline-flex w-full items-center justify-center border border-ink/15 px-6 py-3 text-[10px] tracking-[0.2em] uppercase hover:border-gold"
+                className="inline-flex w-full items-center justify-center border border-ink/12 px-6 py-3.5 text-[10px] tracking-[0.22em] uppercase hover:border-gold"
               >
                 Request price
               </Link>
               <a
+                href={brand.phoneHref}
+                className="inline-flex w-full items-center justify-center bg-gold px-6 py-3.5 text-[10px] tracking-[0.22em] uppercase text-ink hover:bg-gold-soft"
+              >
+                Call {brand.phoneDisplay}
+              </a>
+              <a
                 href={whatsappLink(brand.whatsapp, directMessage)}
                 target="_blank"
                 rel="noreferrer"
-                className="inline-flex w-full items-center justify-center bg-[#25D366] px-6 py-3 text-[10px] tracking-[0.2em] uppercase text-white"
+                className="inline-flex w-full items-center justify-center border border-ink/12 px-6 py-3.5 text-[10px] tracking-[0.22em] uppercase hover:border-gold"
               >
-                Book via WhatsApp
+                WhatsApp {brand.whatsappDisplay}
               </a>
             </div>
             <p className="mt-5 text-xs leading-6 text-ink/50">

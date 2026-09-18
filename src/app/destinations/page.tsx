@@ -31,20 +31,23 @@ export default function DestinationsPage() {
                 {items.map((item) => (
                   <article key={item.slug} className="flex flex-col">
                     <Link href={`/destinations/${item.slug}`} className="image-reveal group">
-                      <div className="relative aspect-[4/5] overflow-hidden">
-                        <Image src={item.image} alt={item.name} fill className="object-cover" sizes="33vw" />
-                        <div className="absolute inset-0 bg-gradient-to-t from-ink/75 to-transparent" />
-                        <div className="absolute bottom-0 p-6 text-ivory">
-                          <h2 className="font-display text-3xl">{item.name}</h2>
-                          <p className="mt-2 line-clamp-2 text-sm text-ivory/70">{item.summary}</p>
+                      <div className="media-card">
+                        <div className="relative aspect-[4/5] overflow-hidden">
+                          <Image src={item.image} alt={item.name} fill className="object-cover" sizes="33vw" />
+                        </div>
+                        <div className="px-5 py-5">
+                          <h2 className="font-display text-3xl transition-colors group-hover:text-gold">
+                            {item.name}
+                          </h2>
+                          <p className="mt-2 line-clamp-2 text-sm leading-6 text-ink/55">{item.summary}</p>
                         </div>
                       </div>
                     </Link>
                     <Link
                       href={`/experiences/${item.slug}`}
-                      className="mt-4 self-start text-[10px] tracking-[0.2em] uppercase text-gold hover:text-ink"
+                      className="mt-4 self-start px-1 text-[10px] tracking-[0.22em] uppercase text-gold hover:text-ink"
                     >
-                      Book this tour →
+                      Book this tour
                     </Link>
                   </article>
                 ))}

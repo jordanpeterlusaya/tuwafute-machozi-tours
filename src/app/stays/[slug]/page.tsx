@@ -2,6 +2,7 @@ import type { Metadata } from "next";
 import Image from "next/image";
 import { notFound } from "next/navigation";
 import { getStay, stays } from "@/content/stays";
+import { brand } from "@/content/brand";
 import { Button } from "@/components/ui/Button";
 import { Container, Eyebrow, Section } from "@/components/ui/Section";
 
@@ -26,7 +27,7 @@ export default async function StayPage({ params }: Props) {
     <>
       <section className="relative min-h-[75vh] bg-ink text-ivory">
         <Image src={item.image} alt={item.name} fill className="object-cover" priority />
-        <div className="absolute inset-0 bg-ink/35" />
+        <div className="absolute inset-0 bg-gradient-to-t from-ink/45 via-transparent to-ink/20" />
         <div className="relative z-10 flex min-h-[75vh] flex-col justify-end px-5 pb-16 md:px-16">
           <Eyebrow>
             {item.stars}-star · {item.place}
@@ -53,7 +54,8 @@ export default async function StayPage({ params }: Props) {
               ))}
             </ul>
             <div className="mt-10 flex flex-wrap gap-3">
-              <Button href={`/enquire?interest=${encodeURIComponent(item.name)}`}>
+              <Button href={brand.phoneHref}>Call {brand.phoneDisplay}</Button>
+              <Button href={`/enquire?interest=${encodeURIComponent(item.name)}`} variant="line">
                 Request availability
               </Button>
               <Button href="/stays" variant="line">

@@ -15,8 +15,11 @@ export const brand = {
   instagram: "tuwafute_255",
   instagramUrl: "https://www.instagram.com/tuwafute_255?igsi=d3FhNWZ4YjUxMDBx",
   email: "hello@tuwafutemachozi.com",
-  phoneDisplay: "+255 622 434 657",
+  phone: "067534657",
+  phoneDisplay: "067 534 657",
+  phoneHref: "tel:067534657",
   whatsapp: "255622434657",
+  whatsappDisplay: "+255 622 434 657",
   founded: "Zanzibar",
 } as const;
 

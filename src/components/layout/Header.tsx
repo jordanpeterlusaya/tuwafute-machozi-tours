@@ -142,6 +142,15 @@ export function Header() {
                     {item.label}
                   </Link>
                 ))}
+                <a
+                  href={brand.phoneHref}
+                  className="mt-4 text-sm tracking-wide text-gold hover:text-ivory"
+                >
+                  Call {brand.phoneDisplay}
+                </a>
+                <p className="text-sm tracking-wide text-ivory/55">
+                  WhatsApp {brand.whatsappDisplay}
+                </p>
                 <p className="mt-8 max-w-xs text-sm leading-7 text-ivory/55">
                   Travel with us and 40% of revenue supports charity in Zanzibar.
                 </p>
@@ -179,6 +188,12 @@ export function Header() {
 
         <div className="flex shrink-0 items-center justify-self-end gap-3 sm:gap-4 xl:col-start-3">
           <TourCartHeaderButton />
+          <a
+            href={brand.phoneHref}
+            className="hidden text-[11px] tracking-[0.22em] uppercase text-ivory/78 transition-colors hover:text-gold lg:inline-flex"
+          >
+            Call
+          </a>
           <Link
             href="/enquire"
             className="hidden text-[11px] tracking-[0.22em] uppercase text-gold md:inline-flex"

@@ -3,6 +3,7 @@ import { Suspense } from "react";
 import { EnquiryForm } from "@/components/booking/EnquiryForm";
 import { PageHero } from "@/components/ui/PageHero";
 import { Container, Section } from "@/components/ui/Section";
+import { ContactLines } from "@/components/layout/ContactActions";
 import { brand } from "@/content/brand";
 
 export const metadata: Metadata = { title: "Enquire" };
@@ -22,6 +23,9 @@ export default function EnquirePage() {
           </Suspense>
           <aside className="self-start border-l border-gold/25 pl-0 lg:pl-12">
             <p className="eyebrow">Also</p>
+            <div className="mt-6">
+              <ContactLines />
+            </div>
             <ul className="mt-6 space-y-4 text-ink/70">
               <li>
                 Instagram ·{" "}
@@ -29,7 +33,6 @@ export default function EnquirePage() {
                   @{brand.instagram}
                 </a>
               </li>
-              <li>WhatsApp · {brand.phoneDisplay}</li>
               <li>
                 <a className="text-gold" href="/trip-builder">
                   Trip builder

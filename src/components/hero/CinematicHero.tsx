@@ -57,17 +57,26 @@ export function CinematicHero() {
           <source src={heroFilm.video} type="video/mp4" />
         </video>
       )}
-      <div className="absolute inset-0 bg-gradient-to-b from-ink/35 via-ink/10 to-ink/70" />
+      <div className="pointer-events-none absolute inset-0 bg-gradient-to-t from-ink/55 via-transparent to-ink/25" />
 
       <div className="relative z-10 flex h-full flex-col justify-end px-5 pb-16 md:px-10 md:pb-20 lg:px-16">
+        <motion.p
+          initial={reduceMotion ? false : { opacity: 0 }}
+          animate={{ opacity: 1 }}
+          transition={{ duration: 0.8 }}
+          className="eyebrow"
+        >
+          Zanzibar
+        </motion.p>
+        <span className="quiet-rule mt-5" />
         <motion.h1
           initial={reduceMotion ? false : { opacity: 0, y: 24 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.9, ease: [0.22, 1, 0.36, 1] }}
-          className="max-w-5xl font-display text-5xl leading-[0.94] md:text-7xl lg:text-[7.4rem]"
+          className="mt-6 max-w-5xl font-display text-6xl leading-[0.9] md:text-8xl lg:text-[8.4rem]"
         >
           Tuwafute Machozi
-          <span className="mt-2 block font-sans text-sm tracking-[0.42em] text-gold md:text-base lg:text-lg">
+          <span className="mt-3 block font-sans text-[0.7rem] tracking-[0.48em] text-gold md:text-sm lg:text-base">
             TOURS
           </span>
         </motion.h1>
@@ -75,9 +84,9 @@ export function CinematicHero() {
           initial={reduceMotion ? false : { opacity: 0 }}
           animate={{ opacity: 1 }}
           transition={{ delay: 0.25 }}
-          className="mt-6 max-w-lg text-base text-ivory/78 md:text-lg"
+          className="mt-6 max-w-md text-sm leading-7 text-ivory/80 md:text-base"
         >
-          Private Zanzibar tours. Forty percent funds charity on the island.
+          Private island tours. Forty percent funds charity in Zanzibar.
         </motion.p>
         <motion.div
           initial={reduceMotion ? false : { opacity: 0, y: 12 }}
@@ -85,9 +94,9 @@ export function CinematicHero() {
           transition={{ delay: 0.4 }}
           className="mt-8 flex flex-wrap gap-4"
         >
-          <Button href="/experiences">Browse Zanzibar tours</Button>
+          <Button href="/experiences">Island tours</Button>
           <Button href="/safaris" variant="ghost">
-            Tanzania safaris
+            Safaris
           </Button>
         </motion.div>
       </div>

@@ -99,6 +99,13 @@ export default function ImpactPage() {
             <Button href="/about" variant="line" className="mt-10">
               Meet Joseph Kitali
             </Button>
+            <p className="mt-8 text-sm leading-7 text-ink/55">
+              Call{" "}
+              <a href={brand.phoneHref} className="text-gold hover:text-ink">
+                {brand.phoneDisplay}
+              </a>
+              {" "}· WhatsApp {brand.whatsappDisplay}
+            </p>
           </div>
         </Container>
       </Section>

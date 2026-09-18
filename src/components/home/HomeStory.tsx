@@ -1,10 +1,9 @@
 import Image from "next/image";
-import Link from "next/link";
 import { AddToTourCartButton } from "@/components/booking/TourCart";
+import { MediaCard, QuietLink } from "@/components/ui/MediaCard";
 import { beachExperiences } from "@/content/beach-experiences";
 import { destinations } from "@/content/destinations";
 import { experiences } from "@/content/experiences";
-import { itineraries } from "@/content/itineraries";
 import { safaris } from "@/content/safaris";
 import { brand } from "@/content/brand";
 import { founder, foundation } from "@/content/founder";
@@ -12,7 +11,7 @@ import { stays } from "@/content/stays";
 import { Button } from "@/components/ui/Button";
 import { Container, Eyebrow, Section } from "@/components/ui/Section";
 import { Reveal } from "@/components/motion/Reveal";
-import { warmImageBlur, whatsappLink } from "@/lib/utils";
+import { whatsappLink } from "@/lib/utils";
 
 const featured = destinations.filter((item) =>
   ["paje-beach", "kizimkazi-dolphin", "kendwa-sunset", "jambiani-village"].includes(
@@ -33,142 +32,101 @@ const featuredTours = [
   .map((slug) => experiences.find((item) => item.slug === slug))
   .filter((item): item is (typeof experiences)[number] => Boolean(item));
 
+function SectionHead({
+  eyebrow,
+  title,
+  summary,
+  href,
+  action,
+}: {
+  eyebrow: string;
+  title: string;
+  summary: string;
+  href: string;
+  action: string;
+}) {
+  return (
+    <div className="flex flex-wrap items-end justify-between gap-8">
+      <div className="max-w-xl">
+        <Eyebrow>{eyebrow}</Eyebrow>
+        <span className="quiet-rule mt-5 block" />
+        <h2 className="mt-5 font-display text-4xl leading-[0.95] md:text-5xl">{title}</h2>
+        <p className="mt-4 text-sm leading-7 text-ink/55">{summary}</p>
+      </div>
+      <Button href={href} variant="line">
+        {action}
+      </Button>
+    </div>
+  );
+}
+
 export function HomeStory() {
   return (
     <>
       <Section>
         <Container>
-          <div className="max-w-3xl">
-            <Eyebrow>Zanzibar tours</Eyebrow>
-            <h2 className="mt-4 font-display text-5xl md:text-6xl">
-              Twenty-eight island tours.
-            </h2>
-            <p className="mt-5 max-w-xl text-lg leading-8 text-ink/70">
-              Beaches, Stone Town, spice farms, forest and sunset dhows — each
-              with its own photograph and booking request.
-            </p>
-          </div>
+          <SectionHead
+            eyebrow="Zanzibar tours"
+            title="Twenty-eight island tours."
+            summary="Beaches, Stone Town, spice and dhow — each with its own photograph."
+            href="/experiences"
+            action="All 28 tours"
+          />
 
-          <div className="mt-14 grid gap-7 md:grid-cols-2 xl:grid-cols-4">
+          <div className="mt-14 grid gap-6 md:grid-cols-2 xl:grid-cols-4">
             {featuredTours.map((item, index) => (
-              <Reveal key={item.slug} delay={index * 0.05}>
-                <article className="flex h-full flex-col border border-ink/8 bg-sand/40">
-                  <Link
-                    href={`/experiences/${item.slug}`}
-                    className="image-reveal group block"
-                  >
-                    <div className="relative aspect-[4/3] overflow-hidden bg-forest">
-                      <Image
-                        src={item.image}
-                        alt={item.name}
-                        fill
-                        sizes="(max-width: 768px) 100vw, (max-width: 1280px) 50vw, 25vw"
-                        className="object-cover transition-transform duration-700 group-hover:scale-[1.03]"
-                        quality={80}
-                        placeholder="blur"
-                        blurDataURL={warmImageBlur}
-                      />
-                    </div>
-                    <div className="px-5 pt-5">
-                      <p className="text-[10px] tracking-[0.22em] uppercase text-gold">
-                        {item.regionLabel}
-                      </p>
-                      <h3 className="mt-2 font-display text-2xl transition-colors group-hover:text-lagoon">
-                        {item.name}
-                      </h3>
-                      <p className="mt-2 line-clamp-3 text-sm leading-6 text-ink/60">
-                        {item.summary}
-                      </p>
-                    </div>
-                  </Link>
-                  <div className="mt-auto flex flex-wrap items-center gap-3 px-5 pb-5 pt-5">
-                    <AddToTourCartButton slug={item.slug} compact />
-                    <Link
-                      href={`/experiences/${item.slug}`}
-                      className="text-[10px] tracking-[0.2em] uppercase text-ink/55 hover:text-gold"
-                    >
-                      View tour →
-                    </Link>
-                  </div>
-                </article>
+              <Reveal key={item.slug} delay={index * 0.04}>
+                <MediaCard
+                  href={`/experiences/${item.slug}`}
+                  image={item.image}
+                  alt={item.name}
+                  eyebrow={item.regionLabel}
+                  title={item.name}
+                  summary={item.summary}
+                  sizes="(max-width: 768px) 100vw, (max-width: 1280px) 50vw, 25vw"
+                >
+                  <AddToTourCartButton slug={item.slug} compact />
+                  <QuietLink href={`/experiences/${item.slug}`}>View tour</QuietLink>
+                </MediaCard>
               </Reveal>
             ))}
           </div>
-
-          <div className="mt-10">
-            <Button href="/experiences" variant="line">
-              See all 28 tours
-            </Button>
-          </div>
         </Container>
       </Section>
 
       <Section className="pt-0">
         <Container>
-          <div className="flex flex-wrap items-end justify-between gap-6">
-            <div className="max-w-2xl">
-              <Eyebrow>Beach Experience</Eyebrow>
-              <h2 className="mt-4 font-display text-4xl md:text-5xl">
-                Nine house packages on the water.
-              </h2>
-              <p className="mt-4 text-sm leading-7 text-ink/60">
-                Catamaran, kayak, watercraft, photography, proposals, horses,
-                caves, beach clubs and 24-hour transfers. Price on request.
-              </p>
-            </div>
-            <Button href="/beach-experiences" variant="line">
-              All beach packages
-            </Button>
-          </div>
-          <div className="mt-10 grid gap-5 sm:grid-cols-2 lg:grid-cols-3">
+          <SectionHead
+            eyebrow="Beach Experience"
+            title="Nine packages on the water."
+            summary="Catamaran to caves. Price on request."
+            href="/beach-experiences"
+            action="All beach packages"
+          />
+          <div className="mt-12 grid gap-6 sm:grid-cols-2 lg:grid-cols-3">
             {beachExperiences.map((item) => (
-              <article key={item.slug} className="flex flex-col">
-                <Link
-                  href={`/beach-experiences/${item.slug}`}
-                  className="image-reveal group block"
+              <MediaCard
+                key={item.slug}
+                href={`/beach-experiences/${item.slug}`}
+                image={item.image}
+                alt={item.imageAlt}
+                eyebrow="Beach Experience"
+                title={item.name}
+                summary={item.summary}
+              >
+                <QuietLink href={`/enquire?interest=${encodeURIComponent(item.name)}`}>
+                  Request price
+                </QuietLink>
+                <QuietLink
+                  href={whatsappLink(
+                    brand.whatsapp,
+                    `Hello ${brand.legalName} — I would like to request the price for the Beach Experience: ${item.name}.`,
+                  )}
+                  external
                 >
-                  <div className="relative aspect-[4/3] overflow-hidden bg-forest">
-                    <Image
-                      src={item.image}
-                      alt={item.imageAlt}
-                      fill
-                      className="object-cover"
-                      sizes="(max-width: 640px) 100vw, (max-width: 1024px) 50vw, 33vw"
-                      quality={80}
-                      placeholder="blur"
-                      blurDataURL={warmImageBlur}
-                    />
-                  </div>
-                  <p className="mt-4 text-[10px] tracking-[0.2em] uppercase text-gold">
-                    Beach Experience
-                  </p>
-                  <h3 className="mt-1 font-display text-2xl transition-colors group-hover:text-gold">
-                    {item.name}
-                  </h3>
-                </Link>
-                <p className="mt-2 line-clamp-2 flex-1 text-sm leading-6 text-ink/58">
-                  {item.summary}
-                </p>
-                <div className="mt-4 flex flex-wrap items-center gap-3">
-                  <Link
-                    href={`/enquire?interest=${encodeURIComponent(item.name)}`}
-                    className="inline-flex self-start text-[10px] tracking-[0.2em] uppercase text-gold hover:text-ink"
-                  >
-                    Request price
-                  </Link>
-                  <a
-                    href={whatsappLink(
-                      brand.whatsapp,
-                      `Hello ${brand.legalName} — I would like to request the price for the Beach Experience: ${item.name}.`,
-                    )}
-                    target="_blank"
-                    rel="noreferrer"
-                    className="inline-flex self-start text-[10px] tracking-[0.2em] uppercase text-[#1f9a4a]"
-                  >
-                    WhatsApp →
-                  </a>
-                </div>
-              </article>
+                  WhatsApp
+                </QuietLink>
+              </MediaCard>
             ))}
           </div>
         </Container>
@@ -176,57 +134,35 @@ export function HomeStory() {
 
       <Section className="pt-0">
         <Container>
-          <div className="flex flex-wrap items-end justify-between gap-6">
-            <div className="max-w-2xl">
-              <Eyebrow>Tanzania safaris</Eyebrow>
-              <h2 className="mt-4 font-display text-4xl md:text-5xl">
-                Mainland by request.
-              </h2>
-              <p className="mt-4 text-sm leading-7 text-ink/60">
-                Serengeti, Ngorongoro, Tarangire and Kilimanjaro — arranged from
-                the Zanzibar house. Not listed in the island excursions guide.
-                Price on request.
-              </p>
-            </div>
-            <Button href="/safaris" variant="line">
-              All safaris
-            </Button>
-          </div>
-          <div className="mt-10 grid gap-5 sm:grid-cols-2 lg:grid-cols-4">
+          <SectionHead
+            eyebrow="Tanzania safaris"
+            title="Mainland by request."
+            summary="Serengeti, Ngorongoro, Tarangire, Kilimanjaro. Price on request."
+            href="/safaris"
+            action="All safaris"
+          />
+          <div className="mt-12 grid gap-6 sm:grid-cols-2 lg:grid-cols-4">
             {safaris.map((item) => (
-              <article key={item.slug} className="flex flex-col">
-                <Link href={`/safaris/${item.slug}`} className="group block">
-                  <div className="relative aspect-[4/3] overflow-hidden bg-forest">
-                    <Image
-                      src={item.image}
-                      alt={item.name}
-                      fill
-                      className="object-cover"
-                      sizes="(max-width: 640px) 100vw, (max-width: 1024px) 50vw, 25vw"
-                      quality={80}
-                      placeholder="blur"
-                      blurDataURL={warmImageBlur}
-                    />
-                  </div>
-                  <h3 className="mt-4 font-display text-2xl group-hover:text-lagoon">
-                    {item.name}
-                  </h3>
-                </Link>
-                <p className="mt-2 line-clamp-2 flex-1 text-sm leading-6 text-ink/58">
-                  {item.summary}
-                </p>
-                <a
+              <MediaCard
+                key={item.slug}
+                href={`/safaris/${item.slug}`}
+                image={item.image}
+                alt={item.name}
+                eyebrow={item.region}
+                title={item.name}
+                summary={item.summary}
+                sizes="(max-width: 640px) 100vw, (max-width: 1024px) 50vw, 25vw"
+              >
+                <QuietLink
                   href={whatsappLink(
                     brand.whatsapp,
                     `Hello ${brand.name} — I would like to request the price for: ${item.name}.`,
                   )}
-                  target="_blank"
-                  rel="noreferrer"
-                  className="mt-4 inline-flex self-start text-[10px] tracking-[0.2em] uppercase text-gold"
+                  external
                 >
-                  Request price →
-                </a>
-              </article>
+                  Request price
+                </QuietLink>
+              </MediaCard>
             ))}
           </div>
         </Container>
@@ -234,95 +170,27 @@ export function HomeStory() {
 
       <Section className="pt-0">
         <Container>
-          <div className="flex flex-wrap items-end justify-between gap-6">
-            <div className="max-w-2xl">
-              <Eyebrow>Stays</Eyebrow>
-              <h2 className="mt-4 font-display text-4xl md:text-5xl">
-                2-star to 5-star Zanzibar hotels.
-              </h2>
-              <p className="mt-4 text-sm leading-7 text-ink/60">
-                Four star bands, each with a real island hotel as an example.
-                Booked on request. No partner list and no published room rate.
-              </p>
-            </div>
-            <Button href="/stays" variant="line">
-              All stays
-            </Button>
-          </div>
-          <div className="mt-10 grid gap-5 sm:grid-cols-2 lg:grid-cols-4">
+          <SectionHead
+            eyebrow="Stays"
+            title="2-star to 5-star hotels."
+            summary="Four bands, each with a real island example. Booked on request."
+            href="/stays"
+            action="All stays"
+          />
+          <div className="mt-12 grid gap-6 sm:grid-cols-2 lg:grid-cols-4">
             {stays.map((item) => (
-              <article key={item.slug} className="flex flex-col">
-                <Link href={`/stays/${item.slug}`} className="group block">
-                  <div className="relative aspect-[4/3] overflow-hidden bg-forest">
-                    <Image
-                      src={item.image}
-                      alt={item.name}
-                      fill
-                      className="object-cover"
-                      sizes="(max-width: 640px) 100vw, (max-width: 1024px) 50vw, 25vw"
-                      quality={80}
-                      placeholder="blur"
-                      blurDataURL={warmImageBlur}
-                    />
-                  </div>
-                  <p className="mt-4 text-[10px] tracking-[0.22em] uppercase text-gold">
-                    {item.kind}
-                  </p>
-                  <h3 className="mt-1 font-display text-2xl group-hover:text-lagoon">
-                    {item.name}
-                  </h3>
-                </Link>
-                <p className="mt-2 line-clamp-2 flex-1 text-sm leading-6 text-ink/58">
-                  {item.summary}
-                </p>
-                <Link
-                  href={`/stays/${item.slug}`}
-                  className="mt-4 inline-flex self-start text-[10px] tracking-[0.2em] uppercase text-gold"
-                >
-                  View stay →
-                </Link>
-              </article>
-            ))}
-          </div>
-        </Container>
-      </Section>
-
-      <Section dark>
-        <Container>
-          <div className="mb-10 flex items-end justify-between gap-6">
-            <div>
-              <Eyebrow>Destinations</Eyebrow>
-              <h2 className="mt-4 font-display text-5xl">Where we take you</h2>
-            </div>
-            <Button href="/destinations" variant="ghost" className="hidden md:inline-flex">
-              All coasts
-            </Button>
-          </div>
-          <div className="grid gap-5 md:grid-cols-2 lg:grid-cols-4">
-            {featured.map((item) => (
-              <Link
+              <MediaCard
                 key={item.slug}
-                href={`/destinations/${item.slug}`}
-                className="image-reveal group block"
+                href={`/stays/${item.slug}`}
+                image={item.image}
+                alt={item.name}
+                eyebrow={item.kind}
+                title={item.name}
+                summary={item.summary}
+                sizes="(max-width: 640px) 100vw, (max-width: 1024px) 50vw, 25vw"
               >
-                <div className="relative aspect-[3/4] overflow-hidden bg-forest">
-                  <Image
-                    src={item.image}
-                    alt={item.name}
-                    fill
-                    sizes="(max-width: 768px) 100vw, 25vw"
-                    className="object-cover"
-                    quality={80}
-                    placeholder="blur"
-                    blurDataURL={warmImageBlur}
-                  />
-                  <div className="absolute inset-0 bg-gradient-to-t from-ink/70 via-ink/10 to-transparent" />
-                  <div className="absolute bottom-0 p-5 text-ivory">
-                    <p className="eyebrow">{item.regionLabel}</p>
-                    <h3 className="mt-2 font-display text-3xl">{item.name}</h3>
-                  </div>
-                </div>
-              </Link>
+                <QuietLink href={`/stays/${item.slug}`}>View stay</QuietLink>
+              </MediaCard>
             ))}
           </div>
         </Container>
@@ -330,41 +198,35 @@ export function HomeStory() {
 
       <Section>
         <Container>
-          <Eyebrow>Sample journeys</Eyebrow>
-          <h2 className="mt-4 font-display text-5xl">A few ways to see the island</h2>
-          <div className="mt-12 grid gap-8 md:grid-cols-3">
-            {itineraries.map((item) => (
-              <article key={item.slug} className="flex flex-col">
-                <Link href={`/itineraries/${item.slug}`} className="group">
-                  <div className="image-reveal relative aspect-[4/3] overflow-hidden">
-                    <Image
-                      src={item.image}
-                      alt={item.name}
-                      fill
-                      className="object-cover"
-                      sizes="33vw"
-                      quality={80}
-                      placeholder="blur"
-                      blurDataURL={warmImageBlur}
-                    />
-                  </div>
-                  <p className="mt-5 eyebrow">{item.days} days</p>
-                  <h3 className="mt-2 font-display text-3xl group-hover:text-lagoon">
-                    {item.name}
-                  </h3>
-                  <p className="mt-3 text-sm leading-7 text-ink/65">{item.summary}</p>
-                </Link>
-                <Button href={`/itineraries/${item.slug}`} variant="line" className="mt-6 self-start">
-                  View journey
-                </Button>
-              </article>
+          <div className="mb-12 flex flex-wrap items-end justify-between gap-6">
+            <div>
+              <Eyebrow>Destinations</Eyebrow>
+              <span className="quiet-rule mt-5 block" />
+              <h2 className="mt-5 font-display text-4xl md:text-5xl">Where we take you</h2>
+            </div>
+            <Button href="/destinations" variant="line" className="hidden md:inline-flex">
+              All coasts
+            </Button>
+          </div>
+          <div className="grid gap-6 md:grid-cols-2 lg:grid-cols-4">
+            {featured.map((item) => (
+              <MediaCard
+                key={item.slug}
+                href={`/destinations/${item.slug}`}
+                image={item.image}
+                alt={item.name}
+                eyebrow={item.regionLabel}
+                title={item.name}
+                aspect="aspect-[3/4]"
+                sizes="(max-width: 768px) 100vw, 25vw"
+              />
             ))}
           </div>
         </Container>
       </Section>
 
       <Section className="pt-0">
-        <Container className="grid items-center gap-12 lg:grid-cols-[0.85fr_1.15fr]">
+        <Container className="grid items-center gap-16 lg:grid-cols-[0.8fr_1.2fr]">
           <div className="relative aspect-[3/4] overflow-hidden bg-forest md:aspect-[4/5]">
             <Image
               src={founder.portrait}
@@ -376,25 +238,20 @@ export function HomeStory() {
           </div>
           <div>
             <Eyebrow>The founder</Eyebrow>
-            <h2 className="mt-4 font-display text-5xl leading-[0.95] tracking-tight md:text-7xl lg:text-8xl">
+            <span className="quiet-rule mt-5 block" />
+            <h2 className="mt-5 font-display text-5xl leading-[0.92] tracking-tight md:text-7xl">
               {founder.name}
             </h2>
-            <p className="mt-4 text-[11px] tracking-[0.22em] uppercase text-gold">
+            <p className="mt-4 text-[11px] tracking-[0.28em] uppercase text-gold">
               {founder.role}
             </p>
-            <p className="mt-6 font-display text-2xl leading-snug md:text-4xl">
+            <p className="mt-8 max-w-xl font-display text-2xl leading-snug md:text-3xl">
               Travel funds the work that wipes tears.
             </p>
-            <p className="mt-5 max-w-xl text-lg leading-8 text-ink/70">
-              {foundation.name} began on {foundation.foundedOn}. Joseph Kitali
-              started the house with other community members — about{" "}
-              {foundation.membersApprox} people now. In Kiswahili,{" "}
-              <em>tuwafute machozi</em> means let us wipe their tears. Forty
-              percent of tour revenue goes to charity in Zanzibar.
-            </p>
-            <p className="mt-4 max-w-xl leading-8 text-ink/65">
-              {foundation.visitCaption} Guests book the island. The foundation
-              does the work.
+            <p className="mt-5 max-w-xl leading-8 text-ink/62">
+              Forty percent of tour revenue goes to charity in Zanzibar. Joseph
+              Kitali started the house so guests fund the work — about{" "}
+              {foundation.membersApprox} members now.
             </p>
             <div className="mt-8 flex flex-wrap gap-4">
               <Button href="/about">Meet Joseph Kitali</Button>
@@ -409,13 +266,10 @@ export function HomeStory() {
       <Section dark className="text-center">
         <Container>
           <p className="eyebrow">{brand.legalName}</p>
-          <h2 className="mx-auto mt-4 max-w-3xl font-display text-4xl md:text-6xl">
+          <span className="quiet-rule mx-auto mt-6" />
+          <h2 className="mx-auto mt-6 max-w-3xl font-display text-4xl md:text-6xl">
             Book a tour. Enable the work.
           </h2>
-          <p className="mx-auto mt-5 max-w-xl text-ivory/65">
-            Forty percent of revenue supports charity in Zanzibar — that is
-            why we are called Tuwafute Machozi Tours.
-          </p>
           <div className="mt-10 flex flex-wrap justify-center gap-4">
             <Button href="/experiences">Choose a tour</Button>
             <Button href="/impact" variant="ghost">

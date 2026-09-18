@@ -44,7 +44,11 @@ export function EnquiryForm() {
         <p className="font-display text-3xl">Your message is ready.</p>
         <p className="mt-4 text-ink/65">
           Nothing has been submitted or stored. Use the button below to send
-          this draft to {brand.phoneDisplay} in WhatsApp.
+          this draft to {brand.whatsappDisplay} in WhatsApp, or call{" "}
+          <a href={brand.phoneHref} className="text-gold">
+            {brand.phoneDisplay}
+          </a>
+          .
         </p>
         <a
           className="mt-6 inline-flex bg-[#25D366] px-6 py-3 text-[11px] tracking-[0.2em] uppercase text-white"
@@ -53,6 +57,12 @@ export function EnquiryForm() {
           rel="noreferrer"
         >
           Book via WhatsApp
+        </a>
+        <a
+          href={brand.phoneHref}
+          className="mt-3 inline-flex border border-ink/12 px-6 py-3 text-[11px] tracking-[0.2em] uppercase hover:border-gold"
+        >
+          Call {brand.phoneDisplay}
         </a>
         <button
           type="button"

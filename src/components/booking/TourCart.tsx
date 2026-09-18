@@ -503,7 +503,12 @@ function TourCartDrawer() {
               </div>
 
               <div className="mt-7 border border-gold/25 bg-sand/45 p-4 text-sm leading-6 text-ink/65">
-                This sends a booking request to {brand.phoneDisplay}. It is not
+                This sends a booking request on WhatsApp to {brand.whatsappDisplay}.
+                You may also call{" "}
+                <a href={brand.phoneHref} className="text-gold">
+                  {brand.phoneDisplay}
+                </a>
+                . It is not
                 a payment or confirmed reservation; a person will reply with
                 prices, availability, and final details.
               </div>

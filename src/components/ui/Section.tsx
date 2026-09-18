@@ -15,7 +15,7 @@ export function Section({
     <section
       id={id}
       className={cx(
-        "relative px-5 py-24 md:px-10 md:py-32 lg:px-16",
+        "relative px-5 py-28 md:px-10 md:py-36 lg:px-16",
         dark ? "bg-ink text-ivory" : "bg-ivory text-ink",
         className,
       )}

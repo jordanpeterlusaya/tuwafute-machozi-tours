@@ -58,6 +58,16 @@ export default function AboutPage() {
                 Browse island tours
               </Button>
             </div>
+            <div className="mt-10 border-t border-gold/25 pt-6">
+              <p className="eyebrow">Speak with the house</p>
+              <p className="mt-4 text-sm leading-7 text-ivory/65">
+                Call{" "}
+                <a href={brand.phoneHref} className="text-gold hover:text-ivory">
+                  {brand.phoneDisplay}
+                </a>
+                {" "}· WhatsApp {brand.whatsappDisplay}
+              </p>
+            </div>
           </div>
         </Container>
       </section>
