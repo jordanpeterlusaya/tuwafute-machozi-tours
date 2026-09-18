@@ -84,7 +84,8 @@ export const beachExperiences: BeachExperience[] = [
     name: "Proposal & small events",
     category: "beach-experience",
     image: "/images/beach/proposal-small-events.jpg",
-    imageAlt: "A couple standing together on a sailing boat over turquoise water",
+    imageAlt:
+      "A beach proposal on the sand with a Will You Marry Me sign, flowers and rose petals",
     summary:
       "Proposals, birthdays and small celebrations on the beach or on the water. Price on request.",
     details:
