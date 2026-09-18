@@ -1,0 +1,223 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <title>Tuwafute Machozi — Let Us Wipe Their Tears</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Bodoni+Moda:ital,opsz,wght@0,6..96,400;0,6..96,500;0,6..96,600;1,6..96,400;1,6..96,500&family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;1,400;1,500&display=swap"
+      rel="stylesheet"
+    />
+    <style>
+      @page {
+        size: A5;
+        margin: 0;
+      }
+      * {
+        box-sizing: border-box;
+        margin: 0;
+        padding: 0;
+      }
+      html,
+      body {
+        width: 148mm;
+        height: 210mm;
+        overflow: hidden;
+        background: #0c1412;
+        -webkit-print-color-adjust: exact;
+        print-color-adjust: exact;
+      }
+      .page {
+        position: relative;
+        width: 148mm;
+        height: 210mm;
+        overflow: hidden;
+        color: #f4ece0;
+      }
+      .hero {
+        position: absolute;
+        inset: 0;
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+        object-position: 38% 18%;
+        display: block;
+      }
+      .scrim {
+        position: absolute;
+        inset: 0;
+        background: linear-gradient(
+          155deg,
+          rgba(9, 16, 22, 0.58) 0%,
+          rgba(9, 16, 22, 0.16) 32%,
+          rgba(9, 16, 22, 0) 55%,
+          rgba(12, 20, 18, 0.08) 72%,
+          rgba(12, 20, 18, 0.55) 100%
+        );
+        pointer-events: none;
+      }
+      .mast {
+        position: absolute;
+        top: 9mm;
+        left: 9mm;
+        z-index: 2;
+        width: 122mm;
+      }
+      .brand {
+        font-family: "Bodoni Moda", "Times New Roman", serif;
+        font-size: 2.1mm;
+        letter-spacing: 0.48em;
+        text-transform: uppercase;
+        color: #d4b06a;
+      }
+      h1 {
+        margin-top: 18mm;
+        font-family: "Bodoni Moda", "Times New Roman", serif;
+        font-weight: 400;
+        font-style: italic;
+        font-size: 13.6mm;
+        line-height: 0.9;
+        letter-spacing: 0.004em;
+        color: #f7f1e6;
+        max-width: 120mm;
+      }
+      .gold-rule {
+        width: 14mm;
+        height: 0.22mm;
+        margin: 5.2mm 0 4.2mm;
+        background: #c9a86a;
+      }
+      .one-line {
+        font-family: "Cormorant Garamond", Palatino, Georgia, serif;
+        font-size: 3.7mm;
+        line-height: 1.3;
+        max-width: 78mm;
+        color: #f4ece0;
+      }
+      .inset {
+        position: absolute;
+        right: 8mm;
+        bottom: 56mm;
+        z-index: 5;
+        width: 48mm;
+        padding: 1.2mm;
+        background: #f4ece0;
+        box-shadow: 0 1.8mm 6mm rgba(0, 0, 0, 0.38);
+      }
+      .inset img {
+        display: block;
+        width: 100%;
+        height: 34mm;
+        object-fit: cover;
+        object-position: 50% 55%;
+      }
+      .band {
+        position: absolute;
+        left: 0;
+        right: 0;
+        bottom: 0;
+        height: 46mm;
+        background: #101916;
+        z-index: 3;
+        padding: 6.5mm 9mm 6.5mm;
+        display: grid;
+        grid-template-columns: 1fr 32mm;
+        column-gap: 7mm;
+        align-items: end;
+      }
+      .services {
+        display: flex;
+        gap: 4.2mm;
+        margin-bottom: 3.4mm;
+      }
+      .services span {
+        font-family: "Bodoni Moda", "Times New Roman", serif;
+        font-size: 2.05mm;
+        letter-spacing: 0.26em;
+        text-transform: uppercase;
+        color: #d4b06a;
+      }
+      .lede {
+        font-family: "Cormorant Garamond", Palatino, Georgia, serif;
+        font-size: 3.3mm;
+        line-height: 1.34;
+        color: #e8dcc8;
+        max-width: 90mm;
+      }
+      .meta {
+        margin-top: 3.2mm;
+        font-family: "Cormorant Garamond", Palatino, Georgia, serif;
+        font-size: 3.05mm;
+        line-height: 1.34;
+        color: #f4ece0;
+      }
+      .meta .name {
+        font-family: "Bodoni Moda", "Times New Roman", serif;
+        font-size: 2.1mm;
+        letter-spacing: 0.24em;
+        text-transform: uppercase;
+        color: #d4b06a;
+      }
+      .qr-object {
+        width: 32mm;
+        background: #f7f1e6;
+        padding: 2mm 2mm 2.2mm;
+      }
+      .qr-object img {
+        display: block;
+        width: 28mm;
+        height: 28mm;
+        background: #fff;
+        padding: 2.2mm;
+      }
+      .qr-object p {
+        margin-top: 1.7mm;
+        font-family: "Bodoni Moda", "Times New Roman", serif;
+        font-size: 1.75mm;
+        letter-spacing: 0.26em;
+        text-transform: uppercase;
+        color: #1a1612;
+        text-align: center;
+        line-height: 1.35;
+      }
+    </style>
+  </head>
+  <body>
+    <article class="page">
+      <img
+        class="hero"
+        src="../images/itineraries/dhow-sail.jpg"
+        alt="Traditional dhow on a Zanzibar beach"
+      />
+      <div class="scrim"></div>
+      <header class="mast">
+        <p class="brand">Tuwafute Machozi · Zanzibar</p>
+        <h1>Let us wipe<br />their tears.</h1>
+        <div class="gold-rule"></div>
+        <p class="one-line">A private travel house for the island — tours, Stone Town, reef, and stays.</p>
+      </header>
+      <figure class="inset">
+        <img src="../images/places/the-rock.jpg" alt="The Rock restaurant, Michamvi, Zanzibar" />
+      </figure>
+      <footer class="band">
+        <div>
+          <p class="services">
+            <span>Tours</span>
+            <span>Stone Town</span>
+            <span>2–5★ stays</span>
+          </p>
+          <p class="lede">When you book, forty percent of revenue funds charity in Zanzibar.</p>
+          <p class="meta">
+            <span class="name">Joseph Kitali, founder</span><br />
+            WhatsApp +255 622 434 657
+          </p>
+        </div>
+        <div class="qr-object">
+          <img src="qr.png" alt="QR code to tuwafutemachozi.com" />
+          <p>Scan to<br />explore</p>
+        </div>
+      </footer>
+    </article>
+  </body>
+</html>

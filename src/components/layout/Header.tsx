@@ -143,7 +143,7 @@ export function Header() {
                   </Link>
                 ))}
                 <p className="mt-8 max-w-xs text-sm leading-7 text-ivory/55">
-                  Travel with us and 60% of revenue supports charity in Zanzibar.
+                  Travel with us and 40% of revenue supports charity in Zanzibar.
                 </p>
               </div>
             </div>

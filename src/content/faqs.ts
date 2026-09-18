@@ -9,7 +9,7 @@ export const faqs = [
   },
   {
     q: "How does the social impact work?",
-    a: "The house is called Tuwafute Machozi Tours because the name means let us wipe their tears. Tuwafute Machozi Foundation was created on 1 June 2023 to support the most vulnerable, including children. Guests who book enable that work: 60% of revenue goes to charity and community impact. We do not publish unverified beneficiary names or treat people as attractions.",
+    a: "The house is called Tuwafute Machozi Tours because the name means let us wipe their tears. Tuwafute Machozi Foundation was created on 1 June 2023 to support the most vulnerable, including children. Guests who book enable that work: 40% of revenue goes to charity and community impact. We do not publish unverified beneficiary names or treat people as attractions.",
   },
   {
     q: "Do you offer mainland safaris and Kilimanjaro?",

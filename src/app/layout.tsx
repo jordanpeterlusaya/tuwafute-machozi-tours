@@ -33,7 +33,7 @@ export const metadata: Metadata = {
     template: `%s · ${brand.legalName}`,
   },
   description:
-    "Tuwafute Machozi Tours: private Zanzibar excursions where 60% of revenue supports charity in Zanzibar.",
+    "Tuwafute Machozi Tours: private Zanzibar excursions where 40% of revenue supports charity in Zanzibar.",
   openGraph: {
     title: `${brand.name} · ${brand.tagline}`,
     description:

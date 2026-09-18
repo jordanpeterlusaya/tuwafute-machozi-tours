@@ -48,7 +48,7 @@ export default function AboutPage() {
             </p>
             <p className="mt-5 max-w-2xl leading-8 text-ivory/65">
               In Kiswahili, <em>tuwafute machozi</em> means let us wipe their
-              tears. Sixty percent of tour revenue is directed to charity and
+              tears. Forty percent of tour revenue is directed to charity and
               community impact in Zanzibar. About {foundation.membersApprox}{" "}
               members now contribute. {foundation.visitCaption}
             </p>

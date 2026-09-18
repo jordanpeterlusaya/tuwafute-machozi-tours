@@ -16,8 +16,8 @@ const principles = [
     copy: "Tuwafute Machozi means let us wipe their tears. The house is called Tuwafute Machozi Tours so guests never mistake this for a slogan. Travel is how the work is funded.",
   },
   {
-    title: "60% of revenue",
-    copy: "Our stated policy is that 60% of revenue goes to charity and community impact in Zanzibar. When you book an excursion or a mainland journey, you enable that allocation.",
+    title: "40% of revenue",
+    copy: "Our stated policy is that 40% of revenue goes to charity and community impact in Zanzibar. When you book an excursion or a mainland journey, you enable that allocation.",
   },
   {
     title: "Dignity, not spectacle",
@@ -91,7 +91,7 @@ export default function ImpactPage() {
             </p>
             <p className="mt-5 leading-8 text-ink/65">
               Tuwafute Machozi Tours is the travel door of the same mission.
-              Sixty percent of revenue is directed to charity and community
+              Forty percent of revenue is directed to charity and community
               impact in Zanzibar. Mainland safaris requested from this house
               follow the same policy. The remaining house keeps the guiding,
               boats and days precise.

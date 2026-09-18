@@ -1,6 +1,7 @@
 import Image from "next/image";
 import Link from "next/link";
 import { AddToTourCartButton } from "@/components/booking/TourCart";
+import { beachExperiences } from "@/content/beach-experiences";
 import { destinations } from "@/content/destinations";
 import { experiences } from "@/content/experiences";
 import { itineraries } from "@/content/itineraries";
@@ -96,6 +97,72 @@ export function HomeStory() {
             <Button href="/experiences" variant="line">
               See all 28 tours
             </Button>
+          </div>
+        </Container>
+      </Section>
+
+      <Section className="pt-0">
+        <Container>
+          <div className="flex flex-wrap items-end justify-between gap-6">
+            <div className="max-w-2xl">
+              <Eyebrow>Beach Experience</Eyebrow>
+              <h2 className="mt-4 font-display text-4xl md:text-5xl">
+                Nine house packages on the water.
+              </h2>
+              <p className="mt-4 text-sm leading-7 text-ink/60">
+                Catamaran, kayak, jet ski and jet car, photography, proposals,
+                horse riding, caves, beach-club recommendations and 24-hour
+                transfers. Not part of the PDF guide. Price on request.
+              </p>
+            </div>
+            <Button href="/beach-experiences" variant="line">
+              All beach packages
+            </Button>
+          </div>
+          <div className="mt-10 grid gap-5 sm:grid-cols-2 lg:grid-cols-3">
+            {beachExperiences.map((item) => (
+              <article key={item.slug} className="flex flex-col">
+                <Link
+                  href={`/beach-experiences/${item.slug}`}
+                  className="group block"
+                >
+                  <div className="relative aspect-[4/3] overflow-hidden bg-forest">
+                    <Image
+                      src={item.image}
+                      alt={item.imageAlt}
+                      fill
+                      className="object-cover"
+                      sizes="(max-width: 640px) 100vw, (max-width: 1024px) 50vw, 33vw"
+                    />
+                  </div>
+                  <h3 className="mt-4 font-display text-2xl group-hover:text-lagoon">
+                    {item.name}
+                  </h3>
+                </Link>
+                <p className="mt-2 line-clamp-2 flex-1 text-sm leading-6 text-ink/58">
+                  {item.summary}
+                </p>
+                <div className="mt-4 flex flex-wrap items-center gap-3">
+                  <Link
+                    href={`/enquire?interest=${encodeURIComponent(item.name)}`}
+                    className="inline-flex self-start text-[10px] tracking-[0.2em] uppercase text-gold"
+                  >
+                    Request price
+                  </Link>
+                  <a
+                    href={whatsappLink(
+                      brand.whatsapp,
+                      `Hello ${brand.legalName} — I would like to request the price for the Beach Experience: ${item.name}.`,
+                    )}
+                    target="_blank"
+                    rel="noreferrer"
+                    className="inline-flex self-start text-[10px] tracking-[0.2em] uppercase text-[#1f9a4a]"
+                  >
+                    WhatsApp →
+                  </a>
+                </div>
+              </article>
+            ))}
           </div>
         </Container>
       </Section>
@@ -303,7 +370,7 @@ export function HomeStory() {
               {foundation.name} began on {foundation.foundedOn}. Joseph Kitali
               started the house with other community members — about{" "}
               {foundation.membersApprox} people now. In Kiswahili,{" "}
-              <em>tuwafute machozi</em> means let us wipe their tears. Sixty
+              <em>tuwafute machozi</em> means let us wipe their tears. Forty
               percent of tour revenue goes to charity in Zanzibar.
             </p>
             <p className="mt-4 max-w-xl leading-8 text-ink/65">
@@ -327,7 +394,7 @@ export function HomeStory() {
             Book a tour. Enable the work.
           </h2>
           <p className="mx-auto mt-5 max-w-xl text-ivory/65">
-            Sixty percent of revenue supports charity in Zanzibar — that is
+            Forty percent of revenue supports charity in Zanzibar — that is
             why we are called Tuwafute Machozi Tours.
           </p>
           <div className="mt-10 flex flex-wrap justify-center gap-4">

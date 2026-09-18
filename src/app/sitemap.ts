@@ -1,4 +1,5 @@
 import type { MetadataRoute } from "next";
+import { beachExperiences } from "@/content/beach-experiences";
 import { destinations } from "@/content/destinations";
 import { experiences } from "@/content/experiences";
 import { itineraries } from "@/content/itineraries";
@@ -11,6 +12,7 @@ const staticRoutes = [
   "",
   "/destinations",
   "/experiences",
+  "/beach-experiences",
   "/safaris",
   "/stays",
   "/itineraries",
@@ -33,6 +35,7 @@ export default function sitemap(): MetadataRoute.Sitemap {
     ...staticRoutes,
     ...destinations.map((item) => `/destinations/${item.slug}`),
     ...experiences.map((item) => `/experiences/${item.slug}`),
+    ...beachExperiences.map((item) => `/beach-experiences/${item.slug}`),
     ...safaris.map((item) => `/safaris/${item.slug}`),
     ...stays.map((item) => `/stays/${item.slug}`),
     ...itineraries.map((item) => `/itineraries/${item.slug}`),

@@ -4,68 +4,70 @@ import Link from "next/link";
 import { PageHero } from "@/components/ui/PageHero";
 import { Container, Section } from "@/components/ui/Section";
 import { brand } from "@/content/brand";
-import { safaris } from "@/content/safaris";
+import { beachExperiences } from "@/content/beach-experiences";
 import { whatsappLink } from "@/lib/utils";
 
 export const metadata: Metadata = {
-  title: "Tanzania Safaris & Kilimanjaro",
+  title: "Beach Experience",
   description:
-    "Mainland Tanzania journeys arranged from the Zanzibar house: Serengeti, Ngorongoro Crater, Tarangire and Mount Kilimanjaro. Prices on request — not listed in the island excursions guide.",
+    "Catamaran, kayak, jet ski and jet car, drone photography, proposals, horse riding, caves, beach-club recommendations and 24-hour transfers. Prices on request — not part of the 28 PDF excursions.",
 };
 
-export default function SafarisPage() {
+export default function BeachExperiencesPage() {
   return (
     <>
       <PageHero
-        eyebrow="Tanzania safaris · mainland journeys"
-        title="The northern circuit, arranged from Zanzibar."
-        copy="Serengeti, Ngorongoro Crater, Tarangire and Kilimanjaro — requested mainland journeys, not items from the Zanzibar Excursions Guide. Prices, nights and routes are confirmed with you."
+        eyebrow="Beach Experience · nine house packages"
+        title="Water, caves, clubs and cars — arranged, not catalogued."
+        copy="Catamaran, kayak, jet ski and jet car, photography, small celebrations, horse riding, a caves day, beach-club recommendations, and 24-hour transfers. These are Tuwafute Machozi Tours packages. They are not the twenty-eight destinations in the Zanzibar Excursions Guide. Prices on request."
       />
 
       <section className="border-y border-gold/20 bg-sand/55">
         <Container className="grid gap-6 py-8 md:grid-cols-[1fr_auto] md:items-center">
           <div>
             <p className="font-display text-2xl">
-              Four journeys. Each one priced for your dates.
+              Request a price. WhatsApp Joseph Kitali’s team. Nothing here is a
+              published tariff.
             </p>
             <p className="mt-2 max-w-3xl text-sm leading-6 text-ink/60">
-              The Zanzibar house remains the centre of the work. These parks
-              sit on the mainland. A request here does not take payment or
-              confirm park fees, flights or lodge inventory.
+              Beach clubs such as Nanasi and Le Saint Lopez are independent
+              venues we recommend and book when they have space. Jet ski and
+              jet car depend on sea conditions. Transfers run 24 hours with
+              whatever suitable car is available on the island.
             </p>
           </div>
           <Link
             href="/experiences"
             className="inline-flex items-center justify-center border border-ink/15 px-6 py-3 text-[10px] tracking-[0.22em] uppercase hover:border-gold"
           >
-            Island tours instead
+            28 PDF excursions
           </Link>
         </Container>
       </section>
 
       <Section>
         <Container>
-          <div className="grid gap-x-7 gap-y-14 md:grid-cols-2">
-            {safaris.map((item) => (
+          <div className="grid gap-x-7 gap-y-14 md:grid-cols-2 xl:grid-cols-3">
+            {beachExperiences.map((item) => (
               <article key={item.slug} className="flex flex-col">
                 <Link
-                  href={`/safaris/${item.slug}`}
+                  href={`/beach-experiences/${item.slug}`}
                   className="image-reveal group block"
                 >
-                  <div className="relative aspect-[16/10] overflow-hidden bg-forest">
+                  <div className="relative aspect-[4/5] overflow-hidden bg-forest">
                     <Image
                       src={item.image}
-                      alt={item.name}
+                      alt={item.imageAlt}
                       fill
                       className="object-cover"
-                      sizes="(max-width: 768px) 100vw, 50vw"
+                      sizes="(max-width: 768px) 100vw, (max-width: 1280px) 50vw, 33vw"
                     />
                     <div className="absolute inset-0 bg-gradient-to-t from-ink/45 to-transparent" />
                   </div>
                   <p className="mt-4 text-[10px] tracking-[0.2em] uppercase text-gold">
-                    {item.region}
+                    Beach Experience · price on request
                   </p>
-                  <h2 className="mt-2 font-display text-4xl transition-colors group-hover:text-lagoon">
+                  <h2 className="mt-2 font-display text-3xl transition-colors group-hover:text-lagoon">
                     {item.name}
                   </h2>
                 </Link>
@@ -82,7 +84,7 @@ export default function SafarisPage() {
                   <a
                     href={whatsappLink(
                       brand.whatsapp,
-                      `Hello ${brand.name} — I would like to request the price and availability for a mainland journey: ${item.name}. I understand this is arranged from Zanzibar and is not listed in the island excursions guide.`,
+                      `Hello ${brand.legalName} — I would like to request the price for the Beach Experience: ${item.name}.`,
                     )}
                     target="_blank"
                     rel="noreferrer"
@@ -91,30 +93,15 @@ export default function SafarisPage() {
                     Book via WhatsApp
                   </a>
                   <Link
-                    href={`/safaris/${item.slug}`}
+                    href={`/beach-experiences/${item.slug}`}
                     className="px-2 py-3 text-[10px] tracking-[0.2em] uppercase text-ink/60 hover:text-gold"
                   >
-                    View journey →
+                    View →
                   </Link>
                 </div>
               </article>
             ))}
           </div>
-        </Container>
-      </Section>
-
-      <Section dark>
-        <Container className="max-w-3xl">
-          <p className="eyebrow">An honest note</p>
-          <h2 className="mt-4 font-display text-4xl md:text-5xl">
-            Island first. Mainland by request.
-          </h2>
-          <p className="mt-6 text-sm leading-7 text-ivory/65">
-            Forty percent of tour revenue still supports charity in Zanzibar.
-            A Serengeti or Kilimanjaro day is arranged so guests who want the
-            northern circuit can travel with the same house — without mixing
-            these parks into the twenty-eight island excursions.
-          </p>
         </Container>
       </Section>
     </>

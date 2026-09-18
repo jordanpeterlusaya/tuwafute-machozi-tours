@@ -10,7 +10,7 @@ export const brand = {
   tagline: "Discover. Experience. Give Back.",
   descriptor: "Zanzibar Tours · Charity in Zanzibar",
   meaning:
-    "In Kiswahili, tuwafute machozi means let us wipe their tears. Guests who travel with us enable charity work in Zanzibar — 60% of revenue is directed to community impact. That is why the house is called Tuwafute Machozi Tours.",
+    "In Kiswahili, tuwafute machozi means let us wipe their tears. Guests who travel with us enable charity work in Zanzibar — 40% of revenue is directed to community impact. That is why the house is called Tuwafute Machozi Tours.",
   location: "Zanzibar",
   instagram: "tuwafute_255",
   instagramUrl: "https://www.instagram.com/tuwafute_255?igsi=d3FhNWZ4YjUxMDBx",
@@ -23,6 +23,7 @@ export const brand = {
 export const nav = [
   { href: "/destinations", label: "Destinations" },
   { href: "/experiences", label: "Zanzibar Tours" },
+  { href: "/beach-experiences", label: "Beach" },
   { href: "/safaris", label: "Safaris" },
   { href: "/stays", label: "Stays" },
   { href: "/itineraries", label: "Journeys" },
