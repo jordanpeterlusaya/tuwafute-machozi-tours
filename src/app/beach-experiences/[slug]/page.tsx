@@ -8,7 +8,7 @@ import {
   beachExperiences,
   getBeachExperience,
 } from "@/content/beach-experiences";
-import { whatsappLink } from "@/lib/utils";
+import { warmImageBlur, whatsappLink } from "@/lib/utils";
 
 type Props = { params: Promise<{ slug: string }> };
 
@@ -47,8 +47,11 @@ export default async function BeachExperiencePage({ params }: Props) {
           className="object-cover"
           priority
           sizes="100vw"
+          quality={80}
+          placeholder="blur"
+          blurDataURL={warmImageBlur}
         />
-        <div className="absolute inset-0 bg-gradient-to-t from-ink via-ink/35 to-ink/20" />
+        <div className="absolute inset-0 bg-gradient-to-t from-ink/80 via-ink/20 to-ink/10" />
         <div className="relative z-10 flex min-h-[70vh] flex-col justify-end px-5 pb-14 md:px-16">
           <Eyebrow>Beach Experience</Eyebrow>
           <h1 className="mt-4 max-w-4xl font-display text-5xl md:text-7xl">

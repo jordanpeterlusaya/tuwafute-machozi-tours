@@ -22,9 +22,9 @@ export const beachExperiences: BeachExperience[] = [
     category: "beach-experience",
     image: "/images/beach/catamaran-experience.jpg",
     imageAlt:
-      "Guests on a traditional sailing boat in turquoise water off a small Zanzibar island",
+      "A sailing boat with guests on deck in turquoise water off a small Zanzibar island",
     summary:
-      "A private catamaran (or similar sailing boat) on the island water — swimming, shade on deck, and a day set to the tide. Price on request.",
+      "A private catamaran or sailing boat — swimming, shade on deck, a day set to the tide. Price on request.",
     details:
       "Tuwafute Machozi Tours arranges a catamaran experience for your party: time on the water, swimming when the sea allows, and a skipper who knows the local line. The vessel confirmed for your date may be a catamaran or a comparable sailing boat — we do not publish a fleet list here. Joseph Kitali’s team confirms the boat, pickup and sea state before you leave. This is not one of the twenty-eight PDF guide excursions.",
     notes: [
@@ -37,9 +37,9 @@ export const beachExperiences: BeachExperience[] = [
     name: "Kayak experience",
     category: "beach-experience",
     image: "/images/beach/kayak-experience.jpg",
-    imageAlt: "A clear kayak decorated with flowers on turquoise Zanzibar water",
+    imageAlt: "A clear kayak with flowers on turquoise Zanzibar water",
     summary:
-      "Paddle the lagoon or a quiet stretch of coast. Clear kayaks can be arranged for photographs. Price on request.",
+      "Paddle a lagoon or quiet coast. Clear kayaks for photographs when available. Price on request.",
     details:
       "A kayak hour on Zanzibar’s sheltered water — usually the east-coast lagoon, confirmed with you. We can request a clear kayak when you want photographs; standard kayaks are the everyday option. This is a guided outing, not a rental desk. Conditions depend on wind and tide. Not listed in the twenty-eight-destination PDF guide.",
     notes: [
@@ -53,9 +53,9 @@ export const beachExperiences: BeachExperience[] = [
     category: "beach-experience",
     image: "/images/beach/jetski-jet-car.jpg",
     imageAlt:
-      "A blue amphibious jet car in shallow water with a jet ski on the sand behind it",
+      "An amphibious jet car in the shallows with a jet ski on the sand behind it",
     summary:
-      "Jet ski and jet-car time on the water when conditions allow. Price on request. Not guaranteed in rough seas.",
+      "Jet ski and jet-car time when the sea allows. Price on request.",
     details:
       "Jet ski and jet car (amphibious water car) sessions are arranged on the island through operators we know — Tuwafute Machozi Tours does not own the machines. Availability, licence rules, age limits and sea state all decide the hour. We will not send you out in unsafe water. Ask Joseph Kitali’s team for the current price and which beach the session uses on your date.",
     notes: [
@@ -69,9 +69,9 @@ export const beachExperiences: BeachExperience[] = [
     category: "beach-experience",
     image: "/images/beach/drone-shoot-photography.jpg",
     imageAlt:
-      "Aerial photograph of a sailing boat and sandbank in clear turquoise water",
+      "Aerial view of a sailing boat and sandbank in clear turquoise water",
     summary:
-      "A photographer and, when permitted, a drone shoot for couples, families or a proposal. Price on request.",
+      "A photographer and, where rules allow, a drone shoot. Price on request.",
     details:
       "We arrange a photographer for beach, boat or sandbank work, and a drone shoot where local rules allow. Permissions, no-fly zones and weather decide whether the drone flies. Still photographs can still be made if the drone stays grounded. This is a booking we make for you — not a studio we own. Share the occasion and preferred coast in the request.",
     notes: [
@@ -86,7 +86,7 @@ export const beachExperiences: BeachExperience[] = [
     image: "/images/beach/proposal-small-events.jpg",
     imageAlt: "A couple standing together on a sailing boat over turquoise water",
     summary:
-      "Proposals, birthdays and other small celebrations on the beach or on the water. Price on request.",
+      "Proposals, birthdays and small celebrations on the beach or on the water. Price on request.",
     details:
       "We help plan a proposal or a small event — birthday, anniversary, a quiet gathering — with flowers, a boat, a beach hour or a photographer as you ask. These are small events, not hotel weddings or nightclub hire. Venues and décor are arranged with partners; Tuwafute Machozi Tours coordinates, it does not own the beach clubs or restaurants. Tell us the date, the size of the party and how private you need it to be.",
     notes: [
@@ -99,10 +99,9 @@ export const beachExperiences: BeachExperience[] = [
     name: "Horse riding",
     category: "beach-experience",
     image: "/images/beach/horse-riding.jpg",
-    imageAlt:
-      "A guest on an island ride in Zanzibar — horse riding is arranged separately on request",
+    imageAlt: "Two riders on horseback along a white tropical beach",
     summary:
-      "Horse riding on the beach or inland trails, arranged with island stables. Price on request.",
+      "Horse riding on the beach or inland trails, booked with island stables. Price on request.",
     details:
       "Horse riding is booked through stables on the island — beach rides or quieter inland trails depending on the horses, the tide and your experience. Helmets and a guide are part of a proper ride. Tuwafute Machozi Tours arranges the booking; we do not keep our own horses. Weight limits, age and riding level are confirmed before the hour. This package is not in the PDF excursions guide.",
     notes: [
@@ -115,9 +114,10 @@ export const beachExperiences: BeachExperience[] = [
     name: "Caves experience",
     category: "beach-experience",
     image: "/images/beach/caves-experience.jpg",
-    imageAlt: "Swimming in clear blue water — the caves day includes cave pools",
+    imageAlt:
+      "A limestone cave pool with clear turquoise water under a rock overhang",
     summary:
-      "A caves day covering Salaam Cave, Kuza Cave, Maalum Cave and other caves when they are open. Price on request.",
+      "Salaam, Kuza, Maalum and other cave pools when they are open. Price on request.",
     details:
       "This is a Beach Experience package: Salaam Cave, Kuza Cave, Maalum Cave, and other caves we can include for your date. Kuza Cave and Maalum Cave also appear as separate site visits in the twenty-eight-excursion PDF guide; this package is the combined caves day, not a replacement of those listings. Swimming is in natural water. Non-swimmers need flotation. Opening hours and conservation rules belong to each site — we confirm them before you go.",
     notes: [
@@ -131,9 +131,9 @@ export const beachExperiences: BeachExperience[] = [
     category: "beach-experience",
     image: "/images/beach/beach-clubs.jpg",
     imageAlt:
-      "The Zanzibar coast from the water — beach-club days are arranged at independent venues",
+      "Palm-lined beach club with daybeds, umbrellas and a lagoon-style pool to the coast",
     summary:
-      "We recommend and arrange days at beach clubs such as Nanasi, Le Saint Lopez, and similar venues. We do not own them. Price on request.",
+      "Days at clubs such as Nanasi and Le Saint Lopez — we book, we do not own them. Price on request.",
     details:
       "Nanasi, Le Saint Lopez, and similar beach clubs on the island are independent venues. Tuwafute Machozi Tours recommends, books a table or daybed when the club accepts it, and handles transfer. Entry, food and minimum spend belong to the club, not to us. Availability changes with season and private events. Ask for current options that match your coast and the size of your party.",
     notes: [
@@ -146,10 +146,9 @@ export const beachExperiences: BeachExperience[] = [
     name: "Transfer services 24hr",
     category: "beach-experience",
     image: "/images/beach/transfer-services.jpg",
-    imageAlt:
-      "Island roads and vehicles in Zanzibar — transfers use cars available on the island",
+    imageAlt: "A white transfer van used for airport and hotel pickups",
     summary:
-      "Airport, hotel and inter-coast transfers, twenty-four hours. Any type of car available on the island. Price on request.",
+      "Airport, hotel and inter-coast transfers, twenty-four hours. Price on request.",
     details:
       "Transfers run around the clock: Abeid Amani Karume Airport, Stone Town, the north and east coasts, and other island points. We use cars that are actually available that day — saloon, minibus, 4×4 or similar — rather than promising a single fleet photograph. Night arrivals are normal. Share flight numbers, hotel names and how many bags you carry so Joseph Kitali’s team can price the right vehicle.",
     notes: [

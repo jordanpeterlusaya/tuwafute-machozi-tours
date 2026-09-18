@@ -5,7 +5,7 @@ import { PageHero } from "@/components/ui/PageHero";
 import { Container, Section } from "@/components/ui/Section";
 import { brand } from "@/content/brand";
 import { beachExperiences } from "@/content/beach-experiences";
-import { whatsappLink } from "@/lib/utils";
+import { warmImageBlur, whatsappLink } from "@/lib/utils";
 
 export const metadata: Metadata = {
   title: "Beach Experience",
@@ -19,7 +19,7 @@ export default function BeachExperiencesPage() {
       <PageHero
         eyebrow="Beach Experience · nine house packages"
         title="Water, caves, clubs and cars — arranged, not catalogued."
-        copy="Catamaran, kayak, jet ski and jet car, photography, small celebrations, horse riding, a caves day, beach-club recommendations, and 24-hour transfers. These are Tuwafute Machozi Tours packages. They are not the twenty-eight destinations in the Zanzibar Excursions Guide. Prices on request."
+        copy="Nine house packages. Not the twenty-eight PDF excursions. Prices on request."
       />
 
       <section className="border-y border-gold/20 bg-sand/55">
@@ -61,13 +61,16 @@ export default function BeachExperiencesPage() {
                       fill
                       className="object-cover"
                       sizes="(max-width: 768px) 100vw, (max-width: 1280px) 50vw, 33vw"
+                      quality={80}
+                      placeholder="blur"
+                      blurDataURL={warmImageBlur}
                     />
-                    <div className="absolute inset-0 bg-gradient-to-t from-ink/45 to-transparent" />
+                    <div className="absolute inset-0 bg-gradient-to-t from-ink/25 to-transparent" />
                   </div>
                   <p className="mt-4 text-[10px] tracking-[0.2em] uppercase text-gold">
                     Beach Experience · price on request
                   </p>
-                  <h2 className="mt-2 font-display text-3xl transition-colors group-hover:text-lagoon">
+                  <h2 className="mt-2 font-display text-3xl transition-colors group-hover:text-gold">
                     {item.name}
                   </h2>
                 </Link>

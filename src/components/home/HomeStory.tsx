@@ -12,7 +12,7 @@ import { stays } from "@/content/stays";
 import { Button } from "@/components/ui/Button";
 import { Container, Eyebrow, Section } from "@/components/ui/Section";
 import { Reveal } from "@/components/motion/Reveal";
-import { whatsappLink } from "@/lib/utils";
+import { warmImageBlur, whatsappLink } from "@/lib/utils";
 
 const featured = destinations.filter((item) =>
   ["paje-beach", "kizimkazi-dolphin", "kendwa-sunset", "jambiani-village"].includes(
@@ -41,12 +41,11 @@ export function HomeStory() {
           <div className="max-w-3xl">
             <Eyebrow>Zanzibar tours</Eyebrow>
             <h2 className="mt-4 font-display text-5xl md:text-6xl">
-              Twenty-eight excursions across the island.
+              Twenty-eight island tours.
             </h2>
-            <p className="mt-5 max-w-2xl text-lg leading-8 text-ink/70">
-              North-coast beaches, east-coast lagoons, Kizimkazi boat days,
-              Stone Town, spice farms, Jozani Forest and sunset dhows. Each
-              tour has its own photograph, description and booking request.
+            <p className="mt-5 max-w-xl text-lg leading-8 text-ink/70">
+              Beaches, Stone Town, spice farms, forest and sunset dhows — each
+              with its own photograph and booking request.
             </p>
           </div>
 
@@ -64,7 +63,10 @@ export function HomeStory() {
                         alt={item.name}
                         fill
                         sizes="(max-width: 768px) 100vw, (max-width: 1280px) 50vw, 25vw"
-                        className="object-cover"
+                        className="object-cover transition-transform duration-700 group-hover:scale-[1.03]"
+                        quality={80}
+                        placeholder="blur"
+                        blurDataURL={warmImageBlur}
                       />
                     </div>
                     <div className="px-5 pt-5">
@@ -110,9 +112,8 @@ export function HomeStory() {
                 Nine house packages on the water.
               </h2>
               <p className="mt-4 text-sm leading-7 text-ink/60">
-                Catamaran, kayak, jet ski and jet car, photography, proposals,
-                horse riding, caves, beach-club recommendations and 24-hour
-                transfers. Not part of the PDF guide. Price on request.
+                Catamaran, kayak, watercraft, photography, proposals, horses,
+                caves, beach clubs and 24-hour transfers. Price on request.
               </p>
             </div>
             <Button href="/beach-experiences" variant="line">
@@ -124,7 +125,7 @@ export function HomeStory() {
               <article key={item.slug} className="flex flex-col">
                 <Link
                   href={`/beach-experiences/${item.slug}`}
-                  className="group block"
+                  className="image-reveal group block"
                 >
                   <div className="relative aspect-[4/3] overflow-hidden bg-forest">
                     <Image
@@ -133,9 +134,15 @@ export function HomeStory() {
                       fill
                       className="object-cover"
                       sizes="(max-width: 640px) 100vw, (max-width: 1024px) 50vw, 33vw"
+                      quality={80}
+                      placeholder="blur"
+                      blurDataURL={warmImageBlur}
                     />
                   </div>
-                  <h3 className="mt-4 font-display text-2xl group-hover:text-lagoon">
+                  <p className="mt-4 text-[10px] tracking-[0.2em] uppercase text-gold">
+                    Beach Experience
+                  </p>
+                  <h3 className="mt-1 font-display text-2xl transition-colors group-hover:text-gold">
                     {item.name}
                   </h3>
                 </Link>
@@ -145,7 +152,7 @@ export function HomeStory() {
                 <div className="mt-4 flex flex-wrap items-center gap-3">
                   <Link
                     href={`/enquire?interest=${encodeURIComponent(item.name)}`}
-                    className="inline-flex self-start text-[10px] tracking-[0.2em] uppercase text-gold"
+                    className="inline-flex self-start text-[10px] tracking-[0.2em] uppercase text-gold hover:text-ink"
                   >
                     Request price
                   </Link>
@@ -196,6 +203,9 @@ export function HomeStory() {
                       fill
                       className="object-cover"
                       sizes="(max-width: 640px) 100vw, (max-width: 1024px) 50vw, 25vw"
+                      quality={80}
+                      placeholder="blur"
+                      blurDataURL={warmImageBlur}
                     />
                   </div>
                   <h3 className="mt-4 font-display text-2xl group-hover:text-lagoon">
@@ -250,6 +260,9 @@ export function HomeStory() {
                       fill
                       className="object-cover"
                       sizes="(max-width: 640px) 100vw, (max-width: 1024px) 50vw, 25vw"
+                      quality={80}
+                      placeholder="blur"
+                      blurDataURL={warmImageBlur}
                     />
                   </div>
                   <p className="mt-4 text-[10px] tracking-[0.22em] uppercase text-gold">
@@ -299,8 +312,11 @@ export function HomeStory() {
                     fill
                     sizes="(max-width: 768px) 100vw, 25vw"
                     className="object-cover"
+                    quality={80}
+                    placeholder="blur"
+                    blurDataURL={warmImageBlur}
                   />
-                  <div className="absolute inset-0 bg-gradient-to-t from-ink/80 via-transparent to-transparent" />
+                  <div className="absolute inset-0 bg-gradient-to-t from-ink/70 via-ink/10 to-transparent" />
                   <div className="absolute bottom-0 p-5 text-ivory">
                     <p className="eyebrow">{item.regionLabel}</p>
                     <h3 className="mt-2 font-display text-3xl">{item.name}</h3>
@@ -327,6 +343,9 @@ export function HomeStory() {
                       fill
                       className="object-cover"
                       sizes="33vw"
+                      quality={80}
+                      placeholder="blur"
+                      blurDataURL={warmImageBlur}
                     />
                   </div>
                   <p className="mt-5 eyebrow">{item.days} days</p>

@@ -4,6 +4,11 @@ const nextConfig: NextConfig = {
   turbopack: {
     root: process.cwd(),
   },
+  images: {
+    formats: ["image/avif", "image/webp"],
+    qualities: [65, 75, 80],
+    deviceSizes: [640, 750, 828, 1080, 1200, 1600],
+  },
   async redirects() {
     return [
       { source: "/destinations/nungwi", destination: "/destinations/nungwi-beach", permanent: true },
