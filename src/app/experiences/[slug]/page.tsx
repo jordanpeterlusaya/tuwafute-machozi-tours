@@ -4,6 +4,7 @@ import Link from "next/link";
 import { notFound } from "next/navigation";
 import { AddToTourCartButton } from "@/components/booking/TourCart";
 import { Container, Eyebrow, Section } from "@/components/ui/Section";
+import { PrivateGuideNote } from "@/components/brand/PrivateGuideNote";
 import { brand } from "@/content/brand";
 import { experiences, getExperience } from "@/content/experiences";
 import { whatsappLink } from "@/lib/utils";
@@ -94,6 +95,7 @@ export default async function ExperiencePage({ params }: Props) {
               </a>
               . No payment is taken here.
             </p>
+            <PrivateGuideNote className="mt-3 text-sm leading-7" />
             <div className="mt-6 grid gap-3">
               <AddToTourCartButton slug={item.slug} className="w-full" />
               <a

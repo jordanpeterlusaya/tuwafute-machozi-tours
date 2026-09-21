@@ -151,7 +151,7 @@ export const beachExperiences: BeachExperience[] = [
     summary:
       "Airport, hotel and inter-coast transfers, twenty-four hours. Price on request.",
     details:
-      "Transfers run around the clock: Abeid Amani Karume Airport, Stone Town, the north and east coasts, and other island points. We use cars that are actually available that day — saloon, minibus, 4×4 or similar — rather than promising a single fleet photograph. Night arrivals are normal. Share flight numbers, hotel names and how many bags you carry so Joseph Kitali’s team can price the right vehicle.",
+      "Transfers run around the clock: Abeid Amani Karume Airport, Stone Town, the north and east coasts, and other island points. We use cars that are actually available that day — saloon, minibus, 4×4 or similar — rather than promising a single fleet photograph. Night arrivals are normal. Share flight numbers, hotel names and how many bags you carry so the Tuwafute Machozi Tours and Safari team can price the right vehicle.",
     notes: [
       "24-hour service. Any car type available on the island for your party size.",
       "Quoted per route and vehicle, not as a published tariff.",

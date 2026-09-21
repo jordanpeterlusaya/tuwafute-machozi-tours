@@ -584,7 +584,7 @@ export const guideTravelNotes = [
   "Excursions are best planned according to weather, sea conditions and guest preferences.",
   "Marine and wildlife experiences should be conducted responsibly, respecting animals, coral reefs and protected areas.",
   "Some attractions have seasonal opening times or conservation requirements; confirm operational details before departure.",
-  "Private and shared experiences can be arranged depending on the desired level of comfort and flexibility.",
+  "Every trip includes a private guide.",
 ] as const;
 
 export function getExperience(slug: string) {

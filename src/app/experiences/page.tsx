@@ -4,6 +4,7 @@ import { AddToTourCartButton } from "@/components/booking/TourCart";
 import { MediaCard, QuietLink } from "@/components/ui/MediaCard";
 import { PageHero } from "@/components/ui/PageHero";
 import { Container, Section } from "@/components/ui/Section";
+import { PrivateGuideNote } from "@/components/brand/PrivateGuideNote";
 import { brand } from "@/content/brand";
 import {
   experienceRegions,
@@ -36,6 +37,7 @@ export default function ExperiencesPage() {
             <p className="mt-2 max-w-3xl text-sm leading-6 text-ink/55">
               The source guide lists no prices. A request does not take payment.
             </p>
+            <PrivateGuideNote className="mt-2 text-sm leading-6" />
           </div>
           <Link
             href="/explorer"

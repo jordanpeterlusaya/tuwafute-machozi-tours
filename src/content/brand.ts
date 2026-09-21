@@ -15,11 +15,15 @@ export const brand = {
   instagram: "tuwafute_255",
   instagramUrl: "https://www.instagram.com/tuwafute_255?igsi=d3FhNWZ4YjUxMDBx",
   email: "hello@tuwafutemachozi.com",
-  phone: "067534657",
-  phoneDisplay: "067 534 657",
-  phoneHref: "tel:067534657",
-  whatsapp: "255622434657",
-  whatsappDisplay: "+255 622 434 657",
+  /** Halotel — voice calls. */
+  phone: "0622434657",
+  phoneDisplay: "+255 622 434 657",
+  phoneLocalDisplay: "062 243 4657",
+  phoneHref: "tel:+255622434657",
+  /** Tigo — WhatsApp. Digits as given; no extra digit. */
+  whatsapp: "25567534657",
+  whatsappDisplay: "067 534 657",
+  privateGuideNote: "Every trip includes a private guide.",
   founded: "Zanzibar",
 } as const;
 

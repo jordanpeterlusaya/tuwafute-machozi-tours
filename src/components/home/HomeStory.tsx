@@ -5,6 +5,7 @@ import { beachExperiences } from "@/content/beach-experiences";
 import { destinations } from "@/content/destinations";
 import { experiences } from "@/content/experiences";
 import { safaris } from "@/content/safaris";
+import { PrivateGuideNote } from "@/components/brand/PrivateGuideNote";
 import { brand } from "@/content/brand";
 import { founder, foundation } from "@/content/founder";
 import { stays } from "@/content/stays";
@@ -72,6 +73,7 @@ export function HomeStory() {
             href="/experiences"
             action="All 28 tours"
           />
+          <PrivateGuideNote className="mt-5 max-w-xl text-sm leading-7" />
 
           <div className="mt-14 grid gap-6 md:grid-cols-2 xl:grid-cols-4">
             {featuredTours.map((item, index) => (

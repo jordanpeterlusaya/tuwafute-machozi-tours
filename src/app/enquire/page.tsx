@@ -4,6 +4,7 @@ import { EnquiryForm } from "@/components/booking/EnquiryForm";
 import { PageHero } from "@/components/ui/PageHero";
 import { Container, Section } from "@/components/ui/Section";
 import { ContactLines } from "@/components/layout/ContactActions";
+import { PrivateGuideNote } from "@/components/brand/PrivateGuideNote";
 import { brand } from "@/content/brand";
 
 export const metadata: Metadata = { title: "Enquire" };
@@ -26,6 +27,7 @@ export default function EnquirePage() {
             <div className="mt-6">
               <ContactLines />
             </div>
+            <PrivateGuideNote className="mt-6 text-sm leading-7" />
             <ul className="mt-6 space-y-4 text-ink/70">
               <li>
                 Instagram ·{" "}

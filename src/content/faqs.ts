@@ -17,7 +17,7 @@ export const faqs = [
   },
   {
     q: "Do you offer private or shared experiences?",
-    a: "The excursions guide says private and shared experiences can be arranged depending on the desired comfort and flexibility. Ask for the current options for your date.",
+    a: "Every trip includes a private guide with your party. Tell us the size of the group and we will confirm the day with you.",
   },
   {
     q: "Is Zanzibar suitable for families?",

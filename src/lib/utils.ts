@@ -1,3 +1,5 @@
+import { brand } from "@/content/brand";
+
 export function cx(...classes: Array<string | false | null | undefined>) {
   return classes.filter(Boolean).join(" ");
 }
@@ -14,6 +16,6 @@ export function formatPrice(value: number, currency = "USD") {
   }).format(value);
 }
 
-export function whatsappLink(phone: string, message: string) {
-  return `https://wa.me/${phone}?text=${encodeURIComponent(message)}`;
+export function whatsappLink(phone: string | undefined, message: string) {
+  return `https://wa.me/${phone || brand.whatsapp}?text=${encodeURIComponent(message)}`;
 }

@@ -63,6 +63,8 @@ export function ContactLines({ inverted = false }: { inverted?: boolean }) {
         <a href={brand.phoneHref} className={link}>
           {brand.phoneDisplay}
         </a>
+        {" "}
+        <span className={muted}>({brand.phoneLocalDisplay})</span>
       </li>
       <li>
         WhatsApp ·{" "}

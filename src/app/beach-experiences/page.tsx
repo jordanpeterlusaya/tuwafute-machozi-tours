@@ -3,6 +3,7 @@ import Link from "next/link";
 import { MediaCard, QuietLink } from "@/components/ui/MediaCard";
 import { PageHero } from "@/components/ui/PageHero";
 import { Container, Section } from "@/components/ui/Section";
+import { PrivateGuideNote } from "@/components/brand/PrivateGuideNote";
 import { brand } from "@/content/brand";
 import { beachExperiences } from "@/content/beach-experiences";
 import { whatsappLink } from "@/lib/utils";
@@ -32,6 +33,7 @@ export default function BeachExperiencesPage() {
               Beach clubs such as Nanasi and Le Saint Lopez are independent
               venues we recommend when they have space. Transfers run 24 hours.
             </p>
+            <PrivateGuideNote className="mt-2 text-sm leading-6" />
           </div>
           <Link
             href="/experiences"

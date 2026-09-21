@@ -3,6 +3,7 @@ import Image from "next/image";
 import Link from "next/link";
 import { notFound } from "next/navigation";
 import { Container, Eyebrow, Section } from "@/components/ui/Section";
+import { PrivateGuideNote } from "@/components/brand/PrivateGuideNote";
 import { brand } from "@/content/brand";
 import {
   beachExperiences,
@@ -99,6 +100,7 @@ export default async function BeachExperiencePage({ params }: Props) {
               , WhatsApp {brand.whatsappDisplay}, or send a price request. No
               payment is taken here. Founder: Joseph Kitali.
             </p>
+            <PrivateGuideNote className="mt-3 text-sm leading-7" />
             <div className="mt-6 grid gap-3">
               <Link
                 href={`/enquire?interest=${encodeURIComponent(item.name)}`}
