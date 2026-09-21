@@ -91,7 +91,7 @@ export const beachExperiences: BeachExperience[] = [
     details:
       "We help plan a proposal or a small event — birthday, anniversary, a quiet gathering — with flowers, a boat, a beach hour or a photographer as you ask. These are small events, not hotel weddings or nightclub hire. Venues and décor are arranged with partners; Tuwafute Machozi Tours coordinates, it does not own the beach clubs or restaurants. Tell us the date, the size of the party and how private you need it to be.",
     notes: [
-      "Birthdays and small events only — not large conferences.",
+      "Birthdays and small events — not large conferences. Tuwafute Machozi Tours recommends and can provide trusted people to help deliver larger events and gatherings with many guests, such as villas and anniversaries.",
       "Setup, flowers and photography are priced for your brief.",
     ],
   },
