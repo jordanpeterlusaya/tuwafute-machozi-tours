@@ -21,14 +21,14 @@ const featured = destinations.filter((item) =>
 );
 
 const featuredTours = [
-  "nungwi-beach",
   "mnemba",
   "the-rock",
-  "stone-town",
-  "spice-farm",
-  "prison-island",
-  "jozani",
+  "kendwa-sunset",
   "sunset-dhow",
+  "nungwi-beach",
+  "paje-beach",
+  "jozani",
+  "blue-lagoon",
 ]
   .map((slug) => experiences.find((item) => item.slug === slug))
   .filter((item): item is (typeof experiences)[number] => Boolean(item));
@@ -64,6 +64,49 @@ function SectionHead({
 export function HomeStory() {
   return (
     <>
+      <section className="relative bg-ink">
+        <div className="grid min-h-[78vh] md:grid-cols-12">
+          <div className="relative min-h-[52vh] md:col-span-8">
+            <Image
+              src="/images/places/mnemba.jpg"
+              alt="Mnemba Island, North Zanzibar"
+              fill
+              sizes="(max-width: 768px) 100vw, 66vw"
+              quality={80}
+              className="object-cover"
+            />
+            <div className="absolute inset-x-0 bottom-0 bg-gradient-to-t from-ink/70 to-transparent px-5 py-8 md:px-10">
+              <p className="eyebrow text-gold">Mnemba Island</p>
+              <p className="mt-2 max-w-md font-display text-3xl text-ivory md:text-5xl">
+                The reef, from the air.
+              </p>
+            </div>
+          </div>
+          <div className="grid md:col-span-4 md:grid-rows-2">
+            <div className="relative min-h-[36vh]">
+              <Image
+                src="/images/places/the-rock.jpg"
+                alt="The Rock Restaurant, Michamvi"
+                fill
+                sizes="(max-width: 768px) 100vw, 34vw"
+                quality={80}
+                className="object-cover"
+              />
+            </div>
+            <div className="relative min-h-[36vh]">
+              <Image
+                src="/images/places/kendwa-sunset.jpg"
+                alt="Kendwa Beach, North Zanzibar"
+                fill
+                sizes="(max-width: 768px) 100vw, 34vw"
+                quality={80}
+                className="object-cover"
+              />
+            </div>
+          </div>
+        </div>
+      </section>
+
       <Section>
         <Container>
           <SectionHead

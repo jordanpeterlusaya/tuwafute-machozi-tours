@@ -6,7 +6,7 @@
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link
-      href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;1,400;1,500&family=Outfit:wght@300;400;500&display=swap"
+      href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;1,400;1,500&family=Outfit:wght@300;400;500;600&display=swap"
       rel="stylesheet"
     />
     <style>
@@ -21,7 +21,7 @@
       }
       html,
       body {
-        background: #e8e0d2;
+        background: #d9cfc0;
         -webkit-print-color-adjust: exact;
         print-color-adjust: exact;
       }
@@ -34,7 +34,7 @@
         height: 297mm;
         overflow: hidden;
         background: #f4efe6;
-        color: #1c1914;
+        color: #16130f;
         page-break-after: always;
         break-after: page;
       }
@@ -47,109 +47,80 @@
         height: 100%;
         object-fit: cover;
       }
-      .gold {
-        color: #9a7a3e;
-      }
       .serif {
         font-family: "Cormorant Garamond", "Times New Roman", serif;
       }
       .sans {
         font-family: Outfit, "Helvetica Neue", Helvetica, Arial, sans-serif;
       }
-      .eyebrow {
-        font-family: Outfit, "Helvetica Neue", Helvetica, Arial, sans-serif;
-        font-weight: 400;
-        font-size: 2.15mm;
-        letter-spacing: 0.38em;
-        text-transform: uppercase;
-        color: #9a7a3e;
-      }
-      .rule {
-        width: 14mm;
-        height: 0.18mm;
-        background: #c4a56a;
-      }
       .folio {
         position: absolute;
-        left: 16mm;
-        right: 16mm;
-        bottom: 8.2mm;
-        display: flex;
-        align-items: center;
-        justify-content: space-between;
+        z-index: 8;
         font-family: Outfit, "Helvetica Neue", Helvetica, Arial, sans-serif;
-        font-size: 2.05mm;
-        letter-spacing: 0.32em;
-        text-transform: uppercase;
-        color: #9a7a3e;
-        z-index: 6;
-      }
-      .folio span {
-        letter-spacing: 0.12em;
-      }
-      .running {
-        position: absolute;
-        top: 8.5mm;
-        left: 16mm;
-        right: 16mm;
-        display: flex;
-        justify-content: space-between;
-        padding-bottom: 2.6mm;
-        border-bottom: 0.12mm solid rgba(154, 122, 62, 0.32);
-        font-family: Outfit, "Helvetica Neue", Helvetica, Arial, sans-serif;
-        font-size: 1.95mm;
+        font-size: 2.1mm;
         letter-spacing: 0.34em;
         text-transform: uppercase;
-        color: #9a7a3e;
-        z-index: 6;
+      }
+      .orb {
+        position: absolute;
+        border-radius: 50%;
+        overflow: hidden;
+        z-index: 5;
+      }
+      .orb img {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+      }
+      .ring {
+        position: absolute;
+        border-radius: 50%;
+        border: 0.35mm solid rgba(196, 160, 86, 0.7);
+        z-index: 4;
+        pointer-events: none;
+      }
+      .dot {
+        position: absolute;
+        border-radius: 50%;
+        background: #c4a056;
+        z-index: 4;
       }
 
-      /* —— 01 cover —— */
+      /* 01 COVER */
       .cover {
-        background: #0e1614;
+        background: #07110f;
         color: #f6f0e6;
       }
-      .cover img.hero {
+      .cover .hero {
         position: absolute;
         inset: 0;
-        object-position: 50% 42%;
+        object-position: 42% 55%;
       }
       .cover .veil {
         position: absolute;
         inset: 0;
-        background: linear-gradient(
-          180deg,
-          rgba(12, 18, 16, 0.18) 0%,
-          rgba(12, 18, 16, 0.05) 38%,
-          rgba(12, 18, 16, 0.55) 72%,
-          rgba(12, 18, 16, 0.88) 100%
-        );
+        background:
+          linear-gradient(180deg, rgba(7, 17, 15, 0.28) 0%, rgba(7, 17, 15, 0.04) 34%, rgba(7, 17, 15, 0.2) 58%, rgba(7, 17, 15, 0.82) 100%),
+          linear-gradient(90deg, rgba(7, 17, 15, 0.35) 0%, transparent 46%);
       }
       .cover .frame {
         position: absolute;
-        inset: 8mm;
-        border: 0.18mm solid rgba(212, 176, 106, 0.72);
-        z-index: 4;
+        inset: 7mm;
+        border: 0.22mm solid rgba(212, 176, 106, 0.85);
+        z-index: 6;
         pointer-events: none;
       }
-      .cover .frame::after {
-        content: "";
+      .cover .copy {
         position: absolute;
-        inset: 1.1mm;
-        border: 0.08mm solid rgba(212, 176, 106, 0.28);
-      }
-      .cover .brand {
-        position: absolute;
-        left: 18mm;
-        right: 18mm;
+        left: 16mm;
+        right: 78mm;
         bottom: 22mm;
-        z-index: 5;
-        text-align: center;
+        z-index: 7;
       }
       .cover .place {
         font-family: Outfit, "Helvetica Neue", Helvetica, Arial, sans-serif;
-        font-size: 2.4mm;
-        letter-spacing: 0.48em;
+        font-size: 2.5mm;
+        letter-spacing: 0.5em;
         text-transform: uppercase;
         color: #d4b06a;
       }
@@ -157,364 +128,558 @@
         margin-top: 5mm;
         font-family: "Cormorant Garamond", "Times New Roman", serif;
         font-weight: 400;
-        font-size: 13.2mm;
-        line-height: 0.9;
-        letter-spacing: 0.04em;
+        font-size: 16.5mm;
+        line-height: 0.86;
+        letter-spacing: 0.01em;
       }
       .cover h1 em {
         display: block;
         font-style: italic;
-        font-size: 12.4mm;
-        letter-spacing: 0.02em;
+        font-size: 15.2mm;
       }
       .cover .house {
-        margin-top: 3.2mm;
+        margin-top: 3.4mm;
         font-family: Outfit, "Helvetica Neue", Helvetica, Arial, sans-serif;
-        font-size: 2.4mm;
-        letter-spacing: 0.42em;
+        font-size: 2.5mm;
+        letter-spacing: 0.44em;
         text-transform: uppercase;
         color: #eadfcb;
       }
       .cover .goldline {
-        width: 16mm;
-        height: 0.18mm;
-        background: #c4a56a;
-        margin: 5mm auto 4.2mm;
+        width: 18mm;
+        height: 0.22mm;
+        background: #c4a056;
+        margin: 5.5mm 0 4.5mm;
       }
       .cover .tag {
         font-family: "Cormorant Garamond", "Times New Roman", serif;
         font-style: italic;
-        font-size: 4.4mm;
-        color: #f4ece0;
+        font-size: 5mm;
       }
       .cover .offer {
-        margin-top: 3.2mm;
+        margin-top: 3mm;
         font-family: Outfit, "Helvetica Neue", Helvetica, Arial, sans-serif;
-        font-size: 2.25mm;
+        font-size: 2.3mm;
         letter-spacing: 0.28em;
         text-transform: uppercase;
-        color: rgba(244, 236, 224, 0.82);
+        color: rgba(244, 236, 224, 0.84);
       }
-      .cover .folio {
-        color: rgba(212, 176, 106, 0.85);
+      .cover .orb-main {
+        width: 72mm;
+        height: 72mm;
+        right: 14mm;
+        bottom: 28mm;
+        border: 1.4mm solid #f4efe6;
       }
-
-      /* —— inner pages —— */
-      .pad {
+      .cover .ring-a {
+        width: 84mm;
+        height: 84mm;
+        right: 8mm;
+        bottom: 22mm;
+      }
+      .cover .badge {
         position: absolute;
-        top: 18mm;
         left: 16mm;
-        right: 16mm;
-        bottom: 16mm;
+        top: 16mm;
+        z-index: 7;
+        width: 28mm;
+        height: 28mm;
+        border-radius: 50%;
+        border: 0.22mm solid rgba(212, 176, 106, 0.9);
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        background: rgba(7, 17, 15, 0.28);
       }
-      h2 {
+      .cover .badge b {
         font-family: "Cormorant Garamond", "Times New Roman", serif;
         font-weight: 400;
-        font-size: 11.4mm;
-        line-height: 0.92;
-        letter-spacing: 0.01em;
-        color: #16130f;
+        font-size: 8.2mm;
+        line-height: 1;
+        color: #f4efe6;
       }
-      h2 em {
+      .cover .badge span {
+        font-family: Outfit, "Helvetica Neue", Helvetica, Arial, sans-serif;
+        font-size: 1.7mm;
+        letter-spacing: 0.18em;
+        text-transform: uppercase;
+        color: #d4b06a;
+        margin-top: 0.6mm;
+      }
+      .cover .folio {
+        left: 16mm;
+        right: 16mm;
+        bottom: 10mm;
+        display: flex;
+        justify-content: space-between;
+        color: rgba(212, 176, 106, 0.9);
+      }
+
+      /* 02 ABOUT */
+      .about .photo {
+        position: absolute;
+        top: 0;
+        right: 0;
+        width: 108mm;
+        height: 297mm;
+      }
+      .about .photo img {
+        object-position: 50% 40%;
+      }
+      .about .panel {
+        position: absolute;
+        left: 0;
+        top: 0;
+        width: 118mm;
+        height: 297mm;
+        background: #f4efe6;
+        z-index: 2;
+        clip-path: polygon(0 0, 100% 0, 86% 100%, 0 100%);
+      }
+      .about .inner {
+        position: absolute;
+        left: 16mm;
+        top: 22mm;
+        width: 86mm;
+        z-index: 3;
+      }
+      .about .eyebrow {
+        font-family: Outfit, "Helvetica Neue", Helvetica, Arial, sans-serif;
+        font-size: 2.15mm;
+        letter-spacing: 0.38em;
+        text-transform: uppercase;
+        color: #9a7a3e;
+      }
+      .about h2 {
+        margin-top: 4mm;
+        font-family: "Cormorant Garamond", "Times New Roman", serif;
+        font-weight: 400;
+        font-size: 13.2mm;
+        line-height: 0.9;
+      }
+      .about h2 em {
         font-style: italic;
         color: #6b5a3a;
       }
-      .lead {
+      .about .lead {
+        margin-top: 6mm;
         font-family: "Cormorant Garamond", "Times New Roman", serif;
-        font-size: 4.15mm;
-        line-height: 1.32;
-        color: #2a241c;
+        font-size: 4.3mm;
+        line-height: 1.28;
       }
-      .body {
+      .about .body {
+        margin-top: 5mm;
         font-family: Outfit, "Helvetica Neue", Helvetica, Arial, sans-serif;
         font-weight: 300;
-        font-size: 2.85mm;
-        line-height: 1.55;
+        font-size: 2.75mm;
+        line-height: 1.5;
         color: #3a342c;
+        max-width: 80mm;
       }
-      .cap {
-        font-family: Outfit, "Helvetica Neue", Helvetica, Arial, sans-serif;
-        font-size: 1.85mm;
-        letter-spacing: 0.22em;
-        text-transform: uppercase;
-        color: #9a7a3e;
-        margin-top: 2.2mm;
+      .about .orb-life {
+        width: 62mm;
+        height: 62mm;
+        left: 78mm;
+        top: 118mm;
+        border: 1.3mm solid #f4efe6;
+        z-index: 5;
       }
-
-      .about-grid {
-        display: grid;
-        grid-template-columns: 92mm 1fr;
-        gap: 8mm;
-        height: 148mm;
-        margin-top: 6mm;
+      .about .ring-life {
+        width: 74mm;
+        height: 74mm;
+        left: 72mm;
+        top: 112mm;
+        z-index: 4;
       }
-      .about-grid .plate {
-        height: 148mm;
-        overflow: hidden;
-      }
-      .about-copy {
+      .about .pct {
+        position: absolute;
+        left: 16mm;
+        bottom: 22mm;
+        z-index: 4;
+        width: 52mm;
+        height: 52mm;
+        border-radius: 50%;
+        background: #16130f;
+        color: #f4efe6;
         display: flex;
         flex-direction: column;
-        justify-content: center;
-        padding-top: 2mm;
-      }
-      .charity {
-        display: grid;
-        grid-template-columns: 1fr 58mm;
-        gap: 8mm;
         align-items: center;
-        margin-top: 7mm;
-        padding-top: 6mm;
-        border-top: 0.16mm solid rgba(154, 122, 62, 0.35);
+        justify-content: center;
       }
-      .pct {
+      .about .pct b {
         font-family: "Cormorant Garamond", "Times New Roman", serif;
         font-weight: 400;
-        font-size: 18mm;
+        font-size: 16mm;
         line-height: 0.85;
-        color: #16130f;
       }
-      .pct span {
-        display: block;
-        margin-top: 2.4mm;
+      .about .pct span {
+        margin-top: 1.6mm;
         font-family: Outfit, "Helvetica Neue", Helvetica, Arial, sans-serif;
-        font-size: 2.2mm;
-        letter-spacing: 0.28em;
+        font-size: 1.7mm;
+        letter-spacing: 0.16em;
         text-transform: uppercase;
+        color: #d4b06a;
+        text-align: center;
+        max-width: 40mm;
+        line-height: 1.25;
+      }
+      .about .folio {
+        left: 16mm;
+        bottom: 9mm;
         color: #9a7a3e;
       }
-      .charity img {
-        height: 42mm;
-        object-position: 50% 30%;
-      }
 
-      .regions {
+      /* 03 MOSAIC */
+      .mosaic {
+        background: #0e1614;
+      }
+      .mosaic .grid {
+        position: absolute;
+        inset: 0;
         display: grid;
         grid-template-columns: 1fr 1fr;
-        gap: 5.5mm 10mm;
-        margin-top: 7mm;
+        grid-template-rows: 1fr 1fr;
+        gap: 1.6mm;
+        padding: 1.6mm;
       }
-      .region h3 {
-        font-family: Outfit, "Helvetica Neue", Helvetica, Arial, sans-serif;
-        font-size: 2.15mm;
-        letter-spacing: 0.3em;
-        text-transform: uppercase;
-        color: #9a7a3e;
-        margin-bottom: 1.6mm;
-      }
-      .region p {
-        font-family: "Cormorant Garamond", "Times New Roman", serif;
-        font-size: 3.35mm;
-        line-height: 1.32;
-        color: #2a241c;
-      }
-      .duo {
-        display: grid;
-        grid-template-columns: 1.15fr 0.85fr;
-        gap: 4mm;
-        height: 112mm;
-        margin-top: 8mm;
-      }
-      .duo .plate {
+      .tile {
+        position: relative;
         overflow: hidden;
-        height: 112mm;
       }
-
-      .split3 {
-        display: grid;
-        grid-template-columns: 1fr 1fr 1fr;
-        gap: 6mm;
-        margin-top: 7mm;
+      .tile .shade {
+        position: absolute;
+        inset: 0;
+        background: linear-gradient(180deg, rgba(8, 16, 14, 0.08) 40%, rgba(8, 16, 14, 0.78) 100%);
       }
-      .split3 h3 {
+      .tile .label {
+        position: absolute;
+        left: 6mm;
+        right: 6mm;
+        bottom: 6mm;
+        z-index: 2;
+        color: #f6f0e6;
+      }
+      .tile .label p {
         font-family: Outfit, "Helvetica Neue", Helvetica, Arial, sans-serif;
-        font-size: 2.1mm;
-        letter-spacing: 0.28em;
+        font-size: 2mm;
+        letter-spacing: 0.32em;
         text-transform: uppercase;
-        color: #9a7a3e;
-        margin-bottom: 2.4mm;
+        color: #d4b06a;
       }
-      .split3 ul {
-        list-style: none;
-      }
-      .split3 li {
+      .tile .label h3 {
+        margin-top: 1.4mm;
         font-family: "Cormorant Garamond", "Times New Roman", serif;
-        font-size: 3.3mm;
-        line-height: 1.42;
-        color: #2a241c;
-        padding: 1.15mm 0;
-        border-bottom: 0.12mm solid rgba(28, 25, 20, 0.1);
+        font-weight: 400;
+        font-size: 7.4mm;
+        line-height: 0.92;
       }
-      .split3 .note {
-        margin-top: 3mm;
+      .tile .label span {
+        display: block;
+        margin-top: 1.6mm;
         font-family: Outfit, "Helvetica Neue", Helvetica, Arial, sans-serif;
         font-weight: 300;
         font-size: 2.35mm;
-        line-height: 1.45;
-        color: #5a5248;
+        line-height: 1.35;
+        color: rgba(246, 240, 230, 0.86);
       }
-      .wide-plate {
-        height: 72mm;
-        overflow: hidden;
-        margin-top: 8mm;
+      .mosaic .banner {
+        position: absolute;
+        left: 50%;
+        top: 50%;
+        transform: translate(-50%, -50%);
+        z-index: 6;
+        background: #f4efe6;
+        padding: 5mm 9mm 4.6mm;
+        text-align: center;
+        min-width: 78mm;
       }
-      .pair {
-        display: grid;
-        grid-template-columns: 1fr 1fr;
-        gap: 4mm;
-        height: 92mm;
-        margin-top: 6mm;
+      .mosaic .banner p {
+        font-family: Outfit, "Helvetica Neue", Helvetica, Arial, sans-serif;
+        font-size: 1.9mm;
+        letter-spacing: 0.36em;
+        text-transform: uppercase;
+        color: #9a7a3e;
       }
-      .pair .plate {
-        overflow: hidden;
-        height: 92mm;
+      .mosaic .banner h2 {
+        margin-top: 1.4mm;
+        font-family: "Cormorant Garamond", "Times New Roman", serif;
+        font-weight: 400;
+        font-size: 8.6mm;
+        line-height: 0.9;
+      }
+      .mosaic .folio {
+        left: 8mm;
+        right: 8mm;
+        bottom: 5mm;
+        color: #d4b06a;
+        display: flex;
+        justify-content: space-between;
+        z-index: 7;
       }
 
-      .trips {
+      /* 04 BANDS */
+      .bands .row {
+        position: relative;
+        height: 99mm;
+        overflow: hidden;
+      }
+      .bands .row img {
+        object-position: 50% 50%;
+      }
+      .bands .row .shade {
+        position: absolute;
+        inset: 0;
+        background: linear-gradient(90deg, rgba(8, 16, 14, 0.78) 0%, rgba(8, 16, 14, 0.28) 52%, rgba(8, 16, 14, 0.08) 100%);
+      }
+      .bands .copy {
+        position: absolute;
+        left: 16mm;
+        top: 50%;
+        transform: translateY(-50%);
+        z-index: 3;
+        color: #f6f0e6;
+        max-width: 92mm;
+      }
+      .bands .copy p {
+        font-family: Outfit, "Helvetica Neue", Helvetica, Arial, sans-serif;
+        font-size: 2.05mm;
+        letter-spacing: 0.34em;
+        text-transform: uppercase;
+        color: #d4b06a;
+      }
+      .bands .copy h2 {
+        margin-top: 2mm;
+        font-family: "Cormorant Garamond", "Times New Roman", serif;
+        font-weight: 400;
+        font-size: 11mm;
+        line-height: 0.9;
+      }
+      .bands .copy ul {
+        margin-top: 3.4mm;
+        list-style: none;
+      }
+      .bands .copy li {
+        font-family: Outfit, "Helvetica Neue", Helvetica, Arial, sans-serif;
+        font-weight: 300;
+        font-size: 2.7mm;
+        line-height: 1.45;
+        color: rgba(246, 240, 230, 0.9);
+      }
+      .bands .folio {
+        right: 10mm;
+        bottom: 6mm;
+        color: #d4b06a;
+        z-index: 5;
+      }
+
+      /* 05 JOURNEY */
+      .sail .hero {
+        position: absolute;
+        inset: 0;
+        object-position: 50% 58%;
+      }
+      .sail .veil {
+        position: absolute;
+        inset: 0;
+        background: linear-gradient(180deg, rgba(10, 12, 18, 0.22) 0%, rgba(10, 12, 18, 0.08) 36%, rgba(10, 12, 18, 0.55) 100%);
+      }
+      .sail .head {
+        position: absolute;
+        left: 16mm;
+        right: 16mm;
+        top: 18mm;
+        z-index: 4;
+        color: #f6f0e6;
+      }
+      .sail .head p {
+        font-family: Outfit, "Helvetica Neue", Helvetica, Arial, sans-serif;
+        font-size: 2.15mm;
+        letter-spacing: 0.36em;
+        text-transform: uppercase;
+        color: #d4b06a;
+      }
+      .sail .head h2 {
+        margin-top: 3mm;
+        font-family: "Cormorant Garamond", "Times New Roman", serif;
+        font-weight: 400;
+        font-size: 14mm;
+        line-height: 0.9;
+      }
+      .sail .head h2 em {
+        font-style: italic;
+      }
+      .sail .cards {
+        position: absolute;
+        left: 12mm;
+        right: 12mm;
+        bottom: 18mm;
+        z-index: 5;
         display: grid;
         grid-template-columns: 1fr 1fr 1fr;
-        gap: 5mm;
-        margin-top: 7mm;
+        gap: 4mm;
       }
-      .trip {
-        padding: 5.5mm 5mm 5mm;
-        border: 0.16mm solid rgba(154, 122, 62, 0.38);
-        min-height: 48mm;
+      .card {
+        background: #f4efe6;
+        padding: 6mm 5.5mm 5.5mm;
+        min-height: 58mm;
       }
-      .trip .days {
+      .card .days {
         font-family: Outfit, "Helvetica Neue", Helvetica, Arial, sans-serif;
-        font-size: 1.95mm;
+        font-size: 1.9mm;
         letter-spacing: 0.28em;
         text-transform: uppercase;
         color: #9a7a3e;
       }
-      .trip h3 {
+      .card h3 {
         margin-top: 2.4mm;
         font-family: "Cormorant Garamond", "Times New Roman", serif;
         font-weight: 400;
-        font-size: 5.1mm;
+        font-size: 5.4mm;
         line-height: 0.95;
-        color: #16130f;
       }
-      .trip p {
-        margin-top: 2.6mm;
+      .card p {
+        margin-top: 2.4mm;
         font-family: Outfit, "Helvetica Neue", Helvetica, Arial, sans-serif;
         font-weight: 300;
-        font-size: 2.45mm;
-        line-height: 1.45;
-        color: #3a342c;
-      }
-      .journey-photo {
-        height: 118mm;
-        overflow: hidden;
-        margin-top: 7mm;
-      }
-      .plan {
-        display: flex;
-        justify-content: space-between;
-        align-items: center;
-        margin-top: 6mm;
-        padding-top: 4.5mm;
-        border-top: 0.16mm solid rgba(154, 122, 62, 0.35);
-      }
-      .plan p {
-        font-family: Outfit, "Helvetica Neue", Helvetica, Arial, sans-serif;
-        font-weight: 300;
-        font-size: 2.5mm;
-        line-height: 1.45;
-        color: #3a342c;
-      }
-
-      .close-grid {
-        display: grid;
-        grid-template-columns: 1fr 78mm;
-        gap: 10mm;
-        height: 100%;
-      }
-      .close-copy {
-        display: flex;
-        flex-direction: column;
-        justify-content: center;
-        padding-bottom: 8mm;
-      }
-      .facts {
-        margin-top: 8mm;
-      }
-      .facts li {
-        list-style: none;
-        display: grid;
-        grid-template-columns: 8mm 1fr;
-        gap: 3mm;
-        padding: 3.2mm 0;
-        border-top: 0.12mm solid rgba(28, 25, 20, 0.1);
-        font-family: Outfit, "Helvetica Neue", Helvetica, Arial, sans-serif;
-        font-weight: 300;
-        font-size: 2.7mm;
+        font-size: 2.4mm;
         line-height: 1.4;
         color: #3a342c;
       }
-      .facts li strong {
-        font-family: "Cormorant Garamond", "Times New Roman", serif;
-        font-weight: 500;
-        font-size: 4.2mm;
-        color: #9a7a3e;
-        line-height: 1;
+      .sail .orb-small {
+        width: 42mm;
+        height: 42mm;
+        right: 16mm;
+        top: 18mm;
+        border: 1.1mm solid #f4efe6;
       }
-      .contact {
-        margin-top: 8mm;
+      .sail .orb-small img {
+        object-position: 50% 38%;
       }
-      .contact p {
-        font-family: "Cormorant Garamond", "Times New Roman", serif;
-        font-size: 3.5mm;
-        line-height: 1.45;
-        color: #1c1914;
+      .sail .folio {
+        left: 16mm;
+        bottom: 7mm;
+        color: rgba(212, 176, 106, 0.95);
+        z-index: 6;
       }
-      .contact .lbl {
-        display: block;
+
+      /* 06 CLOSE */
+      .close .photo {
+        position: absolute;
+        inset: 0;
+      }
+      .close .photo img {
+        object-position: 50% 60%;
+      }
+      .close .veil {
+        position: absolute;
+        inset: 0;
+        background: linear-gradient(90deg, rgba(8, 16, 14, 0.88) 0%, rgba(8, 16, 14, 0.55) 46%, rgba(8, 16, 14, 0.12) 100%);
+      }
+      .close .copy {
+        position: absolute;
+        left: 16mm;
+        top: 20mm;
+        width: 92mm;
+        z-index: 4;
+        color: #f6f0e6;
+      }
+      .close .eyebrow {
         font-family: Outfit, "Helvetica Neue", Helvetica, Arial, sans-serif;
-        font-size: 1.9mm;
+        font-size: 2.15mm;
+        letter-spacing: 0.36em;
+        text-transform: uppercase;
+        color: #d4b06a;
+      }
+      .close h2 {
+        margin-top: 4mm;
+        font-family: "Cormorant Garamond", "Times New Roman", serif;
+        font-weight: 400;
+        font-size: 13mm;
+        line-height: 0.9;
+      }
+      .close h2 em {
+        font-style: italic;
+      }
+      .close .lead {
+        margin-top: 5mm;
+        font-family: "Cormorant Garamond", "Times New Roman", serif;
+        font-size: 4.1mm;
+        line-height: 1.28;
+        max-width: 84mm;
+      }
+      .close .row {
+        margin-top: 3.2mm;
+      }
+      .close .lbl {
+        font-family: Outfit, "Helvetica Neue", Helvetica, Arial, sans-serif;
+        font-size: 1.85mm;
         letter-spacing: 0.26em;
         text-transform: uppercase;
-        color: #9a7a3e;
-        margin-bottom: 0.4mm;
-        margin-top: 2.8mm;
+        color: #d4b06a;
       }
-      .qr-box {
-        width: 32mm;
+      .close .val {
+        margin-top: 0.6mm;
+        font-family: "Cormorant Garamond", "Times New Roman", serif;
+        font-size: 4mm;
+      }
+      .close .qr {
+        margin-top: 7mm;
+        width: 34mm;
         padding: 2.2mm;
         background: #fff;
-        border: 0.16mm solid rgba(154, 122, 62, 0.4);
-        margin-top: 6mm;
       }
-      .qr-box img {
-        width: 27.6mm;
-        height: 27.6mm;
+      .close .qr img {
+        width: 29.6mm;
+        height: 29.6mm;
       }
-      .side-stack {
+      .close .scan {
+        margin-top: 2mm;
+        font-family: Outfit, "Helvetica Neue", Helvetica, Arial, sans-serif;
+        font-size: 1.85mm;
+        letter-spacing: 0.24em;
+        text-transform: uppercase;
+        color: #d4b06a;
+      }
+      .close .orb-p {
+        width: 68mm;
+        height: 68mm;
+        right: 14mm;
+        bottom: 22mm;
+        border: 1.4mm solid #f4efe6;
+      }
+      .close .orb-p img {
+        object-position: 50% 18%;
+      }
+      .close .ring-p {
+        width: 80mm;
+        height: 80mm;
+        right: 8mm;
+        bottom: 16mm;
+      }
+      .close .folio {
+        left: 16mm;
+        right: 16mm;
+        bottom: 8mm;
         display: flex;
-        flex-direction: column;
-        gap: 4mm;
-        height: 100%;
-        padding-bottom: 10mm;
-      }
-      .side-stack .tall {
-        flex: 1;
-        overflow: hidden;
-        min-height: 0;
-      }
-      .side-stack .short {
-        height: 58mm;
-        overflow: hidden;
+        justify-content: space-between;
+        color: #d4b06a;
+        z-index: 6;
       }
     </style>
   </head>
   <body>
-    <!-- 01 COVER -->
+    <!-- 01 -->
     <article class="page cover">
-      <img class="hero" src="../images/places/kendwa-sunset.jpg" alt="Kendwa beach, Zanzibar" />
+      <img class="hero" src="../images/places/mnemba.jpg" alt="Mnemba Island, Zanzibar" />
       <div class="veil"></div>
       <div class="frame"></div>
-      <div class="brand">
+      <div class="badge"><b>40%</b><span>to charity</span></div>
+      <div class="ring ring-a"></div>
+      <div class="orb orb-main">
+        <img src="../images/places/kendwa-sunset.jpg" alt="Kendwa Beach" />
+      </div>
+      <div class="copy">
         <p class="place">Zanzibar · Tanzania</p>
         <h1>Tuwafute<br /><em>Machozi</em></h1>
         <p class="house">Tours &amp; Safari</p>
@@ -522,242 +687,176 @@
         <p class="tag">Discover. Experience. Give Back.</p>
         <p class="offer">Private tours · Beach days · Safari</p>
       </div>
-      <div class="folio" style="justify-content: center">
-        <span>01</span>
-      </div>
+      <div class="folio"><span>01</span><span>The House Book</span></div>
     </article>
 
-    <!-- 02 ABOUT -->
-    <article class="page">
-      <div class="running">
-        <span>Tuwafute Machozi Tours</span>
-        <span>The House</span>
+    <!-- 02 -->
+    <article class="page about">
+      <div class="photo">
+        <img src="../images/places/the-rock.jpg" alt="The Rock, Michamvi" />
       </div>
-      <div class="pad">
+      <div class="panel"></div>
+      <div class="inner">
         <p class="eyebrow">About the house</p>
-        <h2 style="margin-top: 3mm">Travel, held<br />in <em>one place.</em></h2>
-        <div class="about-grid">
-          <div class="plate">
-            <img src="../images/places/mnemba.jpg" alt="Mnemba Island, Zanzibar" />
-          </div>
-          <div class="about-copy">
-            <div class="rule"></div>
-            <p class="lead" style="margin-top: 4mm">
-              Tuwafute Machozi Tours is a Zanzibar house for private travel —
-              island excursions, beach days, mainland safari, stays and transfers,
-              arranged as one itinerary.
-            </p>
-            <p class="body" style="margin-top: 4mm">
-              In Kiswahili, <em>tuwafute machozi</em> means let us wipe their tears.
-              Guests who travel with us enable charity work across the island.
-              Every trip includes a private guide. Prices are confirmed for your
-              dates — nothing is taken on the website.
-            </p>
-            <p class="cap">Mnemba Island · North Zanzibar</p>
-          </div>
-        </div>
-        <div class="charity">
-          <div>
-            <p class="pct">40%<span>of tour revenue to charity</span></p>
-            <p class="body" style="margin-top: 3.5mm; max-width: 108mm">
-              Through the Tuwafute Machozi Foundation, established 1 June 2023,
-              forty percent of tour revenue is directed to community work in
-              Zanzibar.
-            </p>
-          </div>
-          <img src="../images/impact-community.jpg" alt="Community work, Zanzibar" />
-        </div>
+        <h2>Travel, held<br />in <em>one place.</em></h2>
+        <p class="lead">
+          Private island tours, beach days, mainland safari, stays and transfers — one itinerary, one guide.
+        </p>
+        <p class="body">
+          In Kiswahili, tuwafute machozi means let us wipe their tears. Guests who travel with us enable charity work in Zanzibar. Prices are confirmed for your dates. Nothing is taken on the website.
+        </p>
       </div>
-      <div class="folio"><span>02</span><span>Zanzibar</span></div>
+      <div class="ring ring-life"></div>
+      <div class="orb orb-life">
+        <img src="../images/places/blue-lagoon.jpg" alt="Snorkeling, Zanzibar" />
+      </div>
+      <div class="pct"><b>40%</b><span>of tour revenue to charity</span></div>
+      <div class="folio">02 · The House</div>
     </article>
 
-    <!-- 03 DISCOVER -->
-    <article class="page">
-      <div class="running">
-        <span>Tuwafute Machozi Tours</span>
-        <span>The Island</span>
+    <!-- 03 -->
+    <article class="page mosaic">
+      <div class="grid">
+        <div class="tile">
+          <img src="../images/places/nungwi-beach.jpg" alt="Nungwi Beach" />
+          <div class="shade"></div>
+          <div class="label">
+            <p>North</p>
+            <h3>Nungwi &amp; Kendwa</h3>
+            <span>Pale sand, Mnemba reef, turtle sanctuary.</span>
+          </div>
+        </div>
+        <div class="tile">
+          <img src="../images/places/paje-beach.jpg" alt="Paje Beach" style="object-position: 50% 72%" />
+          <div class="shade"></div>
+          <div class="label">
+            <p>East</p>
+            <h3>Paje &amp; The Rock</h3>
+            <span>Lagoon, kite coast, Kuza Cave, Michamvi.</span>
+          </div>
+        </div>
+        <div class="tile">
+          <img src="../images/beach/caves-experience.jpg" alt="Cave pool, Zanzibar" />
+          <div class="shade"></div>
+          <div class="label">
+            <p>South</p>
+            <h3>Kizimkazi &amp; Caves</h3>
+            <span>Menai Bay, Pungume, Maalum, the old mosque.</span>
+          </div>
+        </div>
+        <div class="tile">
+          <img src="../images/itineraries/dhow-sail.jpg" alt="Dhow on Zanzibar shore" />
+          <div class="shade"></div>
+          <div class="label">
+            <p>West &amp; Central</p>
+            <h3>Stone Town &amp; Spice</h3>
+            <span>Prison Island, Jozani, mangroves, sunset dhow.</span>
+          </div>
+        </div>
       </div>
-      <div class="pad">
-        <p class="eyebrow">Twenty-eight named excursions</p>
-        <h2 style="margin-top: 3mm">Discover<br /><em>Zanzibar</em></h2>
-        <p class="lead" style="margin-top: 4mm; max-width: 158mm">
-          Four coasts. One private guide. The catalog is the island itself —
-          beaches, reefs, caves, spice, forest and Stone Town.
-        </p>
-        <div class="regions">
-          <div class="region">
-            <h3>North</h3>
-            <p>Nungwi and Kendwa for pale sand and evening light. Mnemba for the reef. The turtle sanctuary at the northern tip.</p>
-          </div>
-          <div class="region">
-            <h3>East</h3>
-            <p>Paje and Jambiani for kite and lagoon. Kuza Cave. The Rock, set on its own stone in the sea.</p>
-          </div>
-          <div class="region">
-            <h3>South</h3>
-            <p>Kizimkazi for the old mosque and the dolphin coast. Menai Bay, Pungume sandbank, and Maalum Cave.</p>
-          </div>
-          <div class="region">
-            <h3>West &amp; Central</h3>
-            <p>Stone Town, spice farms, Prison Island, Forodhani, Jozani Forest, mangroves, and the sunset dhow.</p>
-          </div>
-        </div>
-        <div class="duo">
-          <div class="plate">
-            <img src="../images/places/nungwi-beach.jpg" alt="Nungwi Beach" />
-          </div>
-          <div class="plate">
-            <img src="../images/places/the-rock.jpg" alt="The Rock Restaurant, Michamvi" />
-          </div>
-        </div>
-        <p class="cap">Nungwi Beach · The Rock, Michamvi</p>
+      <div class="banner">
+        <p>Twenty-eight named excursions</p>
+        <h2>Discover Zanzibar</h2>
       </div>
       <div class="folio"><span>03</span><span>The Island</span></div>
     </article>
 
-    <!-- 04 BEYOND -->
-    <article class="page">
-      <div class="running">
-        <span>Tuwafute Machozi Tours</span>
-        <span>The Work</span>
-      </div>
-      <div class="pad">
-        <p class="eyebrow">Coast · Mainland · Stay</p>
-        <h2 style="margin-top: 3mm">Beyond<br />the <em>shore.</em></h2>
-        <div class="split3">
-          <div>
-            <h3>Beach days</h3>
-            <ul>
-              <li>Catamaran</li>
-              <li>Kayak</li>
-              <li>Jet ski &amp; jet car</li>
-              <li>Drone &amp; photography</li>
-              <li>Proposal &amp; small events</li>
-              <li>Horse riding</li>
-              <li>Caves · Salaam, Kuza, Maalum</li>
-              <li>Beach clubs, booked for you</li>
-              <li>Transfers, twenty-four hours</li>
-            </ul>
-            <p class="note">Clubs such as Nanasi and Le Saint Lopez are independent. We recommend and arrange — we do not own them.</p>
-          </div>
-          <div>
-            <h3>Mainland safari</h3>
-            <ul>
-              <li>Serengeti National Park</li>
-              <li>Ngorongoro Crater</li>
-              <li>Tarangire National Park</li>
-              <li>Mount Kilimanjaro trek</li>
-            </ul>
-            <p class="note">Arranged from the Zanzibar house, with private guiding. Wildlife is never guaranteed. Route and nights set with you.</p>
-          </div>
-          <div>
-            <h3>Stay your way</h3>
-            <ul>
-              <li>2★ · Shangani, Stone Town</li>
-              <li>3★ · Tembo House, seafront</li>
-              <li>4★ · Ocean Paradise, east coast</li>
-              <li>5★ · Baraza Resort, Bwejuu</li>
-            </ul>
-            <p class="note">Named houses are examples of each standard — not partnerships, not printed rates. We confirm what is open for your dates.</p>
-          </div>
+    <!-- 04 -->
+    <article class="page bands">
+      <div class="row">
+        <img src="../images/beach/horse-riding.jpg" alt="Horse riding on the beach" />
+        <div class="shade"></div>
+        <div class="copy">
+          <p>Beach days</p>
+          <h2>The coast.</h2>
+          <ul>
+            <li>Catamaran · Kayak · Jet ski</li>
+            <li>Drone · Proposal · Horse riding</li>
+            <li>Caves · Beach clubs · 24-hour transfers</li>
+          </ul>
         </div>
-        <div class="pair">
-          <div class="plate">
-            <img src="../images/safaris/serengeti.jpg" alt="Serengeti National Park" />
-          </div>
-          <div class="plate">
-            <img src="../images/stays/five-star.jpg" alt="Five-star pool, Zanzibar" />
-          </div>
-        </div>
-        <p class="cap">Serengeti · Five-star stay, east coast Zanzibar</p>
       </div>
-      <div class="folio"><span>04</span><span>The Work</span></div>
+      <div class="row">
+        <img src="../images/safaris/serengeti.jpg" alt="Serengeti National Park" />
+        <div class="shade"></div>
+        <div class="copy">
+          <p>Mainland safari</p>
+          <h2>Beyond the shore.</h2>
+          <ul>
+            <li>Serengeti · Ngorongoro</li>
+            <li>Tarangire · Kilimanjaro trek</li>
+            <li>Private guiding, arranged from Zanzibar</li>
+          </ul>
+        </div>
+      </div>
+      <div class="row">
+        <img src="../images/stays/five-star.jpg" alt="Five-star pool, Zanzibar" />
+        <div class="shade"></div>
+        <div class="copy">
+          <p>Stay your way</p>
+          <h2>2★ to 5★ houses.</h2>
+          <ul>
+            <li>Shangani · Tembo House</li>
+            <li>Ocean Paradise · Baraza</li>
+            <li>Examples only — booked for your dates</li>
+          </ul>
+        </div>
+      </div>
+      <div class="folio">04 · The Work</div>
     </article>
 
-    <!-- 05 JOURNEYS -->
-    <article class="page">
-      <div class="running">
-        <span>Tuwafute Machozi Tours</span>
-        <span>Journeys</span>
+    <!-- 05 -->
+    <article class="page sail">
+      <img class="hero" src="../images/places/sunset-dhow.jpg" alt="Sunset dhow, Zanzibar" />
+      <div class="veil"></div>
+      <div class="orb orb-small">
+        <img src="../images/beach/kayak-experience.jpg" alt="Clear kayak, Zanzibar" />
       </div>
-      <div class="pad">
-        <p class="eyebrow">Sample sequences · not priced packages</p>
-        <h2 style="margin-top: 3mm">One journey.<br /><em>Many days.</em></h2>
-        <div class="trips">
-          <div class="trip">
-            <p class="days">Seven days</p>
-            <h3>North, Heritage &amp; Reef</h3>
-            <p>Stone Town, spice, Prison Island, Nungwi, Mnemba, northern villages, Kendwa at dusk.</p>
-          </div>
-          <div class="trip">
-            <p class="days">Six days</p>
-            <h3>East Coast &amp; Wild South</h3>
-            <p>Paje, kite, Jambiani, Kuza Cave, Kizimkazi, and the waters of Menai Bay.</p>
-          </div>
-          <div class="trip">
-            <p class="days">Eight days</p>
-            <h3>Coast, Caves &amp; Dhow</h3>
-            <p>Kendwa, the sunset dhow, The Rock, Michamvi, the caves, Stone Town, Nungwi.</p>
-          </div>
+      <div class="head">
+        <p>Sample sequences · not priced packages</p>
+        <h2>One journey.<br /><em>Many days.</em></h2>
+      </div>
+      <div class="cards">
+        <div class="card">
+          <p class="days">Seven days</p>
+          <h3>North, Heritage &amp; Reef</h3>
+          <p>Stone Town, spice, Prison Island, Nungwi, Mnemba, Kendwa at dusk.</p>
         </div>
-        <div class="journey-photo">
-          <img src="../images/places/sunset-dhow.jpg" alt="Sunset dhow, Zanzibar" />
+        <div class="card">
+          <p class="days">Six days</p>
+          <h3>East Coast &amp; Wild South</h3>
+          <p>Paje, kite, Jambiani, Kuza Cave, Kizimkazi, Menai Bay.</p>
         </div>
-        <p class="cap">Sunset dhow · West Zanzibar</p>
-        <div class="plan">
-          <p>
-            Compose your own days on the website — Island Explorer, excursion map,
-            trip builder and planner — then send the request on WhatsApp.
-          </p>
+        <div class="card">
+          <p class="days">Eight days</p>
+          <h3>Coast, Caves &amp; Dhow</h3>
+          <p>Kendwa, sunset dhow, The Rock, the caves, Stone Town, Nungwi.</p>
         </div>
       </div>
-      <div class="folio"><span>05</span><span>Journeys</span></div>
+      <div class="folio">05 · Journeys</div>
     </article>
 
-    <!-- 06 CLOSE -->
-    <article class="page">
-      <div class="running">
-        <span>Tuwafute Machozi Tours</span>
-        <span>The Invitation</span>
+    <!-- 06 -->
+    <article class="page close">
+      <div class="photo">
+        <img src="../images/beach/beach-clubs.jpg" alt="Beach club, Zanzibar" />
       </div>
-      <div class="pad">
-        <div class="close-grid">
-          <div class="close-copy">
-            <p class="eyebrow">Why this house</p>
-            <h2 style="margin-top: 3mm">Leave the island<br /><em>lighter.</em></h2>
-            <div class="rule" style="margin-top: 5mm"></div>
-            <p class="lead" style="margin-top: 5mm">
-              Private guiding on every trip. Forty percent of tour revenue to
-              community work in Zanzibar. One house for the island and the
-              mainland.
-            </p>
-            <ul class="facts">
-              <li><strong>01</strong> Private tours, never a shared desk queue.</li>
-              <li><strong>02</strong> Beach, safari and stay held in one request.</li>
-              <li><strong>03</strong> 40% of tour revenue to the Foundation.</li>
-              <li><strong>04</strong> Prices on request. No payment taken here.</li>
-            </ul>
-            <div class="contact">
-              <p><span class="lbl">WhatsApp · Tigo</span>067 534 657</p>
-              <p><span class="lbl">Call · Halotel</span>+255 622 434 657</p>
-              <p><span class="lbl">Email</span>hello@tuwafutemachozi.com</p>
-              <p><span class="lbl">Instagram</span>tuwafute_255</p>
-              <p><span class="lbl">Website</span>tuwafute-machozi-tours.vercel.app</p>
-            </div>
-            <div class="qr-box">
-              <img src="qr.png" alt="QR code to the house website" />
-            </div>
-            <p class="cap" style="margin-top: 2mm">Scan to begin</p>
-          </div>
-          <div class="side-stack">
-            <div class="tall">
-              <img src="../images/beach/beach-clubs.jpg" alt="Beach club, Zanzibar" />
-            </div>
-            <div class="short">
-              <img src="../images/places/stone-town.jpg" alt="Stone Town waterfront" />
-            </div>
-          </div>
-        </div>
+      <div class="veil"></div>
+      <div class="copy">
+        <p class="eyebrow">Begin here</p>
+        <h2>Leave the island<br /><em>lighter.</em></h2>
+        <p class="lead">Private guide on every trip. Forty percent of tour revenue to community work in Zanzibar.</p>
+        <div class="row"><p class="lbl">WhatsApp · Tigo</p><p class="val">067 534 657</p></div>
+        <div class="row"><p class="lbl">Call · Halotel</p><p class="val">+255 622 434 657</p></div>
+        <div class="row"><p class="lbl">Email</p><p class="val">hello@tuwafutemachozi.com</p></div>
+        <div class="row"><p class="lbl">Instagram</p><p class="val">tuwafute_255</p></div>
+        <div class="row"><p class="lbl">Website</p><p class="val">tuwafute-machozi-tours.vercel.app</p></div>
+        <div class="qr"><img src="qr.png" alt="QR code to the house website" /></div>
+        <p class="scan">Scan to begin</p>
+      </div>
+      <div class="ring ring-p"></div>
+      <div class="orb orb-p">
+        <img src="../images/beach/proposal-small-events.jpg" alt="Beach proposal, Zanzibar" />
       </div>
       <div class="folio"><span>06</span><span>Zanzibar</span></div>
     </article>
