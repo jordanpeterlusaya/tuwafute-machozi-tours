@@ -1,0 +1,765 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <title>Tuwafute Machozi Tours — House Book</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;1,400;1,500&family=Outfit:wght@300;400;500&display=swap"
+      rel="stylesheet"
+    />
+    <style>
+      @page {
+        size: A4 portrait;
+        margin: 0;
+      }
+      * {
+        box-sizing: border-box;
+        margin: 0;
+        padding: 0;
+      }
+      html,
+      body {
+        background: #e8e0d2;
+        -webkit-print-color-adjust: exact;
+        print-color-adjust: exact;
+      }
+      body {
+        width: 210mm;
+      }
+      .page {
+        position: relative;
+        width: 210mm;
+        height: 297mm;
+        overflow: hidden;
+        background: #f4efe6;
+        color: #1c1914;
+        page-break-after: always;
+        break-after: page;
+      }
+      .page:last-child {
+        page-break-after: auto;
+      }
+      img {
+        display: block;
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+      }
+      .gold {
+        color: #9a7a3e;
+      }
+      .serif {
+        font-family: "Cormorant Garamond", "Times New Roman", serif;
+      }
+      .sans {
+        font-family: Outfit, "Helvetica Neue", Helvetica, Arial, sans-serif;
+      }
+      .eyebrow {
+        font-family: Outfit, "Helvetica Neue", Helvetica, Arial, sans-serif;
+        font-weight: 400;
+        font-size: 2.15mm;
+        letter-spacing: 0.38em;
+        text-transform: uppercase;
+        color: #9a7a3e;
+      }
+      .rule {
+        width: 14mm;
+        height: 0.18mm;
+        background: #c4a56a;
+      }
+      .folio {
+        position: absolute;
+        left: 16mm;
+        right: 16mm;
+        bottom: 8.2mm;
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        font-family: Outfit, "Helvetica Neue", Helvetica, Arial, sans-serif;
+        font-size: 2.05mm;
+        letter-spacing: 0.32em;
+        text-transform: uppercase;
+        color: #9a7a3e;
+        z-index: 6;
+      }
+      .folio span {
+        letter-spacing: 0.12em;
+      }
+      .running {
+        position: absolute;
+        top: 8.5mm;
+        left: 16mm;
+        right: 16mm;
+        display: flex;
+        justify-content: space-between;
+        padding-bottom: 2.6mm;
+        border-bottom: 0.12mm solid rgba(154, 122, 62, 0.32);
+        font-family: Outfit, "Helvetica Neue", Helvetica, Arial, sans-serif;
+        font-size: 1.95mm;
+        letter-spacing: 0.34em;
+        text-transform: uppercase;
+        color: #9a7a3e;
+        z-index: 6;
+      }
+
+      /* —— 01 cover —— */
+      .cover {
+        background: #0e1614;
+        color: #f6f0e6;
+      }
+      .cover img.hero {
+        position: absolute;
+        inset: 0;
+        object-position: 50% 42%;
+      }
+      .cover .veil {
+        position: absolute;
+        inset: 0;
+        background: linear-gradient(
+          180deg,
+          rgba(12, 18, 16, 0.18) 0%,
+          rgba(12, 18, 16, 0.05) 38%,
+          rgba(12, 18, 16, 0.55) 72%,
+          rgba(12, 18, 16, 0.88) 100%
+        );
+      }
+      .cover .frame {
+        position: absolute;
+        inset: 8mm;
+        border: 0.18mm solid rgba(212, 176, 106, 0.72);
+        z-index: 4;
+        pointer-events: none;
+      }
+      .cover .frame::after {
+        content: "";
+        position: absolute;
+        inset: 1.1mm;
+        border: 0.08mm solid rgba(212, 176, 106, 0.28);
+      }
+      .cover .brand {
+        position: absolute;
+        left: 18mm;
+        right: 18mm;
+        bottom: 22mm;
+        z-index: 5;
+        text-align: center;
+      }
+      .cover .place {
+        font-family: Outfit, "Helvetica Neue", Helvetica, Arial, sans-serif;
+        font-size: 2.4mm;
+        letter-spacing: 0.48em;
+        text-transform: uppercase;
+        color: #d4b06a;
+      }
+      .cover h1 {
+        margin-top: 5mm;
+        font-family: "Cormorant Garamond", "Times New Roman", serif;
+        font-weight: 400;
+        font-size: 13.2mm;
+        line-height: 0.9;
+        letter-spacing: 0.04em;
+      }
+      .cover h1 em {
+        display: block;
+        font-style: italic;
+        font-size: 12.4mm;
+        letter-spacing: 0.02em;
+      }
+      .cover .house {
+        margin-top: 3.2mm;
+        font-family: Outfit, "Helvetica Neue", Helvetica, Arial, sans-serif;
+        font-size: 2.4mm;
+        letter-spacing: 0.42em;
+        text-transform: uppercase;
+        color: #eadfcb;
+      }
+      .cover .goldline {
+        width: 16mm;
+        height: 0.18mm;
+        background: #c4a56a;
+        margin: 5mm auto 4.2mm;
+      }
+      .cover .tag {
+        font-family: "Cormorant Garamond", "Times New Roman", serif;
+        font-style: italic;
+        font-size: 4.4mm;
+        color: #f4ece0;
+      }
+      .cover .offer {
+        margin-top: 3.2mm;
+        font-family: Outfit, "Helvetica Neue", Helvetica, Arial, sans-serif;
+        font-size: 2.25mm;
+        letter-spacing: 0.28em;
+        text-transform: uppercase;
+        color: rgba(244, 236, 224, 0.82);
+      }
+      .cover .folio {
+        color: rgba(212, 176, 106, 0.85);
+      }
+
+      /* —— inner pages —— */
+      .pad {
+        position: absolute;
+        top: 18mm;
+        left: 16mm;
+        right: 16mm;
+        bottom: 16mm;
+      }
+      h2 {
+        font-family: "Cormorant Garamond", "Times New Roman", serif;
+        font-weight: 400;
+        font-size: 11.4mm;
+        line-height: 0.92;
+        letter-spacing: 0.01em;
+        color: #16130f;
+      }
+      h2 em {
+        font-style: italic;
+        color: #6b5a3a;
+      }
+      .lead {
+        font-family: "Cormorant Garamond", "Times New Roman", serif;
+        font-size: 4.15mm;
+        line-height: 1.32;
+        color: #2a241c;
+      }
+      .body {
+        font-family: Outfit, "Helvetica Neue", Helvetica, Arial, sans-serif;
+        font-weight: 300;
+        font-size: 2.85mm;
+        line-height: 1.55;
+        color: #3a342c;
+      }
+      .cap {
+        font-family: Outfit, "Helvetica Neue", Helvetica, Arial, sans-serif;
+        font-size: 1.85mm;
+        letter-spacing: 0.22em;
+        text-transform: uppercase;
+        color: #9a7a3e;
+        margin-top: 2.2mm;
+      }
+
+      .about-grid {
+        display: grid;
+        grid-template-columns: 92mm 1fr;
+        gap: 8mm;
+        height: 148mm;
+        margin-top: 6mm;
+      }
+      .about-grid .plate {
+        height: 148mm;
+        overflow: hidden;
+      }
+      .about-copy {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        padding-top: 2mm;
+      }
+      .charity {
+        display: grid;
+        grid-template-columns: 1fr 58mm;
+        gap: 8mm;
+        align-items: center;
+        margin-top: 7mm;
+        padding-top: 6mm;
+        border-top: 0.16mm solid rgba(154, 122, 62, 0.35);
+      }
+      .pct {
+        font-family: "Cormorant Garamond", "Times New Roman", serif;
+        font-weight: 400;
+        font-size: 18mm;
+        line-height: 0.85;
+        color: #16130f;
+      }
+      .pct span {
+        display: block;
+        margin-top: 2.4mm;
+        font-family: Outfit, "Helvetica Neue", Helvetica, Arial, sans-serif;
+        font-size: 2.2mm;
+        letter-spacing: 0.28em;
+        text-transform: uppercase;
+        color: #9a7a3e;
+      }
+      .charity img {
+        height: 42mm;
+        object-position: 50% 30%;
+      }
+
+      .regions {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        gap: 5.5mm 10mm;
+        margin-top: 7mm;
+      }
+      .region h3 {
+        font-family: Outfit, "Helvetica Neue", Helvetica, Arial, sans-serif;
+        font-size: 2.15mm;
+        letter-spacing: 0.3em;
+        text-transform: uppercase;
+        color: #9a7a3e;
+        margin-bottom: 1.6mm;
+      }
+      .region p {
+        font-family: "Cormorant Garamond", "Times New Roman", serif;
+        font-size: 3.35mm;
+        line-height: 1.32;
+        color: #2a241c;
+      }
+      .duo {
+        display: grid;
+        grid-template-columns: 1.15fr 0.85fr;
+        gap: 4mm;
+        height: 112mm;
+        margin-top: 8mm;
+      }
+      .duo .plate {
+        overflow: hidden;
+        height: 112mm;
+      }
+
+      .split3 {
+        display: grid;
+        grid-template-columns: 1fr 1fr 1fr;
+        gap: 6mm;
+        margin-top: 7mm;
+      }
+      .split3 h3 {
+        font-family: Outfit, "Helvetica Neue", Helvetica, Arial, sans-serif;
+        font-size: 2.1mm;
+        letter-spacing: 0.28em;
+        text-transform: uppercase;
+        color: #9a7a3e;
+        margin-bottom: 2.4mm;
+      }
+      .split3 ul {
+        list-style: none;
+      }
+      .split3 li {
+        font-family: "Cormorant Garamond", "Times New Roman", serif;
+        font-size: 3.3mm;
+        line-height: 1.42;
+        color: #2a241c;
+        padding: 1.15mm 0;
+        border-bottom: 0.12mm solid rgba(28, 25, 20, 0.1);
+      }
+      .split3 .note {
+        margin-top: 3mm;
+        font-family: Outfit, "Helvetica Neue", Helvetica, Arial, sans-serif;
+        font-weight: 300;
+        font-size: 2.35mm;
+        line-height: 1.45;
+        color: #5a5248;
+      }
+      .wide-plate {
+        height: 72mm;
+        overflow: hidden;
+        margin-top: 8mm;
+      }
+      .pair {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        gap: 4mm;
+        height: 92mm;
+        margin-top: 6mm;
+      }
+      .pair .plate {
+        overflow: hidden;
+        height: 92mm;
+      }
+
+      .trips {
+        display: grid;
+        grid-template-columns: 1fr 1fr 1fr;
+        gap: 5mm;
+        margin-top: 7mm;
+      }
+      .trip {
+        padding: 5.5mm 5mm 5mm;
+        border: 0.16mm solid rgba(154, 122, 62, 0.38);
+        min-height: 48mm;
+      }
+      .trip .days {
+        font-family: Outfit, "Helvetica Neue", Helvetica, Arial, sans-serif;
+        font-size: 1.95mm;
+        letter-spacing: 0.28em;
+        text-transform: uppercase;
+        color: #9a7a3e;
+      }
+      .trip h3 {
+        margin-top: 2.4mm;
+        font-family: "Cormorant Garamond", "Times New Roman", serif;
+        font-weight: 400;
+        font-size: 5.1mm;
+        line-height: 0.95;
+        color: #16130f;
+      }
+      .trip p {
+        margin-top: 2.6mm;
+        font-family: Outfit, "Helvetica Neue", Helvetica, Arial, sans-serif;
+        font-weight: 300;
+        font-size: 2.45mm;
+        line-height: 1.45;
+        color: #3a342c;
+      }
+      .journey-photo {
+        height: 118mm;
+        overflow: hidden;
+        margin-top: 7mm;
+      }
+      .plan {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        margin-top: 6mm;
+        padding-top: 4.5mm;
+        border-top: 0.16mm solid rgba(154, 122, 62, 0.35);
+      }
+      .plan p {
+        font-family: Outfit, "Helvetica Neue", Helvetica, Arial, sans-serif;
+        font-weight: 300;
+        font-size: 2.5mm;
+        line-height: 1.45;
+        color: #3a342c;
+      }
+
+      .close-grid {
+        display: grid;
+        grid-template-columns: 1fr 78mm;
+        gap: 10mm;
+        height: 100%;
+      }
+      .close-copy {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        padding-bottom: 8mm;
+      }
+      .facts {
+        margin-top: 8mm;
+      }
+      .facts li {
+        list-style: none;
+        display: grid;
+        grid-template-columns: 8mm 1fr;
+        gap: 3mm;
+        padding: 3.2mm 0;
+        border-top: 0.12mm solid rgba(28, 25, 20, 0.1);
+        font-family: Outfit, "Helvetica Neue", Helvetica, Arial, sans-serif;
+        font-weight: 300;
+        font-size: 2.7mm;
+        line-height: 1.4;
+        color: #3a342c;
+      }
+      .facts li strong {
+        font-family: "Cormorant Garamond", "Times New Roman", serif;
+        font-weight: 500;
+        font-size: 4.2mm;
+        color: #9a7a3e;
+        line-height: 1;
+      }
+      .contact {
+        margin-top: 8mm;
+      }
+      .contact p {
+        font-family: "Cormorant Garamond", "Times New Roman", serif;
+        font-size: 3.5mm;
+        line-height: 1.45;
+        color: #1c1914;
+      }
+      .contact .lbl {
+        display: block;
+        font-family: Outfit, "Helvetica Neue", Helvetica, Arial, sans-serif;
+        font-size: 1.9mm;
+        letter-spacing: 0.26em;
+        text-transform: uppercase;
+        color: #9a7a3e;
+        margin-bottom: 0.4mm;
+        margin-top: 2.8mm;
+      }
+      .qr-box {
+        width: 32mm;
+        padding: 2.2mm;
+        background: #fff;
+        border: 0.16mm solid rgba(154, 122, 62, 0.4);
+        margin-top: 6mm;
+      }
+      .qr-box img {
+        width: 27.6mm;
+        height: 27.6mm;
+      }
+      .side-stack {
+        display: flex;
+        flex-direction: column;
+        gap: 4mm;
+        height: 100%;
+        padding-bottom: 10mm;
+      }
+      .side-stack .tall {
+        flex: 1;
+        overflow: hidden;
+        min-height: 0;
+      }
+      .side-stack .short {
+        height: 58mm;
+        overflow: hidden;
+      }
+    </style>
+  </head>
+  <body>
+    <!-- 01 COVER -->
+    <article class="page cover">
+      <img class="hero" src="../images/places/kendwa-sunset.jpg" alt="Kendwa beach, Zanzibar" />
+      <div class="veil"></div>
+      <div class="frame"></div>
+      <div class="brand">
+        <p class="place">Zanzibar · Tanzania</p>
+        <h1>Tuwafute<br /><em>Machozi</em></h1>
+        <p class="house">Tours &amp; Safari</p>
+        <div class="goldline"></div>
+        <p class="tag">Discover. Experience. Give Back.</p>
+        <p class="offer">Private tours · Beach days · Safari</p>
+      </div>
+      <div class="folio" style="justify-content: center">
+        <span>01</span>
+      </div>
+    </article>
+
+    <!-- 02 ABOUT -->
+    <article class="page">
+      <div class="running">
+        <span>Tuwafute Machozi Tours</span>
+        <span>The House</span>
+      </div>
+      <div class="pad">
+        <p class="eyebrow">About the house</p>
+        <h2 style="margin-top: 3mm">Travel, held<br />in <em>one place.</em></h2>
+        <div class="about-grid">
+          <div class="plate">
+            <img src="../images/places/mnemba.jpg" alt="Mnemba Island, Zanzibar" />
+          </div>
+          <div class="about-copy">
+            <div class="rule"></div>
+            <p class="lead" style="margin-top: 4mm">
+              Tuwafute Machozi Tours is a Zanzibar house for private travel —
+              island excursions, beach days, mainland safari, stays and transfers,
+              arranged as one itinerary.
+            </p>
+            <p class="body" style="margin-top: 4mm">
+              In Kiswahili, <em>tuwafute machozi</em> means let us wipe their tears.
+              Guests who travel with us enable charity work across the island.
+              Every trip includes a private guide. Prices are confirmed for your
+              dates — nothing is taken on the website.
+            </p>
+            <p class="cap">Mnemba Island · North Zanzibar</p>
+          </div>
+        </div>
+        <div class="charity">
+          <div>
+            <p class="pct">40%<span>of tour revenue to charity</span></p>
+            <p class="body" style="margin-top: 3.5mm; max-width: 108mm">
+              Through the Tuwafute Machozi Foundation, established 1 June 2023,
+              forty percent of tour revenue is directed to community work in
+              Zanzibar.
+            </p>
+          </div>
+          <img src="../images/impact-community.jpg" alt="Community work, Zanzibar" />
+        </div>
+      </div>
+      <div class="folio"><span>02</span><span>Zanzibar</span></div>
+    </article>
+
+    <!-- 03 DISCOVER -->
+    <article class="page">
+      <div class="running">
+        <span>Tuwafute Machozi Tours</span>
+        <span>The Island</span>
+      </div>
+      <div class="pad">
+        <p class="eyebrow">Twenty-eight named excursions</p>
+        <h2 style="margin-top: 3mm">Discover<br /><em>Zanzibar</em></h2>
+        <p class="lead" style="margin-top: 4mm; max-width: 158mm">
+          Four coasts. One private guide. The catalog is the island itself —
+          beaches, reefs, caves, spice, forest and Stone Town.
+        </p>
+        <div class="regions">
+          <div class="region">
+            <h3>North</h3>
+            <p>Nungwi and Kendwa for pale sand and evening light. Mnemba for the reef. The turtle sanctuary at the northern tip.</p>
+          </div>
+          <div class="region">
+            <h3>East</h3>
+            <p>Paje and Jambiani for kite and lagoon. Kuza Cave. The Rock, set on its own stone in the sea.</p>
+          </div>
+          <div class="region">
+            <h3>South</h3>
+            <p>Kizimkazi for the old mosque and the dolphin coast. Menai Bay, Pungume sandbank, and Maalum Cave.</p>
+          </div>
+          <div class="region">
+            <h3>West &amp; Central</h3>
+            <p>Stone Town, spice farms, Prison Island, Forodhani, Jozani Forest, mangroves, and the sunset dhow.</p>
+          </div>
+        </div>
+        <div class="duo">
+          <div class="plate">
+            <img src="../images/places/nungwi-beach.jpg" alt="Nungwi Beach" />
+          </div>
+          <div class="plate">
+            <img src="../images/places/the-rock.jpg" alt="The Rock Restaurant, Michamvi" />
+          </div>
+        </div>
+        <p class="cap">Nungwi Beach · The Rock, Michamvi</p>
+      </div>
+      <div class="folio"><span>03</span><span>The Island</span></div>
+    </article>
+
+    <!-- 04 BEYOND -->
+    <article class="page">
+      <div class="running">
+        <span>Tuwafute Machozi Tours</span>
+        <span>The Work</span>
+      </div>
+      <div class="pad">
+        <p class="eyebrow">Coast · Mainland · Stay</p>
+        <h2 style="margin-top: 3mm">Beyond<br />the <em>shore.</em></h2>
+        <div class="split3">
+          <div>
+            <h3>Beach days</h3>
+            <ul>
+              <li>Catamaran</li>
+              <li>Kayak</li>
+              <li>Jet ski &amp; jet car</li>
+              <li>Drone &amp; photography</li>
+              <li>Proposal &amp; small events</li>
+              <li>Horse riding</li>
+              <li>Caves · Salaam, Kuza, Maalum</li>
+              <li>Beach clubs, booked for you</li>
+              <li>Transfers, twenty-four hours</li>
+            </ul>
+            <p class="note">Clubs such as Nanasi and Le Saint Lopez are independent. We recommend and arrange — we do not own them.</p>
+          </div>
+          <div>
+            <h3>Mainland safari</h3>
+            <ul>
+              <li>Serengeti National Park</li>
+              <li>Ngorongoro Crater</li>
+              <li>Tarangire National Park</li>
+              <li>Mount Kilimanjaro trek</li>
+            </ul>
+            <p class="note">Arranged from the Zanzibar house, with private guiding. Wildlife is never guaranteed. Route and nights set with you.</p>
+          </div>
+          <div>
+            <h3>Stay your way</h3>
+            <ul>
+              <li>2★ · Shangani, Stone Town</li>
+              <li>3★ · Tembo House, seafront</li>
+              <li>4★ · Ocean Paradise, east coast</li>
+              <li>5★ · Baraza Resort, Bwejuu</li>
+            </ul>
+            <p class="note">Named houses are examples of each standard — not partnerships, not printed rates. We confirm what is open for your dates.</p>
+          </div>
+        </div>
+        <div class="pair">
+          <div class="plate">
+            <img src="../images/safaris/serengeti.jpg" alt="Serengeti National Park" />
+          </div>
+          <div class="plate">
+            <img src="../images/stays/five-star.jpg" alt="Five-star pool, Zanzibar" />
+          </div>
+        </div>
+        <p class="cap">Serengeti · Five-star stay, east coast Zanzibar</p>
+      </div>
+      <div class="folio"><span>04</span><span>The Work</span></div>
+    </article>
+
+    <!-- 05 JOURNEYS -->
+    <article class="page">
+      <div class="running">
+        <span>Tuwafute Machozi Tours</span>
+        <span>Journeys</span>
+      </div>
+      <div class="pad">
+        <p class="eyebrow">Sample sequences · not priced packages</p>
+        <h2 style="margin-top: 3mm">One journey.<br /><em>Many days.</em></h2>
+        <div class="trips">
+          <div class="trip">
+            <p class="days">Seven days</p>
+            <h3>North, Heritage &amp; Reef</h3>
+            <p>Stone Town, spice, Prison Island, Nungwi, Mnemba, northern villages, Kendwa at dusk.</p>
+          </div>
+          <div class="trip">
+            <p class="days">Six days</p>
+            <h3>East Coast &amp; Wild South</h3>
+            <p>Paje, kite, Jambiani, Kuza Cave, Kizimkazi, and the waters of Menai Bay.</p>
+          </div>
+          <div class="trip">
+            <p class="days">Eight days</p>
+            <h3>Coast, Caves &amp; Dhow</h3>
+            <p>Kendwa, the sunset dhow, The Rock, Michamvi, the caves, Stone Town, Nungwi.</p>
+          </div>
+        </div>
+        <div class="journey-photo">
+          <img src="../images/places/sunset-dhow.jpg" alt="Sunset dhow, Zanzibar" />
+        </div>
+        <p class="cap">Sunset dhow · West Zanzibar</p>
+        <div class="plan">
+          <p>
+            Compose your own days on the website — Island Explorer, excursion map,
+            trip builder and planner — then send the request on WhatsApp.
+          </p>
+        </div>
+      </div>
+      <div class="folio"><span>05</span><span>Journeys</span></div>
+    </article>
+
+    <!-- 06 CLOSE -->
+    <article class="page">
+      <div class="running">
+        <span>Tuwafute Machozi Tours</span>
+        <span>The Invitation</span>
+      </div>
+      <div class="pad">
+        <div class="close-grid">
+          <div class="close-copy">
+            <p class="eyebrow">Why this house</p>
+            <h2 style="margin-top: 3mm">Leave the island<br /><em>lighter.</em></h2>
+            <div class="rule" style="margin-top: 5mm"></div>
+            <p class="lead" style="margin-top: 5mm">
+              Private guiding on every trip. Forty percent of tour revenue to
+              community work in Zanzibar. One house for the island and the
+              mainland.
+            </p>
+            <ul class="facts">
+              <li><strong>01</strong> Private tours, never a shared desk queue.</li>
+              <li><strong>02</strong> Beach, safari and stay held in one request.</li>
+              <li><strong>03</strong> 40% of tour revenue to the Foundation.</li>
+              <li><strong>04</strong> Prices on request. No payment taken here.</li>
+            </ul>
+            <div class="contact">
+              <p><span class="lbl">WhatsApp · Tigo</span>067 534 657</p>
+              <p><span class="lbl">Call · Halotel</span>+255 622 434 657</p>
+              <p><span class="lbl">Email</span>hello@tuwafutemachozi.com</p>
+              <p><span class="lbl">Instagram</span>tuwafute_255</p>
+              <p><span class="lbl">Website</span>tuwafute-machozi-tours.vercel.app</p>
+            </div>
+            <div class="qr-box">
+              <img src="qr.png" alt="QR code to the house website" />
+            </div>
+            <p class="cap" style="margin-top: 2mm">Scan to begin</p>
+          </div>
+          <div class="side-stack">
+            <div class="tall">
+              <img src="../images/beach/beach-clubs.jpg" alt="Beach club, Zanzibar" />
+            </div>
+            <div class="short">
+              <img src="../images/places/stone-town.jpg" alt="Stone Town waterfront" />
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="folio"><span>06</span><span>Zanzibar</span></div>
+    </article>
+  </body>
+</html>
